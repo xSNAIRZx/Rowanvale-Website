@@ -1,8 +1,8 @@
 ROWANVALE AI CODE HANDOFF
 
-This repository contains the uploaded Rowanvale 19.3.0 application plus the AI guide and build/documentation fixes. The site source is now available in this GitHub repository. The uploaded ZIP was used for the initial structure review.
+This repository now contains Rowanvale 1.1.0, evolved from the uploaded Beta 19.3.0 application. Preserve the newer Lamplight layer, Worker deployment source and offline repairs. The site source is now available in this GitHub repository. The uploaded ZIP was used for the initial structure review.
 
-Start by reading README.md and NEXT_PROJECT_BRIEF.md. Use the brief as project context and follow the user's current request. No redesign or deployment was requested in preparing this handoff.
+Start by reading README.md and NEXT_PROJECT_BRIEF.md. Use the brief as project context and follow the user's current request. The existing Lamplight redesign and Worker source were added after the original handoff. Check the current source before treating historical pending work as unimplemented.
 
 STRUCTURE
 app/index.html: application shell and ordered script/style loading.
@@ -14,6 +14,9 @@ app/sw.js and manifest.webmanifest: offline/installable app support.
 app/assets/ and app/vendor/: visual assets and bundled Supabase client.
 backend/supabase-private-sync.sql: optional private cloud sync schema.
 hosting/server.cjs: owner-private authenticated gateway around the original loopback backend.
+app/lamplight.css and app/assets/fonts/: current design layer and self-hosted type.
+artifacts/build-dist.mjs: public browser asset builder (npm run build:public).
+deploy/worker.js and deploy/cover-resolver.js: public Worker and keyless artwork resolver; other Node API routes remain unavailable in this mode.
 tests/: source checks, unit/integration and browser tests.
 docs/: historical notes, screenshots and test evidence, not fresh verification.
 Dockerfile, compose.yaml, Caddyfile.example and environment examples: hosting configuration.

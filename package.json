@@ -2,7 +2,7 @@
   "name": "rowanvale",
   "version": "1.1.0",
   "private": true,
-  "description": "Rowanvale 1.1.0 \u2014 Your World Together Beta",
+  "description": "Rowanvale 1.1.0 — Your World Together Beta",
   "engines": {
     "node": ">=18"
   },
@@ -17,7 +17,9 @@
     "test:live-covers": "node tests/covers1861_live.cjs",
     "start:hosted": "node hosting/server.cjs",
     "test:hosting": "node --test hosting/server.test.cjs",
-    "test:hosting:browser": "node hosting/browser.test.cjs"
+    "test:hosting:browser": "node hosting/browser.test.cjs",
+    "build:public": "node artifacts/build-dist.mjs",
+    "test:public-build": "node --test tests/public_build.test.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1",

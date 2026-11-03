@@ -1,6 +1,17 @@
-# Rowanvale 19.3 — runnable private website starter
+# Rowanvale 1.1.0 — local-first website and private Node host
 
-This package contains the actual Beta 19.3 app plus a working hosted entry point, not only a prompt. The visual redesign is still pending your direction choice. For an AI with limited file access, start with [AI_HANDOFF.txt](AI_HANDOFF.txt), then this README and [NEXT_PROJECT_BRIEF.md](NEXT_PROJECT_BRIEF.md). The AI can request individual source files as needed; no ZIP is required.
+This repository contains Rowanvale 1.1.0, including the Lamplight design layer, offline app shell, public Worker entry point and a separate owner-private Node hosting gateway. For an AI with limited file access, start with [AI_HANDOFF.txt](AI_HANDOFF.txt), then this README and [NEXT_PROJECT_BRIEF.md](NEXT_PROJECT_BRIEF.md). The AI can request individual source files as needed; no ZIP is required.
+
+## Choose the build you need
+
+| Build | Command | Output and capabilities |
+| --- | --- | --- |
+| Local Node app | npm start | Loopback app with the Node API routes; optional providers need configuration. |
+| Private Node website | npm run start:hosted | Owner-authenticated gateway plus the original Node APIs and persistent private artwork. |
+| Public Worker assets | npm run build:public | dist/ browser assets; deploy/worker.js implements artwork resolution and returns explicit 503 responses for other /api routes. |
+| Complete source package | npm run build | build/Rowanvale_1.1.0/, including app, hosting, deploy and artifacts source plus tests and documentation. |
+
+The public Worker build does not implement the complete Node API. It is appropriate for browser-local records and the supported artwork resolver. Use private Node hosting when you need server-backed catalogs, barcode lookup and artwork/workspace ZIP operations. Review deploy/worker.js before choosing a deployment target.
 
 ## What is implemented
 
@@ -39,7 +50,7 @@ The original desktop launcher remains available. Do not run the desktop and webs
 5. If using a managed container host, configure its persistent volume at `/data/rowanvale`, its PORT convention, PUBLIC_URL, owner credentials and HTTPS ingress. A restartable container filesystem without a persistent volume is insufficient. Verify volume ownership permits the container's non-root `node` user to write.
 6. Check `/healthz` at the final origin, then verify app sign-in, metadata lookup, selected-artwork caching, ZIP export/import and offline restart. Live provider requests depend on their availability, terms and any required owner-supplied API keys.
 
-No hosting provider account, domain, TLS certificate or credentials is included. This package was not deployed. Docker image construction and production HTTPS must be verified on the chosen host. It cannot be deployed unchanged as a static GitHub Pages site or as a Worker-only site; it needs Node and persistent private storage. Do not upload `.env.hosted`, runtime storage or private backups to GitHub.
+No hosting provider account, domain, TLS certificate or credentials is included. Live deployment status is not established by this README. Docker image construction and production HTTPS must be verified on the chosen host. The full private-server feature set needs Node and persistent private storage. The separate deploy/ Worker entry point provides a smaller public feature set described above. Do not upload `.env.hosted`, runtime storage or private backups to GitHub.
 
 ## Move existing data
 
@@ -60,10 +71,10 @@ Hosting tests use a temporary synthetic workspace and the real Node backend. The
 
 ## Rollback and remaining work
 
-Keep the unchanged Beta 19.3 desktop build and the previous server image. Export browser data and the artwork ZIP before upgrades. To roll back, run the prior image with the same persistent volume only if its data format remains compatible; otherwise restore the verified exported backup into an isolated prior volume. Keep the final website origin stable to retain browser storage.
+Keep a verified previous desktop build and the previous server image. Export browser data and the artwork ZIP before upgrades. To roll back, run the prior image with the same persistent volume only if its data format remains compatible; otherwise restore the verified exported backup into an isolated prior volume. Keep the final website origin stable to retain browser storage.
 
-The other AI should now: configure the actual host and secrets; verify real HTTPS, provider calls and persistent-volume restart; then follow NEXT_PROJECT_BRIEF.md through the design-direction checkpoint. Public multi-user accounts require a separate isolation design. The gateway password must stay private; Basic authentication uses browser-managed sessions and does not provide an in-app logout/account-management system. On shared computers, use a separate browser profile/private session and explicitly close it after use. Reassess this authentication design before any wider release.
+The other AI should now: configure the actual host and secrets; verify real HTTPS, provider calls and persistent-volume restart; then use NEXT_PROJECT_BRIEF.md as the historical redesign brief, checking each requested item against the implemented Lamplight layer. Public multi-user accounts require a separate isolation design. The gateway password must stay private; Basic authentication uses browser-managed sessions and does not provide an in-app logout/account-management system. On shared computers, use a separate browser profile/private session and explicitly close it after use. Reassess this authentication design before any wider release.
 
 ## Build and repository readiness
 
-Run npm ci, then npm run build. The complete source package is generated in build/Rowanvale_19.3.0 with a BUILD_MANIFEST.json containing file hashes. It includes the original app, private hosting gateway, Docker/Compose examples, tests, and AI project brief. This is a source package, not a static-only web export. See [REPOSITORY_READINESS.txt](REPOSITORY_READINESS.txt) for the source audit, verification results and remaining deployment/design decisions.
+Run npm ci, then npm run build. The complete source package is generated in build/Rowanvale_1.1.0 with a BUILD_MANIFEST.json containing file hashes. It includes the original app, private hosting gateway, Docker/Compose examples, tests, and AI project brief. This is a source package, not a static-only web export. See [REPOSITORY_READINESS.txt](REPOSITORY_READINESS.txt) for the source audit, verification results and remaining deployment/design decisions.

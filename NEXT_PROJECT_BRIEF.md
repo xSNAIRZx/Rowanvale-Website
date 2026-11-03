@@ -1,5 +1,9 @@
 # ROWANVALE — REDESIGN + FULL HOSTED WEBSITE
 
+## Current source status (2026-11-03)
+
+The repository has advanced to 1.1.0. Lamplight is already implemented in app/lamplight.css; offline-shell fixes, deploy/ Worker source and artifacts/build-dist.mjs are present. The original assignment below is preserved as historical product intent, not a fresh claim that all listed work is pending. Public Worker APIs are a subset of the private Node API; see README.md for the build matrix. Compare the existing design with this brief before proposing another redesign.
+
 ## Read this first
 
 Implement both projects against the enclosed real Beta 19.3.0 code. This is an implementation assignment, not a request for another generic plan or a mock website. The code is the working baseline. A private owner hosting gateway is implemented in hosting/server.cjs; production deployment and the visual redesign remain pending. README.md describes the current gateway and its limits. Preserve the current local desktop edition as a separately runnable build.

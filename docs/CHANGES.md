@@ -1,3 +1,11 @@
+## Unreleased — reproducible public and private builds
+
+- Include public Worker deployment source and the asset builder in the complete source package.
+- Add documented public build/check commands and a regression covering missing assets, backend exclusion and preservation of earlier output on validation failure.
+- Build public assets from the HTML/offline-shell references rather than copying Node backend modules.
+- Update README and AI handoff context for the existing 1.1.0 Lamplight release.
+- Verification: 164 automated tests and 7 book catalog assertions passed; source package and public asset builds passed. This update does not change the running app version or deploy a new live site.
+
 # Rowanvale 1.1.0 — A shell that keeps working offline
 
 Release 3 November 2026

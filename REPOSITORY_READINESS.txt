@@ -1,3 +1,13 @@
+CURRENT SOURCE UPDATE — 2026-11-03
+
+Current release: 1.1.0. Lamplight and the public Worker source are already implemented. The earlier Beta 19.3 audit below is historical.
+
+This update adds npm run build:public and npm run test:public-build, limits public output to the declared browser shell plus assets/vendor files, and excludes the Node-only services. Invalid or missing declared assets fail validation before an earlier dist build is removed. The complete source package now includes artifacts/ and deploy/ so its public build can be reproduced. README.md includes the public/private build matrix and current version.
+
+Fresh verification on Windows / Node 26.12.1: npm ci passed with zero reported dependency vulnerabilities; npm run build passed (626 manifest files); npm test passed 164 tests plus 7 book catalog assertions; public build passed (114 files, 5,811,647 bytes). No live deployment or external-provider verification was performed for this update. App data shapes, runtime UI and the existing Lamplight design are unchanged.
+
+--- HISTORICAL BASELINE AUDIT ---
+
 ROWANVALE REPOSITORY READINESS — 2026-11-03
 
 SOURCE AUDIT
