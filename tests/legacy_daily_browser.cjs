@@ -60,7 +60,7 @@ const K = 'mindforge.momentum.data';
    await go('dashboard');const habit=p.locator('[data-action=habit]').first();const id=await habit.getAttribute('data-id');await habit.check();assert.equal((await data()).habits.find(h=>h.id===id).done,true);await p.reload();await go('dashboard');await p.locator('[data-action=habit][data-id="'+id+'"]').uncheck();assert.equal((await data()).habits.find(h=>h.id===id).done,false);
   });
   assert.deepEqual(errors,[]);
-  const out=path.resolve(__dirname,'../docs/evidence/19.3.0');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'legacy-daily-results.json'),JSON.stringify({date:new Date().toISOString(),results,errors},null,2));
+  const out=path.resolve(__dirname,'../docs/evidence/1.0.0');fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'legacy-daily-results.json'),JSON.stringify({date:new Date().toISOString(),results,errors},null,2));
   console.log(results.length+' daily-life outcome workflows passed.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

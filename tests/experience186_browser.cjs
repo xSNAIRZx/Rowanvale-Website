@@ -4,7 +4,7 @@ const fs = require("fs"),
   assert = require("node:assert/strict"),
   { chromium } = require("./browser-runtime.cjs");
 const ROOT = path.resolve(__dirname, ".."),
-  OUT = path.join(ROOT, "docs/evidence/19.3.0"),
+  OUT = path.join(ROOT, "docs/evidence/1.0.0"),
   BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8186",
   K = "mindforge.momentum.data";
 fs.mkdirSync(OUT, { recursive: true });
@@ -127,7 +127,7 @@ fs.mkdirSync(OUT, { recursive: true });
   for (const [id, label] of Object.entries(routes))
     await check("Route and title: " + label, async () => {
       await nav(id);
-      assert.equal(await page.title(), label + " · Rowanvale 19.3.0");
+      assert.equal(await page.title(), label + " · Rowanvale 1.0.0");
       assert.equal(
         await page
           .locator('.nav-item[data-view="' + id + '"] .nav-label')

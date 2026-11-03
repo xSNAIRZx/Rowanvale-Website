@@ -4,7 +4,7 @@ const { chromium } = require("./browser-runtime.cjs"),
   fs = require("node:fs"),
   path = require("node:path");
 const K = "mindforge.momentum.data",
-  out = path.resolve(__dirname, "../docs/evidence/19.3.0");
+  out = path.resolve(__dirname, "../docs/evidence/1.0.0");
 fs.mkdirSync(out, { recursive: true });
 (async () => {
   const browser = await chromium.launch({

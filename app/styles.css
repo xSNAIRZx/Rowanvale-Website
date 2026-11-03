@@ -89,7 +89,9 @@ body[data-atmosphere="blue-hour"]{--bg:#101521;background-image:radial-gradient(
 
 
 /* VYTRON 6.0 — cinematic cockpit redesign: structural layout, typography, surfaces and interaction states */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+/* No third-party font import: it was a render-blocking request to fonts.googleapis.com
+   that also overrode the app's own body face. DM Mono now falls back to the system
+   monospace stack below, which costs nothing and works offline. */
 :root{--bg:#080a12;--panel:#101522;--panel2:#151c2d;--line:rgba(166,190,255,.14);--text:#f2f5ff;--muted:#929db8;--accent:#8ef5d0;--accent2:#9c8bff;--radius:20px;--shadow:0 22px 70px rgba(0,0,0,.28)}
 *{scrollbar-color:#303b57 #0b0e17}body{font-family:Manrope,system-ui,sans-serif;background:radial-gradient(ellipse at 75% -10%,rgba(93,85,196,.24),transparent 38%),radial-gradient(ellipse at 12% 45%,rgba(31,145,133,.10),transparent 32%),#080a12;color:var(--text);letter-spacing:-.015em}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.17;background-image:linear-gradient(rgba(145,166,222,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(145,166,222,.055) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}

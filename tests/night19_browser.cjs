@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('./browser-runtime.cjs'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const K='mindforge.momentum.data',OUT=path.resolve(__dirname,'../docs/evidence/19.3.0');
+const K='mindforge.momentum.data',OUT=path.resolve(__dirname,'../docs/evidence/1.0.0');
 (async()=>{const b=await chromium.launch({headless:true,executablePath:process.env.ROWANVALE_BROWSER||'C:/Program Files/Google/Chrome/Application/chrome.exe'});const checks=[];try{
 const c=await b.newContext({serviceWorkers:'block',viewport:{width:1440,height:1000}}),p=await c.newPage();await p.route('https://**/*',r=>r.abort());await p.goto(process.env.ROWANVALE_TEST_URL||'http://localhost:8290');await p.locator('#authSkipIntro').click();
 const check=async(name,fn)=>{await fn();checks.push({name,pass:true});console.log('PASS '+name)},read=()=>p.evaluate(k=>JSON.parse(localStorage.getItem(k)),K);

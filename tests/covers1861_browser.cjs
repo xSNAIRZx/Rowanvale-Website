@@ -4,7 +4,7 @@ const fs = require("fs"),
   assert = require("node:assert/strict"),
   { chromium } = require(process.env.ROWANVALE_PLAYWRIGHT || "playwright");
 const ROOT = path.resolve(__dirname, ".."),
-  OUT = path.join(ROOT, "docs/evidence/19.3.0"),
+  OUT = path.join(ROOT, "docs/evidence/1.0.0"),
   BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
   K = "mindforge.momentum.data";
 fs.mkdirSync(OUT, { recursive: true });

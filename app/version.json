@@ -1,9 +1,9 @@
 {
-  "version": "19.3.0",
-  "channel": "beta",
-  "name": "Rowanvale Beta 19.3 — More of Your World",
-  "released": "2026-11-02",
-  "releaseNotes": "Trust repairs, recoverable workouts and quiet sessions, private history, detailed media tracking and reviewed local imports.",
+  "version": "1.0.0",
+  "channel": "release",
+  "name": "Rowanvale 1.0 — A softer place to play, grow and unwind",
+  "released": "2026-11-03",
+  "releaseNotes": "Rowanvale 1.0 ships the Lamplight design layer, self-hosted typography, a public deployment and a full feature sweep across every view.",
   "changes": [
     "Search opens the correct saved media title; reviewed CSV/JSON imports preserve editions and paused statuses",
     "Journals and activity history no longer silently discard older records",

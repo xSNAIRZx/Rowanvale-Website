@@ -5,7 +5,7 @@ const fs = require("fs"),
   { chromium } = require(process.env.ROWANVALE_PLAYWRIGHT || "playwright");
 const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
   ROOT = path.resolve(__dirname, ".."),
-  OUT = path.join(ROOT, "docs/evidence/19.3.0"),
+  OUT = path.join(ROOT, "docs/evidence/1.0.0"),
   K = "mindforge.momentum.data";
 fs.mkdirSync(OUT, { recursive: true });
 (async () => {
@@ -21,7 +21,7 @@ fs.mkdirSync(OUT, { recursive: true });
     errors = [];
   p.on("pageerror", (e) => errors.push(e.message));
   await p.goto(BASE + "/api/launch", { waitUntil: "domcontentloaded" });
-  await p.waitForURL("**/index.html?build=19.3.0");
+  await p.waitForURL("**/index.html?build=1.0.0");
   await p.locator("#authSkipIntro").click();
   await p.evaluate((k) => {
     const d = JSON.parse(localStorage.getItem(k));
@@ -113,7 +113,7 @@ fs.mkdirSync(OUT, { recursive: true });
     JSON.stringify(
       {
         date: new Date().toISOString(),
-        version: "19.3.0",
+        version: "1.0.0",
         checks,
         errors,
         mode: "Genuine internet provider responses and genuine image pixels; no provider or image mocks. No TMDB/IGDB keys, no manual artwork search, metadata backfill disabled.",

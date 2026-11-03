@@ -537,3 +537,12 @@ html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket-
   color:var(--rv-muted)!important;
 }
 html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket-flower){color:var(--rv-lamp)!important}
+
+/* The welcome screen lives outside .signed-in, so it kept the legacy CDN body face
+   (Manrope) while the app uses Work Sans, and it still exposed a back-to-top control
+   on a screen that never scrolls. */
+html body:not(.signed-in) .auth-gate,
+html body:not(.signed-in) .auth-gate :is(p,span,small,label,button,input,select,textarea,li,a){
+  font-family:var(--rv-font-ui)!important;
+}
+html body:not(.signed-in) :is(#hb13BackTop,.guide-launcher){display:none!important}

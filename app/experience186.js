@@ -209,7 +209,7 @@ const RVExperience = (() => {
   function mount(id, d) {
     view = id;
     document.body.dataset.rv186View = id;
-    document.title = (labels[id] || "Rowanvale") + " · Rowanvale 19.3.0";
+    document.title = (labels[id] || "Rowanvale") + " · Rowanvale 1.0.0";
     for (const b of document.querySelectorAll(
       "#appSidebar .nav-item[data-view]",
     )) {

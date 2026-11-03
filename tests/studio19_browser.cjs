@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('./browser-runtime.cjs');const assert=require('node:assert/strict');const fs=require('fs'),path=require('path'),os=require('os');
-const OUT=path.resolve(__dirname,'../docs/evidence/19.3.0/studio');fs.mkdirSync(OUT,{recursive:true});
+const OUT=path.resolve(__dirname,'../docs/evidence/1.0.0/studio');fs.mkdirSync(OUT,{recursive:true});
 (async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.ROWANVALE_BROWSER||'C:/Program Files/Google/Chrome/Application/chrome.exe'});const context=await browser.newContext({viewport:{width:1500,height:1050},serviceWorkers:'block'}),page=await context.newPage(),errors=[],checks=[];let acceptDialog=true;page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>acceptDialog?d.accept():d.dismiss());await page.route('https://**/*',r=>r.abort());
 const nav=v=>page.evaluate(v=>document.querySelector('.nav-item[data-view="'+v+'"]').click(),v),read=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('mindforge.momentum.data'))),button=a=>page.locator('[data-rv18-action="'+a+'"]'),category=id=>page.locator('[data-rv18-action=category][data-id="'+id+'"]');
 async function check(name,fn){await fn();checks.push(name);console.log('PASS '+name)}

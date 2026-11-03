@@ -1,6 +1,6 @@
 (() => {
 'use strict';
-const APP_VERSION = '19.3.0';
+const APP_VERSION = '1.0.0';
 window.ROWANVALE_VERSION=APP_VERSION;
 const PROFILE_KEY='vytron.device.profile';
 let deviceProfile=null;

@@ -1,7 +1,9 @@
 /* Rowanvale 15 mobile service worker.
    App-shell cache is versioned. New worker installs a fresh cache; old caches are
    removed only after activation. API/version checks bypass cache. */
-const CACHE_NAME = 'hearthbyte-play-connect-reset-v19.3.0-rowanvale-lamplight';
+// Bump the trailing build tag on every deploy. The fetch handler is cache-first, so an
+// unchanged name keeps serving the previous shell to anyone who has already visited.
+const CACHE_NAME = 'hearthbyte-play-connect-reset-v1.0.0-rowanvale-lamplight-b2';
 const APP_SHELL = [
   './import-core193.js', './import193.js', './import193.css',
   './media193-core.js', './media193.js', './wellbeing-core193.js', './wellbeing193.js', './wellbeing193.css', './training-core193.js', './training193.js', './training193.css',

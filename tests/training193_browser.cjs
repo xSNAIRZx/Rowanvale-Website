@@ -5,7 +5,7 @@ const assert = require("node:assert/strict"),
 const { chromium } = require("./browser-runtime.cjs");
 const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8193",
   K = "mindforge.momentum.data";
-const SHOTS = path.resolve(__dirname, "../docs/evidence/19.3.0");
+const SHOTS = path.resolve(__dirname, "../docs/evidence/1.0.0");
 fs.mkdirSync(SHOTS, { recursive: true });
 (async () => {
   const browser = await chromium.launch({
@@ -453,7 +453,7 @@ fs.mkdirSync(SHOTS, { recursive: true });
       },
     );
     assert.deepEqual(errors, []);
-    const out = path.resolve(__dirname, "../docs/evidence/19.3.0");
+    const out = path.resolve(__dirname, "../docs/evidence/1.0.0");
     fs.mkdirSync(out, { recursive: true });
     await go();
     await p.screenshot({
