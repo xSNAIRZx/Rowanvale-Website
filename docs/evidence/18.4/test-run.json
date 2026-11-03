@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-25T21:26:42.107Z",
+  "node": "v26.12.1",
+  "commands": [
+    {
+      "command": "node --test tests/living_core.test.cjs tests/living_backup.test.cjs tests/living_server.test.cjs tests/living_artwork_fetch.test.cjs",
+      "status": 0,
+      "stdout": "✔ Open Library cover redirects are limited to known Internet Archive image routes (0.9268ms)\n✔ selected cover follows two validated redirects and preserves one timeout budget (30.1969ms)\n✔ an unsupported redirect is rejected before it is fetched (0.5299ms)\n✔ portable ZIP includes covers selected in the new shared library (3.7495ms)\n✔ restore verifies hashes and preserves workspace metadata and artwork (5.4626ms)\n✔ archive corruption is rejected before modifying the destination (1.7991ms)\n✔ unsafe archive paths are rejected (1.3191ms)\n✔ migration preserves legacy XP, achievements, themes and 2,501 event IDs (12.0805ms)\n✔ migration never retracts historical 18.3 XP (0.4759ms)\n✔ reading milestones, completion, duplicate protection and achievement (16.636ms)\n✔ progress corrections reverse and restore original XP without new events (0.4892ms)\n✔ deleting then readding the same work restores the award, not a duplicate (0.4165ms)\n✔ book progress cannot exceed selected edition (0.335ms)\n✔ movie awards once and retracts on undo (0.2438ms)\n✔ TV/anime episode and season awards share stable IDs (0.3298ms)\n✔ game completion, review and undo are connected to the host save (0.2938ms)\n✔ daily repeatable awards have a hard ceiling (1.431ms)\n✔ reward values are configurable and zero disables future rewards (0.1336ms)\n✔ metadata protects manually edited descriptions, custom artwork and edition pages (0.6816ms)\n✔ provider artwork refresh can replace a stale provider cover after review (0.2763ms)\n✔ malformed metadata and unsafe images are sanitized (0.237ms)\n✔ unconsented moods do not influence recommendations or explanations (0.8792ms)\n✔ voluntary mood suggestions, hide formats, dismissal and less-like preferences (0.2244ms)\n✔ cross-media suggestions are based on shared genres (0.1819ms)\n✔ duplicate reporting preserves both editions (0.1363ms)\n✔ serialized backups preserve preferences, artwork, XP registry and sessions (0.3413ms)\n✔ Open Library search, detail, fixed hosts and request cache (16.7625ms)\n✔ TMDB setup errors are explicit and secrets never appear in status (0.2388ms)\n✔ TMDB movie, TV and anime mapping and details (1.4753ms)\n✔ IGDB token protection and rich metadata mapping (0.7559ms)\n✔ rate-limit failures honor provider Retry-After (0.4753ms)\n✔ provider outage, oversized response, corrupt JSON and invalid category stay explicit (0.7565ms)\n✔ corrupt or future Living World restore data is rejected (0.1493ms)\n✔ all new rewards have a finite aggregate daily cap (1.5864ms)\n✔ creative and voluntary wellness activities share the ledger without sensitive mood text (0.2407ms)\n✔ existing wellness check-in labels connect to local suggestions after consent (0.1242ms)\n✔ server exposes complete versioned shell and hides private server modules (65.4712ms)\n✔ metadata rejects invalid categories, IDs and short terms (11.4581ms)\n✔ missing credentials remain an actionable error; no credentials are exposed (2.5214ms)\n✔ private cache and backup writes reject cross-origin and malformed requests (5.0734ms)\nℹ tests 40\nℹ suites 0\nℹ pass 40\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 178.2558\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/books_catalog_test.js",
+      "status": 0,
+      "stdout": "PASS book catalog mapping, validation, and cache (7 assertions)\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/living_browser.cjs",
+      "status": 0,
+      "stdout": "PASS Fresh hub loads with the 18.4 release label\nPASS Manual entry saves all five formats in the existing workspace\nPASS Unified search finds title, creator and genre across formats\nPASS Reading progress saves 75 pages and awards exactly 15 XP\nPASS Repeating progress does not award XP again\nPASS Completing a book saves its journal and milestone XP\nPASS Corrections reconcile XP without creating replacement awards\nPASS Saved progress and ledger survive a real browser reload\nPASS Storage write failure keeps the form and committed workspace intact\nPASS Movie completion, TV and anime episode progress award once\nPASS Game completion flows into the same XP balance\nPASS Opt-in preferences save local mood choices and reminder settings\nPASS Online matching requires explicit confirmation and protects manual descriptions\nPASS Suggestions explain mood relevance and allow dismissal\nPASS Session timer survives reload and break awards cannot be farmed\nPASS Ending a short session saves its reflection without session XP\nPASS Bulk enhancement shows previews and never writes unapproved matches\nPASS All eight specialization tracks use the unified saved ledger\nPASS Existing game, book, watch, fan, wellness, fitness, quests and profile views render\nPASS Responsive library, recommendations, maintenance and journey fit 390, 768 and 1440 pixels\n20 browser workflows passed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/living_migration_offline.cjs",
+      "status": 0,
+      "stdout": "PASS Actual 18.3 migration preserves 2,501 events, original XP, theme, achievements and book progress\nPASS Legacy Books Directory still logs progress and prevents duplicate awards\nPASS Legacy Watch Room shares configured XP and undoes completion awards\nPASS Existing Books Directory page two selects the actual clicked title\nPASS Corrupt stored workspace is protected from overwrite\nPASS Complete service worker shell installs without missing files\nPASS Offline startup and all five media tabs work with the server unreachable\n7 migration, legacy and offline workflows passed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/living_artwork_accessibility.cjs",
+      "status": 0,
+      "stdout": "PASS Keyboard opens and closes the story editor\nPASS Custom artwork uploads are decoded, resized, persisted and protected\nPASS Broken artwork leaves a usable placeholder and repair action\nPASS Long session completion awards XP once per story per day\nPASS A concurrent edit cannot silently overwrite a story from an open form\nPASS Light theme retains usable controls and stays within the viewport\nPASS Selected private artwork can be read with the local server unreachable\n7 artwork, concurrency and accessibility workflows passed.\n",
+      "stderr": ""
+    }
+  ]
+}

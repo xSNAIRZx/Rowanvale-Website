@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-01T10:27:48.091Z",
+  "results": [
+    {
+      "name": "No worker cannot claim offline readiness, even while browser is online",
+      "pass": true
+    },
+    {
+      "name": "Health refresh leaves workspace bytes unchanged and does not falsely certify backups",
+      "pass": true
+    },
+    {
+      "name": "Recovery shortcut focuses the existing backup control without duplicate downloads",
+      "pass": true
+    },
+    {
+      "name": "Unavailable storage estimates are reported honestly; storage read errors surface",
+      "pass": true
+    },
+    {
+      "name": "Health cards and actions fit a 320-pixel viewport",
+      "pass": true
+    },
+    {
+      "name": "Corrupt saved data keeps its original bytes and points to raw-file recovery",
+      "pass": true
+    },
+    {
+      "name": "Active worker verifies the actual complete app shell",
+      "pass": true
+    },
+    {
+      "name": "A missing cached file changes readiness to attention",
+      "pass": true
+    },
+    {
+      "name": "Verified health checks still work with network and local server unreachable",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

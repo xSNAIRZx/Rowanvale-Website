@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-25T21:26:42.095Z",
+  "results": [
+    {
+      "name": "Keyboard opens and closes the story editor",
+      "pass": true
+    },
+    {
+      "name": "Custom artwork uploads are decoded, resized, persisted and protected",
+      "pass": true
+    },
+    {
+      "name": "Broken artwork leaves a usable placeholder and repair action",
+      "pass": true
+    },
+    {
+      "name": "Long session completion awards XP once per story per day",
+      "pass": true
+    },
+    {
+      "name": "A concurrent edit cannot silently overwrite a story from an open form",
+      "pass": true
+    },
+    {
+      "name": "Light theme retains usable controls and stays within the viewport",
+      "pass": true
+    },
+    {
+      "name": "Selected private artwork can be read with the local server unreachable",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

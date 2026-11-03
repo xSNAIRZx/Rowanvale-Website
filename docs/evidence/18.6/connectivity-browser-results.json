@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-26T02:54:27.164Z",
+  "checks": [
+    {
+      "name": "Opening an online library automatically enriches all five supported formats",
+      "pass": true
+    },
+    {
+      "name": "Repeated reconnect signals do not duplicate completed artwork requests",
+      "pass": true
+    },
+    {
+      "name": "Adding offline media persists a pending job and reconnecting resumes it safely",
+      "pass": true
+    },
+    {
+      "name": "Ambiguous identities are held for review instead of taking the first cover",
+      "pass": true
+    },
+    {
+      "name": "No-result lookups are negatively cached across repeated reconnects",
+      "pass": true
+    },
+    {
+      "name": "A temporary rate limit is retried with backoff and then saved",
+      "pass": true
+    },
+    {
+      "name": "Existing manual descriptions and custom artwork are not replaced by background jobs",
+      "pass": true
+    },
+    {
+      "name": "Actual reachability failure is shown even when the browser reports online",
+      "pass": true
+    },
+    {
+      "name": "Connectivity settings persist and every displayed account action has a real handler",
+      "pass": true
+    },
+    {
+      "name": "The bundled real account SDK verifies a session and saves through the versioned RPC",
+      "pass": true
+    },
+    {
+      "name": "Offline profile edits resume cloud sync after reconnect without duplicate writes",
+      "pass": true
+    },
+    {
+      "name": "Concurrent cloud changes stop at a conflict without replacing local edits",
+      "pass": true
+    },
+    {
+      "name": "Permission errors never show a successful sync and never clear local data",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "externalEvidence": "Metadata and Supabase HTTP endpoints are mocked. The bundled Supabase SDK and application lifecycle execute normally. No live user credentials or backend were supplied."
+}

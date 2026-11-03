@@ -1,0 +1,152 @@
+{
+  "checks": [
+    {
+      "name": "Saved theme survives restart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Saved theme reapplies",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Light theme canvas has intended background",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Saved theme deletion works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Classic theme clears new tokens",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gradient and blur apply",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Bundled wallpaper resolves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High contrast overrides a selected wallpaper",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Bounded atmosphere uses 16 particles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "OS reduced motion suppresses effects",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Audio is manual, paused and has controls",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Decoded local audio can play",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Audio pauses and adjusts volume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Broken audio rejected without replacing last valid clip",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gallery renders caption",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gallery removal saves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Profile section order saves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "My Day layout and visibility apply",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard and movement preferences survive restart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Canonical pinned editor opens",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Leaving discards after confirmation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Discard refreshes newer disk data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Save after conflict cannot overwrite newer name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unreadable custom palette refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Keyboard focus visibly marked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Zoom-equivalent narrow viewport fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy shared wallpaper copied without loss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Removing profile wallpaper preserves app wallpaper",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No uncaught errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "passed": 29,
+  "total": 29,
+  "errors": []
+}

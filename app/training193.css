@@ -1,0 +1,201 @@
+.training193 {
+  padding: clamp(18px, 3vw, 30px);
+  margin: 22px 0;
+}
+.training193 h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  margin: 8px 0;
+}
+.training193 h3 {
+  margin: 0 0 8px;
+}
+.training193 p {
+  line-height: 1.6;
+}
+.training-heading,
+.training-exercise-heading,
+.training-draft-heading,
+.training-settings,
+.training-finish,
+.training-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.training-heading {
+  justify-content: space-between;
+}
+.training-settings {
+  margin: 24px 0 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.training193 label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.training193 input,
+.training193 select {
+  min-height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--panel);
+}
+.training193 input:focus-visible,
+.training193 select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.training-settings small {
+  max-width: 36ch;
+  line-height: 1.6;
+}
+.training193 button {
+  min-height: 44px;
+}
+.training193 small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.training-status {
+  padding: 12px 14px;
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-radius: 10px;
+}
+.training-error {
+  border: 1px solid #cf906c;
+}
+.training-exercise {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  min-width: 0;
+}
+.training-exercise legend {
+  font-weight: 800;
+  padding: 0 8px;
+}
+.training-exercise-heading > label,
+.training-draft-heading > label {
+  flex: 1;
+  min-width: min(100%, 220px);
+}
+.training-previous {
+  font-size: 13px;
+  opacity: 0.9;
+}
+.training-set-list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+.training-set {
+  display: grid;
+  grid-template-columns: 45px repeat(3, minmax(70px, 1fr)) 75px 44px;
+  gap: 10px;
+  align-items: center;
+}
+.training-complete {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+.training-complete input {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+}
+.training-rest {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+.training-finish {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 24px;
+}
+.training-finish input {
+  max-width: 130px;
+}
+.training-routines article,
+.training-history article {
+  padding: 16px;
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.training-routines article > div,
+.training-history details {
+  flex: 1;
+  min-width: min(100%, 220px);
+}
+.training-history {
+  margin-top: 30px;
+}
+.training-history summary {
+  cursor: pointer;
+  padding: 8px;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+.training-history-exercise {
+  padding: 12px;
+  border-top: 1px solid var(--border);
+}
+.training-history-exercise p {
+  margin: 7px 0;
+}
+.training193 :is(p, b, small) {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .training-set {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .training-set > b {
+    grid-column: 1/-1;
+  }
+  .training-exercise {
+    padding: 12px;
+  }
+  .training193 {
+    padding: 16px;
+  }
+  .training-heading > button {
+    width: 100%;
+  }
+  .training-settings {
+    align-items: stretch;
+  }
+  .training-settings > label {
+    flex: 1;
+  }
+  .training-rest {
+    flex-wrap: wrap;
+  }
+  .training-finish > button {
+    flex: 1;
+  }
+  .training-actions button {
+    flex: 1;
+  }
+}

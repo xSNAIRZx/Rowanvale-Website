@@ -1,0 +1,493 @@
+{
+  "date": "2026-11-01T10:24:53.040Z",
+  "catalogs": [
+    {
+      "name": "Merged games shown by the application",
+      "count": 3996,
+      "uniqueNormalizedTitles": 3996,
+      "errors": [],
+      "warnings": [],
+      "sameTitleGroups": [],
+      "verification": "Structural scan of every supplied title. A shared title is not proof of a duplicate: remakes, formats, translations and editions remain distinct. Individual authority checks are limited to sourced additions and the documented sample."
+    },
+    {
+      "name": "Books including three sourced additions",
+      "count": 110,
+      "uniqueNormalizedTitles": 110,
+      "errors": [],
+      "warnings": [],
+      "sameTitleGroups": [],
+      "verification": "Structural scan of every supplied title. A shared title is not proof of a duplicate: remakes, formats, translations and editions remain distinct. Individual authority checks are limited to sourced additions and the documented sample."
+    },
+    {
+      "name": "Film, TV and anime structured directory",
+      "count": 2198,
+      "uniqueNormalizedTitles": 2169,
+      "errors": [],
+      "warnings": [],
+      "sameTitleGroups": [
+        [
+          {
+            "title": "Metropolis",
+            "type": "Movie",
+            "year": 1927,
+            "sourceId": "Q151599",
+            "author": ""
+          },
+          {
+            "title": "Metropolis",
+            "type": "Anime",
+            "year": 2001,
+            "sourceId": "Q640695",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Casino Royale",
+            "type": "Movie",
+            "year": 2006,
+            "sourceId": "Q151904",
+            "author": ""
+          },
+          {
+            "title": "Casino Royale",
+            "type": "Movie",
+            "year": 1967,
+            "sourceId": "Q591272",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "From Russia with Love",
+            "type": "Movie",
+            "year": 1963,
+            "sourceId": "Q106571",
+            "author": ""
+          },
+          {
+            "title": "From Russia with Love",
+            "type": "Anime",
+            "year": 1992,
+            "sourceId": "Q3088282",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "The Wizard of Oz",
+            "type": "Movie",
+            "year": 1939,
+            "sourceId": "Q193695",
+            "author": ""
+          },
+          {
+            "title": "The Wizard of Oz",
+            "type": "Anime",
+            "year": 1982,
+            "sourceId": "Q3224176",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Around the World in 80 Days",
+            "type": "Movie",
+            "year": 2004,
+            "sourceId": "Q156519",
+            "author": ""
+          },
+          {
+            "title": "Around the World in 80 Days",
+            "type": "Movie",
+            "year": 1956,
+            "sourceId": "Q696057",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "The Fugitive",
+            "type": "Movie",
+            "year": 1993,
+            "sourceId": "Q156309",
+            "author": ""
+          },
+          {
+            "title": "The Fugitive",
+            "type": "Show",
+            "year": 1963,
+            "sourceId": "Q137034",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "The Incredible Hulk",
+            "type": "Movie",
+            "year": 2008,
+            "sourceId": "Q466611",
+            "author": ""
+          },
+          {
+            "title": "The Incredible Hulk",
+            "type": "Show",
+            "year": 1977,
+            "sourceId": "Q670579",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Sherlock Holmes",
+            "type": "Movie",
+            "year": 2009,
+            "sourceId": "Q200396",
+            "author": ""
+          },
+          {
+            "title": "Sherlock Holmes",
+            "type": "Show",
+            "year": 1984,
+            "sourceId": "Q387306",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "The Killing",
+            "type": "Movie",
+            "year": 1956,
+            "sourceId": "Q592072",
+            "author": ""
+          },
+          {
+            "title": "The Killing",
+            "type": "Show",
+            "year": 2011,
+            "sourceId": "Q28214",
+            "author": ""
+          },
+          {
+            "title": "The Killing",
+            "type": "Show",
+            "year": 2007,
+            "sourceId": "Q956446",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Total Recall",
+            "type": "Movie",
+            "year": 2012,
+            "sourceId": "Q634810",
+            "author": ""
+          },
+          {
+            "title": "Total Recall",
+            "type": "Movie",
+            "year": 1990,
+            "sourceId": "Q222018",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Robin Hood",
+            "type": "Movie",
+            "year": 2010,
+            "sourceId": "Q223559",
+            "author": ""
+          },
+          {
+            "title": "Robin Hood",
+            "type": "Show",
+            "year": 2006,
+            "sourceId": "Q40028",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "King Kong",
+            "type": "Movie",
+            "year": 2005,
+            "sourceId": "Q160215",
+            "author": ""
+          },
+          {
+            "title": "King Kong",
+            "type": "Movie",
+            "year": 1933,
+            "sourceId": "Q309048",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Charlie's Angels",
+            "type": "Movie",
+            "year": 2000,
+            "sourceId": "Q229599",
+            "author": ""
+          },
+          {
+            "title": "Charlie's Angels",
+            "type": "Show",
+            "year": 1976,
+            "sourceId": "Q617274",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Planet of the Apes",
+            "type": "Movie",
+            "year": 2001,
+            "sourceId": "Q469624",
+            "author": ""
+          },
+          {
+            "title": "Planet of the Apes",
+            "type": "Movie",
+            "year": 1968,
+            "sourceId": "Q59534",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "10 Things I Hate About You",
+            "type": "Movie",
+            "year": 1999,
+            "sourceId": "Q169082",
+            "author": ""
+          },
+          {
+            "title": "10 Things I Hate About You",
+            "type": "Show",
+            "year": 2009,
+            "sourceId": "Q169074",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Sex and the City",
+            "type": "Movie",
+            "year": 2008,
+            "sourceId": "Q381751",
+            "author": ""
+          },
+          {
+            "title": "Sex and the City",
+            "type": "Show",
+            "year": 1998,
+            "sourceId": "Q35791",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "The Avengers",
+            "type": "Movie",
+            "year": 2012,
+            "sourceId": "Q182218",
+            "author": ""
+          },
+          {
+            "title": "The Avengers",
+            "type": "Show",
+            "year": 1961,
+            "sourceId": "Q113700",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Cleopatra",
+            "type": "Movie",
+            "year": 1963,
+            "sourceId": "Q4430",
+            "author": ""
+          },
+          {
+            "title": "Cleopatra",
+            "type": "Anime",
+            "year": 1970,
+            "sourceId": "Q3200538",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Taxi",
+            "type": "Movie",
+            "year": 1998,
+            "sourceId": "Q726215",
+            "author": ""
+          },
+          {
+            "title": "Taxi",
+            "type": "Show",
+            "year": 1978,
+            "sourceId": "Q427529",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Nikita",
+            "type": "Movie",
+            "year": 1990,
+            "sourceId": "Q743928",
+            "author": ""
+          },
+          {
+            "title": "Nikita",
+            "type": "Show",
+            "year": 2010,
+            "sourceId": "Q390405",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "21 Jump Street",
+            "type": "Movie",
+            "year": 2012,
+            "sourceId": "Q214014",
+            "author": ""
+          },
+          {
+            "title": "21 Jump Street",
+            "type": "Show",
+            "year": 1987,
+            "sourceId": "Q214016",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "My Neighbor Totoro",
+            "type": "Movie",
+            "year": 1988,
+            "sourceId": "Q39571",
+            "author": ""
+          },
+          {
+            "title": "My Neighbor Totoro",
+            "type": "Anime",
+            "year": 1988,
+            "sourceId": "Q39571",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Dallas",
+            "type": "Show",
+            "year": 1978,
+            "sourceId": "Q168708",
+            "author": ""
+          },
+          {
+            "title": "Dallas",
+            "type": "Show",
+            "year": 2012,
+            "sourceId": "Q726735",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Full House",
+            "type": "Show",
+            "year": 1987,
+            "sourceId": "Q465472",
+            "author": ""
+          },
+          {
+            "title": "Full House",
+            "type": "Show",
+            "year": 2004,
+            "sourceId": "Q386680",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Mission: Impossible",
+            "type": "Show",
+            "year": 1966,
+            "sourceId": "Q369111",
+            "author": ""
+          },
+          {
+            "title": "Mission: Impossible",
+            "type": "Show",
+            "year": 1988,
+            "sourceId": "Q715107",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "The Office",
+            "type": "Show",
+            "year": 2005,
+            "sourceId": "Q23831",
+            "author": ""
+          },
+          {
+            "title": "The Office",
+            "type": "Show",
+            "year": 2001,
+            "sourceId": "Q23829",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Shameless",
+            "type": "Show",
+            "year": 2011,
+            "sourceId": "Q23599",
+            "author": ""
+          },
+          {
+            "title": "Shameless",
+            "type": "Show",
+            "year": 2004,
+            "sourceId": "Q23605",
+            "author": ""
+          }
+        ],
+        [
+          {
+            "title": "Queer as Folk",
+            "type": "Show",
+            "year": 2000,
+            "sourceId": "Q23619",
+            "author": ""
+          },
+          {
+            "title": "Queer as Folk",
+            "type": "Show",
+            "year": 1999,
+            "sourceId": "Q23623",
+            "author": ""
+          }
+        ]
+      ],
+      "verification": "Structural scan of every supplied title. A shared title is not proof of a duplicate: remakes, formats, translations and editions remain distinct. Individual authority checks are limited to sourced additions and the documented sample."
+    }
+  ],
+  "rawExtension": {
+    "count": 4267,
+    "alreadyDeduplicatedByExistingMerge": 463
+  },
+  "userData": "No user media records were opened or renamed."
+}

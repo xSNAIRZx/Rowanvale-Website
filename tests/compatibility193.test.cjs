@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),N=require('../app/night19');
+const plan=()=>({budget:180,breakMinutes:10,guests:[{id:'a'},{id:'b'}],candidates:[{title:'Blocked',slot:30,votes:{a:'yes',b:'yes'},compatibility:{access:{a:'yes',b:'no'}}},{title:'Unknown',slot:40,votes:{a:'yes'},compatibility:{access:{a:'yes'}}},{title:'Ready',slot:50,votes:{a:'yes',b:'yes'},compatibility:{access:{a:'yes',b:'yes'}}}]});
+test('blocked access excludes a popular pick while unknown remains explicitly unconfirmed',()=>{const a=N.analyse(plan());assert.ok(!a.selected.includes(0));assert.ok(a.selected.includes(1));assert.equal(a.candidates[1].accessUnknown,1);assert.equal(a.candidates[0].accessBlocked,true);});
+test('confirmed-access requirement only suggests verified guest setup',()=>{const p=plan();p.requireConfirmedAccess=true;assert.deepEqual(N.analyse(p).selected,[2]);});
+test('removed guest access cannot block or confirm remaining participants',()=>{const p=plan();p.guests=[{id:'a'}];assert.ok(N.analyse(p).selected.includes(0));p.candidates[0].compatibility.access={b:'yes'};assert.equal(N.analyse(p).candidates[0].accessUnknown,1);});

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-03T01:57:04.574Z",
+  "checks": [
+    "Unknown access explicitly labeled",
+    "Explicit no-go excluded from suggestion",
+    "Optional confirmed-access rule excludes unknown",
+    "Confirmed alternative selected",
+    "Setup and constraints survive reload",
+    "Portable plan preserves guest access checks"
+  ],
+  "network": "External requests blocked; manual setup only"
+}

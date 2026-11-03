@@ -1,0 +1,73 @@
+'use strict';
+const { chromium } = require('./browser-runtime.cjs');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const out = path.resolve(__dirname, '../docs/evidence/audit-polish');
+fs.mkdirSync(out, {recursive:true});
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:process.env.ROWANVALE_BROWSER||'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+ try {
+ const context=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block'});
+ await context.route('https://**/*', r=>r.abort());
+ const page=await context.newPage(), errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(process.env.ROWANVALE_TEST_URL||'http://localhost:8287');
+ await page.locator('#authSkipIntro').click();
+ await page.evaluate(()=>{
+  const k='mindforge.momentum.data',d=JSON.parse(localStorage.getItem(k));
+  d.settings.online185.automaticArtwork=false;
+  d.backlog=[['Game','Stardew Valley','Currently Playing'],['Movie','Spirited Away','Want to Try'],['Show','The Good Place','In Progress'],['Anime','Frieren','On Hold'],['Book','The Hobbit','Finished']].map(([type,title,status],i)=>({id:'audit-'+i,type,title,status,note:'',createdAt:new Date(2026,0,i+1).toISOString(),metadata184:{genres:'Adventure',favorite:i===1},...(type==='Book'?{book:{pages:300,progress:300}}:{})}));
+  localStorage.setItem(k,JSON.stringify(d));
+ });
+ await page.reload();
+ await page.evaluate(()=>document.querySelector('.nav-item[data-view=media]').click());
+ await page.screenshot({path:path.join(out,process.env.ROWANVALE_CAPTURE_BEFORE?'media-before.png':'media-after.png'),fullPage:true});
+ if(process.env.ROWANVALE_CAPTURE_BEFORE)return;
+ const count=async n=>assert.equal(await page.locator('.living-card').count(),n);
+ await count(5);
+ await page.locator('[data-living=shelf][data-id="In progress"]').click();await count(2);
+ assert.match(await page.locator('#living-results').innerText(),/Stardew Valley/);
+ await page.locator('[data-living=shelf][data-id="For later"]').click();await count(1);
+ assert.match(await page.locator('#living-results').innerText(),/Spirited Away/);
+ await page.locator('#living-filter').selectOption('Paused');await count(1);
+ assert.match(await page.locator('#living-results').innerText(),/Frieren/);
+ await page.locator('#living-query').fill('Not on this shelf');await count(0);
+ assert.match(await page.locator('#living-results').innerText(),/No stories match/);
+ assert.equal(await page.getByText('Add your first story',{exact:false}).count(),0);
+ await page.locator('[data-living=clear-filters]').click();await count(5);
+ assert.equal(await page.locator('#living-query').inputValue(),'');
+ assert.equal(await page.locator('#living-kind').inputValue(),'All');
+ assert.equal(await page.locator('#living-filter').inputValue(),'All');
+ await page.locator('#living-kind').selectOption('Movie');await count(1);
+ await page.locator('[data-living=favorite]').click();
+ await page.reload();await page.evaluate(()=>document.querySelector('.nav-item[data-view=media]').click());
+ await page.locator('[data-living=shelf][data-id=Favorites]').click();await count(0);
+ await page.locator('[data-living=clear-filters]').click();
+ for(const width of [390,768,1440]) {await page.setViewportSize({width,height:900});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'overflow '+width);}
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(out,'media-mobile-after.png'),fullPage:true});
+ await page.evaluate(()=>{
+  const k='mindforge.momentum.data',d=JSON.parse(localStorage.getItem(k));
+  d.fanClub={shelves:[],plans:[{id:'audit-night',name:'A shared evening',budget:180,breakMinutes:10,guests:[{id:'host',name:'Host'},{id:'guest',name:'Guest'}],candidates:[{type:'Movie',title:'Spirited Away',year:2001,slot:125,chosen:false,votes:{}}]}]};
+  localStorage.setItem(k,JSON.stringify(d));
+ });
+ await page.reload();await page.evaluate(()=>document.querySelector('.nav-item[data-view=fan]').click());
+ await page.locator('[data-fan=tab][data-id=nights]').click();
+ await page.locator('#fan-guest').selectOption('guest');
+ await page.locator('[data-lineup="0"]').check();
+ assert.equal(await page.locator('#fan-guest').inputValue(),'guest','lineup changes must preserve voting identity');
+ await page.locator('[data-fan=vote][data-vote=yes]').click();
+ const votes=await page.evaluate(()=>JSON.parse(localStorage.getItem('mindforge.momentum.data')).fanClub.plans[0].candidates[0].votes);
+ assert.deepEqual(votes,{guest:'yes'});
+ await page.locator('[data-slot="0"]').fill('130');await page.locator('[data-slot="0"]').blur();
+ assert.equal(await page.locator('#fan-guest').inputValue(),'guest','duration changes must preserve voting identity');
+ await page.evaluate(()=>document.querySelector('.nav-item[data-view=safety]').click());
+ await page.locator('#lwBugDescription').fill('Fixture report: incorrect shelf count');
+ const downloading=page.waitForEvent('download');await page.locator('#lwDownloadBug').click();
+ const download=await downloading,report=fs.readFileSync(await download.path(),'utf8');
+ assert.ok(report.includes('Version: '+await page.evaluate(()=>window.ROWANVALE_VERSION)),'issue report must identify the running release');
+ assert.ok(report.includes('Fixture report: incorrect shelf count'));
+ assert.deepEqual(errors,[]);
+ fs.writeFileSync(path.join(out,'media-results.json'),JSON.stringify({date:new Date().toISOString(),checks:['In-progress excludes planned and paused titles','For-later shelf selects planned films','Paused filter selects paused anime','No-result state accurately distinguishes existing library','Clear filters restores all stories and controls','Favorite removal survives reload','390/768/1440 widths fit viewport','No page errors','Night lineup changes preserve guest selection and saved vote ownership','Duration changes preserve guest selection','Downloaded issue report identifies current release'],network:'External requests blocked; local fixture data only'},null,2));
+ console.log('PASS media shelf filters, recovery, persistence, responsive widths, guest vote identity and page errors');
+ } finally {await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,59 @@
+{
+  "note": "One Chrome session, no forced GC; snapshots are not peak memory or proof of leak absence. Theme wall times include a deliberate 200ms wait.",
+  "before": {
+    "Documents": 13,
+    "Nodes": 3960,
+    "TaskDuration": 0.324627,
+    "JSHeapUsedSize": 6028504,
+    "JSHeapTotalSize": 8241152
+  },
+  "after": {
+    "Documents": 12,
+    "Nodes": 3797,
+    "TaskDuration": 2.551425,
+    "JSHeapUsedSize": 4535904,
+    "JSHeapTotalSize": 11124736
+  },
+  "times": [
+    {
+      "theme": "forest",
+      "wallMs": 629
+    },
+    {
+      "theme": "midnight",
+      "wallMs": 332
+    },
+    {
+      "theme": "autumn",
+      "wallMs": 360
+    },
+    {
+      "theme": "lavender",
+      "wallMs": 332
+    },
+    {
+      "theme": "ocean",
+      "wallMs": 313
+    },
+    {
+      "theme": "blossom",
+      "wallMs": 327
+    },
+    {
+      "theme": "retro",
+      "wallMs": 392
+    },
+    {
+      "theme": "minimal",
+      "wallMs": 344
+    },
+    {
+      "theme": "academia",
+      "wallMs": 1109
+    },
+    {
+      "theme": "neon",
+      "wallMs": 1130
+    }
+  ]
+}

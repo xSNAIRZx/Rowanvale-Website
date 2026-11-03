@@ -1,0 +1,237 @@
+{
+  "checks": [
+    {
+      "name": "Preview frame fits mobile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview frame fits desktop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview frame fits mobile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview resizes with sidebar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview renders unsaved identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Phone has accessible preview switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Phone save controls fit above navigation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Phone preview opens without scrolling through editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Phone returns to editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile More navigates to Watch Room",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Watch Room opens",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Movie manual entry persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Anime manual entry persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Show manual entry persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Local operations made no online lookup",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Anime progress increments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Anime completes at known total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Movie rewatch logged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Favorites filter shows selected title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "TV filter works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Local search works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Picker chooses an unwatched title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Viewing diary contains episode and film events",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Remove persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Undo restores TV entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Search requires explicit online permission",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Catalog add is copied into local data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Catalog add cannot duplicate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Catalog outage keeps local titles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cover decoded and saved locally",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Local cover rendered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Invalid episode progress rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Failed save leaves edit dialog and original data",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All formats and metadata survive restart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JSON backup restores watch progress, reviews and covers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "320 Watch Room no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "320 edit dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390 Watch Room no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390 edit dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768 Watch Room no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768 edit dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 Watch Room no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 edit dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Watch Room restarts offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Manual entry works completely offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No uncaught browser errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "passed": 46,
+  "total": 46
+}

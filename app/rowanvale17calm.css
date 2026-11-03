@@ -1,0 +1,39 @@
+/* Rowanvale 17: use one quiet visual language, reveal detailed settings on request. */
+#viewRoot .rv17calm-switch{margin-left:12px;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;min-height:42px;min-width:126px;border:1px solid var(--line,#425e5d);border-radius:11px;color:var(--text,#f7f1e8);background:var(--panel-2,#20343a);font:inherit;font-size:12px;font-weight:650;cursor:pointer}
+#viewRoot .rv17calm-switch[aria-pressed=true]{border-color:var(--accent,#e6a26b);color:var(--accent,#e6a26b)}
+#viewRoot .rv17calm-switch:focus-visible,#viewRoot .rv17calm-tabs button:focus-visible,#viewRoot .rv17calm-quick button:focus-visible{outline:3px solid var(--accent,#e6a26b);outline-offset:3px}
+#viewRoot.rv17calm-studio>.rv17calm-studio-hub{padding:clamp(18px,2vw,27px);margin:13px 0 0;background:var(--panel,#132b31);border:1px solid var(--line,#3d5458);border-radius:16px}
+.rv17calm-hub-head{display:flex;gap:16px;align-items:start;justify-content:space-between}
+.rv17calm-hub-head h1{font-size:clamp(1.45rem,2.35vw,2.2rem);line-height:1.17;margin:10px 0;font-family:var(--font-heading,inherit);overflow-wrap:anywhere}
+.rv17calm-hub-head p{max-width:65ch;line-height:1.6;margin:0;color:var(--muted,#b1bdb8);font-size:14px}
+.rv17calm-keep{white-space:nowrap;border:1px solid var(--line,#3d5458);border-radius:999px;padding:7px 12px;color:var(--muted,#b1bdb8);font-size:11px}
+.rv17calm-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.rv17calm-tabs button{min-height:46px;padding:10px 14px;color:var(--text,#f4ede2);border:1px solid var(--line,#476260);background:var(--panel-2,#20383d);border-radius:11px;font:inherit;font-size:13px;font-weight:650;cursor:pointer}
+.rv17calm-tabs button[aria-selected=true]{color:var(--panel,#101f26);background:var(--accent,#e6a26b);border-color:var(--accent,#e6a26b)}
+.rv17calm-hint{margin:14px 0 0;font-size:12px;line-height:1.5;color:var(--muted,#a6b9b7)}
+.rv17calm-sections{min-width:0}.rv17calm-pane{min-width:0;outline-offset:4px}.rv17calm-pane[hidden]{display:none!important}.rv17calm-pane>.panel{margin:16px 0;min-width:0}
+.rv17calm-pane> .hb13-advanced-tools{margin:17px 0}
+.rv17calm-guide{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:17px 22px;background:color-mix(in srgb,var(--panel,#152e33) 88%,var(--accent,#e6a26b) 12%);border:1px solid var(--line,#40545a);border-radius:14px;margin:17px 0}
+.rv17calm-guide h2{font-size:clamp(1.15rem,1.6vw,1.5rem);margin:0 0 5px}.rv17calm-guide p{margin:0;line-height:1.55;font-size:13px;color:var(--muted,#b2c6c3)}
+.rv17calm-quick{display:flex;flex-wrap:wrap;gap:8px}.rv17calm-quick button{min-height:44px;padding:9px 13px;border:1px solid var(--line,#476260);background:var(--panel-2,#1c353b);color:var(--text,#efece6);border-radius:10px;font:inherit;font-size:12px;cursor:pointer}
+#viewRoot.rv17calm-studio .rv163-studio-nav[hidden],#viewRoot.rv17calm-studio .rv161-page-outline[hidden]{display:none!important}
+/* Calm presentation: trim effects, never remove navigation, cards or actual feature controls. */
+body.rv17calm-quiet #viewRoot .panel,body.rv17calm-quiet #viewRoot .game-card{box-shadow:none!important;backdrop-filter:none!important}
+body.rv17calm-quiet #viewRoot :is(.rv16-hero,.discover-hero,.wellness-hero,.fitness-hero){min-height:unset!important}
+body.rv17calm-quiet #viewRoot :is(.hb11-hud,.discover-hero-art,.catalog-constellations){background-image:none!important}
+body.rv17calm-quiet #viewRoot :is(.game-card,.panel,.rv17-mode){transition:none!important;animation:none!important}
+body.rv17calm-quiet #viewRoot .hb11-hud{opacity:.78}
+@media(min-width:1100px){.rv17calm-tabs{flex-wrap:nowrap}.rv17calm-tabs button{flex:1}}
+@media(max-width:760px){.rv17calm-hub-head{flex-wrap:wrap}.rv17calm-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.rv17calm-tabs button{font-size:12px}.rv17calm-keep{white-space:normal}.rv17calm-guide{padding:15px}#viewRoot .rv17calm-switch{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.rv17calm-studio-hub *,body #viewRoot .rv17calm-switch{animation:none!important;transition:none!important}}
+/* 17.2.9: cover the current shell and illustrated heroes, not only legacy panels. */
+body.signed-in.rv17calm-quiet::before,body.signed-in.rv17calm-quiet::after{background-image:none!important;animation:none!important}
+body.signed-in.rv17calm-quiet #viewRoot :is(.rv-home-art,.game-planet-art,.catalog-constellations){display:none!important}
+body.signed-in.rv17calm-quiet #viewRoot :is(.rv-home-hero,.discover-hero){grid-template-columns:minmax(0,1fr)!important;min-height:0!important;box-shadow:none!important;background-image:none!important}
+body.signed-in.rv17calm-quiet #viewRoot :is(.rv-home-hero,.discover-hero)::before,body.signed-in.rv17calm-quiet #viewRoot :is(.rv-home-hero,.discover-hero)::after{background-image:none!important;animation:none!important}
+body.signed-in.rv17calm-quiet #viewRoot .rv-home-welcome{padding:24px!important}
+body.signed-in.rv17calm-quiet #viewRoot .rv-home-welcome h2{font-size:clamp(26px,2.3vw,34px)!important}
+body.signed-in.rv17calm-quiet #viewRoot :is(.panel,.game-card,.rv-home-hero,.rv17-mode){box-shadow:none!important;backdrop-filter:none!important;animation:none!important;transition:none!important}
+/* The shared Calm preference also covers decorations introduced by Your World. */
+body.rv17calm-quiet #viewRoot .rv18-effects{display:none!important}
+body.rv17calm-quiet #viewRoot .rv18-effects i{animation:none!important}

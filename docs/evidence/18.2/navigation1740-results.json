@@ -1,0 +1,170 @@
+{
+  "checks": [
+    {
+      "name": "Direct page myday",
+      "passed": true
+    },
+    {
+      "name": "Direct page dashboard",
+      "passed": true
+    },
+    {
+      "name": "Direct page quests",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation discover",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation backlog",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation fitness",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation focus",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation wellness",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation resources",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation clubhouse",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation friends",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation connections",
+      "passed": true
+    },
+    {
+      "name": "Pointer navigation space",
+      "passed": true
+    },
+    {
+      "name": "Studio remains direct",
+      "passed": true
+    },
+    {
+      "name": "Enter expands group",
+      "passed": true
+    },
+    {
+      "name": "Space collapses group",
+      "passed": true
+    },
+    {
+      "name": "Reload on My Day starts with secondary groups closed",
+      "passed": true
+    },
+    {
+      "name": "Sidebar search opens search dialog",
+      "passed": true
+    },
+    {
+      "name": "Pin editor opens",
+      "passed": true
+    },
+    {
+      "name": "Pin edits update sidebar",
+      "passed": true
+    },
+    {
+      "name": "Pin edits persist",
+      "passed": true
+    },
+    {
+      "name": "Collapse state saved",
+      "passed": true
+    },
+    {
+      "name": "Collapsed Games opens labelled flyout",
+      "passed": true
+    },
+    {
+      "name": "Escape closes flyout and returns focus",
+      "passed": true
+    },
+    {
+      "name": "Collapsed flyout navigates",
+      "passed": true
+    },
+    {
+      "name": "Footer navigation safety",
+      "passed": true
+    },
+    {
+      "name": "Footer navigation updates",
+      "passed": true
+    },
+    {
+      "name": "Profile footer works",
+      "passed": true
+    },
+    {
+      "name": "Brand opens My Day",
+      "passed": true
+    },
+    {
+      "name": "1440x650 no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440x650 footer reachable",
+      "passed": true
+    },
+    {
+      "name": "1440x650 scrollable navigation works",
+      "passed": true
+    },
+    {
+      "name": "1024x768 no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1024x768 footer reachable",
+      "passed": true
+    },
+    {
+      "name": "1024x768 scrollable navigation works",
+      "passed": true
+    },
+    {
+      "name": "768x768 no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768x768 footer reachable",
+      "passed": true
+    },
+    {
+      "name": "768x768 scrollable navigation works",
+      "passed": true
+    },
+    {
+      "name": "390x844 no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation available",
+      "passed": true
+    },
+    {
+      "name": "No browser errors",
+      "passed": true
+    }
+  ],
+  "passed": 41,
+  "total": 41
+}

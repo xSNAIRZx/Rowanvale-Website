@@ -1,0 +1,163 @@
+.wb193-history {
+  max-width: 1100px;
+  margin: auto;
+}
+.wb193-filters {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0;
+}
+.wb193-history label,
+.wb193-dialog label,
+.wb193-focus-tools label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+}
+.wb193-history input,
+.wb193-history select,
+.wb193-dialog textarea,
+.wb193-focus-tools input {
+  font: inherit;
+  padding: 11px;
+  border: 1px solid var(--line, #526361);
+  border-radius: 10px;
+  background: var(--panel, #183034);
+  color: var(--text, #f7f0e5);
+  min-width: 0;
+}
+.wb193-toolbar,
+.wb193-export {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.wb193-export {
+  border: 1px solid var(--line, #526361);
+  padding: 18px;
+  border-radius: 14px;
+  margin: 18px 0;
+}
+.wb193-export p {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 12px;
+}
+.wb193-entry {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  border: 1px solid var(--line, #526361);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 14px 0;
+}
+.wb193-entry h3 {
+  margin: 8px 0;
+}
+.wb193-entry p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 9em;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.wb193-entry .eyebrow {
+  font-size: 11px;
+}
+.wb193-select input {
+  width: 20px;
+  height: 20px;
+}
+.wb193-entry small {
+  display: block;
+}
+.wb193-dialog {
+  width: min(680px, calc(100vw - 28px));
+  max-height: 90dvh;
+  overflow: auto;
+  padding: 24px;
+}
+.wb193-dialog label {
+  margin: 16px 0;
+}
+.wb193-dialog textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+.wb193-dialog footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.wb193-focus-tools {
+  border-top: 1px solid var(--line, #526361);
+  padding-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: left;
+}
+.wb193-focus-tools small {
+  flex-basis: 100%;
+}
+.wb193-error {
+  color: #ffc4ad;
+}
+.wb193-history button,
+.wb193-dialog button,
+.wb193-focus-tools button {
+  min-height: 44px !important;
+}
+.wb193-history :focus-visible,
+.wb193-dialog :focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .wb193-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .wb193-filters label:first-child {
+    grid-column: 1/-1;
+  }
+  .wb193-filters input,
+  .wb193-filters select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .wb193-entry {
+    padding: 14px;
+    gap: 8px;
+  }
+  .wb193-history input,
+  .wb193-history select,
+  .wb193-dialog textarea {
+    font-size: 16px;
+  }
+  .wb193-export {
+    padding: 14px;
+  }
+}
+.wb193-entry > div {
+  min-width: 0;
+}
+.wb193-entry h3 {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  .reset186 .wb193-history .reset186-subhead {
+    margin-bottom: 18px;
+  }
+  .reset186 .wb193-history .reset186-subhead h2 {
+    font-size: 27px;
+    margin: 12px 0;
+  }
+  .wb193-history .reset186-subhead p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}

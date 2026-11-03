@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "name": "Normal home shows illustration",
+      "passed": true
+    },
+    {
+      "name": "Pointer click enables saved Calm View",
+      "passed": true
+    },
+    {
+      "name": "Current home illustration hidden",
+      "passed": true
+    },
+    {
+      "name": "Home banner becomes smaller",
+      "passed": true
+    },
+    {
+      "name": "Background effects removed",
+      "passed": true
+    },
+    {
+      "name": "Hero actions remain available",
+      "passed": true
+    },
+    {
+      "name": "Calm View survives reload",
+      "passed": true
+    },
+    {
+      "name": "Discover scenery hidden",
+      "passed": true
+    },
+    {
+      "name": "Game cards remain available",
+      "passed": true
+    },
+    {
+      "name": "Keyboard switches Calm View off",
+      "passed": true
+    },
+    {
+      "name": "Discover scenery restored",
+      "passed": true
+    },
+    {
+      "name": "Home illustration restored",
+      "passed": true
+    },
+    {
+      "name": "Blocked save retains saved off state",
+      "passed": true
+    },
+    {
+      "name": "Blocked save retains visible off state",
+      "passed": true
+    },
+    {
+      "name": "Blocked save reports error",
+      "passed": true
+    },
+    {
+      "name": "Retry enables Calm View",
+      "passed": true
+    },
+    {
+      "name": "Mobile switch remains visible",
+      "passed": true
+    },
+    {
+      "name": "Mobile has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Mobile pointer restores artwork",
+      "passed": true
+    },
+    {
+      "name": "No page errors",
+      "passed": true
+    }
+  ],
+  "passed": 20,
+  "total": 20
+}

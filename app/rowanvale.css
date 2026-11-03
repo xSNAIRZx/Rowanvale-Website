@@ -1,0 +1,125 @@
+/* Rowanvale v15 • cohesive desktop-first design. Fully local, retains all v14 routes.
+   Tokens first, generous type and 8px rhythm, predictable button geometry. */
+body.signed-in[data-theme="rowan"][data-appearance-resolved="dark"]{
+ --hb12-bg:#0b1f2a;--hb12-shell:#0b1c23;--hb12-surface:#172c34;--hb12-raised:#203944;
+ --hb12-outline:#48626a;--hb12-text:#f5f1e6;--hb12-muted:#c3d1ca;
+ --bg:#0b1f2a;--panel:#172c34;--panel2:#203944;--panel3:#0d222a;--line:#48626a;
+ --text:#f5f1e6;--muted:#c3d1ca;--dim:#bdcbbf;--shadow:0 12px 30px #07151c33;
+ color-scheme:dark;color:var(--hb12-text)
+}
+body.signed-in[data-theme="rowan"][data-appearance-resolved="light"]{
+ --hb12-bg:#fbf8f1;--hb12-shell:#e9eee5;--hb12-surface:#fffdf8;--hb12-raised:#edf2e9;
+ --hb12-outline:#a6b7a7;--hb12-text:#23392f;--hb12-muted:#4d6557;
+ --bg:#fbf8f1;--panel:#fffdf8;--panel2:#edf2e9;--panel3:#e9eee5;--line:#a6b7a7;
+ --text:#23392f;--muted:#4d6557;--dim:#536b5c;--shadow:0 12px 30px #3349391a;
+ color-scheme:light;color:var(--hb12-text)
+}
+body.signed-in[data-theme="rowan"]{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--rv-heading:Georgia,"Times New Roman",serif}
+body.signed-in[data-theme="rowan"]:before{opacity:.018!important}
+body.signed-in[data-theme="rowan"] :is(.sidebar,.topbar,.hb12-wayfinder,.mobile-nav){background:var(--hb12-shell)!important;border-color:var(--hb12-outline)!important;color:var(--hb12-text)!important}
+body.signed-in[data-theme="rowan"] :is(.panel,.home-stat-card,.game-card,.modal,.hb11-hud,.hb11-context-dock,.shell-account-menu,.hb13-workspace-dialog){background:var(--hb12-surface)!important;color:var(--hb12-text)!important;border-color:var(--hb12-outline)!important}
+body.signed-in[data-theme="rowan"] :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea,.field-input,.button-quiet,.tiny-button,.command-launch,.hb12-undo-top,.hb13-workspace-launch){background:var(--hb12-raised)!important;border-color:var(--hb12-outline)!important;color:var(--hb12-text)!important}
+body.signed-in[data-theme="rowan"] :is(.page-heading,.page-heading h1,.hb12-day-hero h2,.eyebrow,.small-note,.hb12-widget p,.hb12-support-header p,.hb12-resource-card p,.hb12-theme-studio p){color:var(--hb12-text)!important}
+body.signed-in[data-theme="rowan"] :is(.hb12-widget,.hb12-today-snapshot,.hb12-controls,.hb12-pick,.hb12-metrics span,.home-quick-grid button,.hb12-resource-card,.hb12-safety-card,.nav-section){background:var(--hb12-raised)!important;border-color:var(--hb12-outline)!important}
+body.signed-in[data-theme="rowan"] :is(.button-primary,.auth-big-button){background:var(--accent)!important;color:var(--hb12-onaccent,#102125)!important;border-color:transparent!important}
+body.signed-in[data-theme="rowan"] .button-primary:hover{filter:brightness(1.07)}
+body.signed-in[data-theme="rowan"] :is(.button,.tiny-button,.icon-button,.command-launch,.nav-item){min-height:40px}
+body.signed-in[data-theme="rowan"] :is(h1,h2,h3){text-wrap:pretty}
+body.signed-in[data-theme="rowan"] :is(.page-heading h1,.hb12-section-title h2){font-family:var(--rv-heading)!important;font-weight:650!important;letter-spacing:-.04em!important}
+body.signed-in[data-theme="rowan"] .panel-heading h2{font-family:var(--rv-heading)!important;font-size:clamp(21px,1.6vw,27px)!important;font-weight:600}
+body.signed-in[data-theme="rowan"] .hb12-widget h3{font-size:clamp(20px,1.6vw,24px)!important}
+body.signed-in[data-theme="rowan"] .small-note{color:var(--hb12-muted)!important}
+/* Sidebar: brand, one navigation hierarchy, meaningful shortcuts, bottom account. */
+@media (min-width:761px){
+ :root{--lw-side-width:274px}
+ body.signed-in .lw-sidebar{padding:16px 15px 12px!important;gap:0!important;background:var(--hb12-shell)!important;box-shadow:none!important}
+ body.signed-in .lw-sidehead{min-height:70px!important;padding:0 0 14px!important;margin-bottom:16px!important;align-items:center!important}
+ body.signed-in .lw-brand{gap:8px!important}
+ body.signed-in .lw-brand .brand-mark{width:49px!important;height:49px!important;flex-basis:49px!important;border:0!important;background:none!important}
+ body.signed-in .lw-brand .brand-mark img{width:49px!important;height:49px!important}
+ body.signed-in .lw-brand .brand-wordmark strong{font:600 26px/1.1 Georgia,"Times New Roman",serif!important;letter-spacing:-.055em!important;color:var(--hb12-text)!important}
+ body.signed-in .lw-brand .brand-wordmark small{font-size:9px!important;letter-spacing:.09em!important;color:var(--hb12-muted)!important}
+ body.signed-in .lw-sidehead #sidebarToggle{width:34px!important;min-width:34px!important;height:36px!important}
+ body.signed-in .lw-utility-row{margin-bottom:10px!important}
+ body.signed-in .lw-filter-wrap{margin-bottom:13px!important;min-height:42px!important}
+ body.signed-in .lw-blockhead{font-size:10px!important;letter-spacing:.105em!important;margin-bottom:8px!important;font-weight:650!important}
+ body.signed-in .lw-pin-block{padding-bottom:14px!important;margin-bottom:12px!important}
+ body.signed-in .lw-pin-item{min-height:41px!important;border-radius:11px!important;font-weight:600!important;font-size:11px!important}
+ body.signed-in .lw-sidebar .nav-section>summary.side-label{min-height:40px!important;padding:10px 8px!important;font-size:13px!important}
+ body.signed-in .lw-sidebar .nav-item{min-height:42px!important;padding:9px 10px!important;border-radius:10px!important}
+ body.signed-in .lw-sidebar .nav-item.active{box-shadow:inset 3px 0 var(--accent)!important;background:color-mix(in srgb,var(--accent) 12%,var(--hb12-surface))!important}
+ body.signed-in .lw-sidebar .nav-item .nav-icon{color:var(--hb12-muted)!important}
+ body.signed-in .lw-sidebar .nav-item.active .nav-icon{color:var(--accent)!important}
+ body.signed-in .lw-footer{gap:9px!important;padding:12px 0 0!important}
+ body.signed-in .lw-footer .lw-account{width:100%!important;margin:0!important;min-height:63px!important;max-height:none!important;border-radius:12px!important;padding:9px!important;background:var(--hb12-raised)!important;order:0}
+ body.signed-in .lw-footer .shell-progress{order:1;padding:10px!important;border-radius:12px!important}
+ body.signed-in .lw-footer .mini-status{order:2}
+ body.signed-in .lw-footer .sidebar-version{order:3}
+ body.signed-in .topbar{box-shadow:none!important;border-bottom:1px solid var(--hb12-outline)!important}
+ body.signed-in .topbar .top-actions{gap:7px!important}
+ body.signed-in .content{padding-top:24px!important;max-width:1550px}
+ body.signed-in .page-heading{margin-bottom:24px!important}
+ #appShell.sidebar-collapsed .lw-footer .lw-account{justify-content:center!important;padding:6px!important;min-height:51px!important}
+ #appShell.sidebar-collapsed .lw-footer .lw-account .workspace-avatar{width:34px!important;height:34px!important;flex-basis:34px!important}
+}
+/* Calm, real-data home instead of an invented activity feed. */
+.rv-home-hero{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);position:relative;isolation:isolate;overflow:hidden;min-height:330px;border:1px solid var(--hb12-outline);border-radius:21px;background:linear-gradient(115deg,#0b2029,#1d333d);box-shadow:0 14px 34px #020a0d18;margin:0 0 16px;color:#f5f1e6}
+.rv-home-welcome{position:relative;z-index:1;padding:clamp(22px,3.5vw,48px);display:flex;flex-direction:column;align-items:start;justify-content:center}
+.rv-eyebrow{letter-spacing:.13em;font-size:10px;color:#bfd4c2;font-weight:750}
+.rv-home-welcome h1{font:500 clamp(26px,3vw,37px)/1.18 Georgia,"Times New Roman",serif!important;letter-spacing:-.04em!important;margin:13px 0 4px!important;color:#f5f1e6!important}
+.rv-home-welcome h2{font:500 clamp(30px,3.2vw,51px)/1.06 Georgia,"Times New Roman",serif!important;letter-spacing:-.035em!important;margin:4px 0 16px!important;color:#e9dfc7!important}
+.rv-home-welcome p{color:#d7dfd5!important;font-size:14px!important;line-height:1.63;max-width:43ch;margin:0 0 22px}
+.rv-hero-actions{display:flex;flex-wrap:wrap;gap:9px}.rv-hero-actions button{padding:10px 18px!important;min-height:44px!important}
+.rv-home-art{background:linear-gradient(90deg,#152e38 0%,transparent 24%),url('./assets/rowanvale-valley.webp') center/cover no-repeat;min-width:0;min-height:280px}
+.rv-home-places{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.rv-home-places button{display:grid;grid-template-columns:42px minmax(0,1fr) 18px;grid-template-rows:auto auto;align-items:center;gap:1px 12px;text-align:left;position:relative;min-width:0;padding:18px 14px!important;border:1px solid var(--hb12-outline)!important;border-radius:16px!important;background:var(--hb12-surface)!important;color:var(--hb12-text)!important;cursor:pointer;transition:border-color .14s,background .14s}
+.rv-home-places button:hover,.rv-home-places button:focus-visible{border-color:var(--accent)!important;background:var(--hb12-raised)!important}
+.rv-home-places button>span{grid-row:1/3;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--accent) 19%,var(--hb12-raised));font-size:23px}
+.rv-home-places button>b{grid-column:2;font:600 18px/1.2 Georgia,serif;letter-spacing:-.02em}
+.rv-home-places button>small{grid-column:2;font-size:11px;color:var(--hb12-muted);line-height:1.5}
+.rv-home-places button>i{grid-column:3;grid-row:1/3;font-style:normal;color:var(--hb12-muted)}
+.rv-home-bridge{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 22px}
+.rv-bridge-card{min-width:0;display:flex;flex-direction:column;align-items:start;min-height:172px;padding:23px 25px;background:var(--hb12-surface);border:1px solid var(--hb12-outline);border-radius:16px}
+.rv-bridge-card>span{color:var(--hb12-muted);letter-spacing:.115em;font-size:10px;font-weight:750}
+.rv-bridge-card h3{font:600 22px/1.18 Georgia,serif!important;margin:10px 0 7px!important;color:var(--hb12-text)}
+.rv-bridge-card p{font-size:13px;line-height:1.6;color:var(--hb12-muted);margin:0 0 12px}.rv-bridge-card button{margin-top:auto}
+body.signed-in .hb12-widget-grid{gap:16px!important}
+body.signed-in .hb12-widget{padding:clamp(19px,2vw,25px)!important}
+body.signed-in .hb12-controls{margin:0 0 19px!important;padding:13px 17px!important}
+body.signed-in .hb12-widget .hb12-widget-head{align-items:center}
+body.signed-in :is(button,a,input,textarea,select,summary):focus-visible{outline:3px solid var(--accent)!important;outline-offset:3px!important}
+body.signed-in button:disabled{opacity:.52;cursor:not-allowed!important}
+body.signed-in [hidden]{display:none!important}
+@media(max-width:1200px){.rv-home-places{grid-template-columns:repeat(2,minmax(0,1fr))}.rv-home-hero{grid-template-columns:1.1fr .9fr}}
+@media(max-width:850px){.rv-home-hero{grid-template-columns:1fr}.rv-home-art{min-height:190px;background-position:center 52%}.rv-home-welcome{padding:29px 24px}.rv-home-bridge{grid-template-columns:1fr}}
+@media(max-width:520px){.rv-home-places{grid-template-columns:1fr}.rv-home-welcome h2{font-size:36px!important}.rv-home-hero{border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.rv-home-places button{transition:none}}
+/* v15 review: prevent the footer from consuming the navigable portion of short desktops. */
+@media(min-width:761px){
+ body.signed-in .lw-sidebar .sidebar-nav-scroll{min-height:96px!important;overflow-y:auto!important;overscroll-behavior:contain}
+ body.signed-in .lw-footer{gap:5px!important;padding-top:7px!important}
+ body.signed-in .lw-footer .lw-account{min-height:52px!important;max-height:52px!important;padding:7px 9px!important}
+ body.signed-in .lw-footer .shell-progress{min-height:54px!important;padding:6px 9px!important;gap:4px!important}
+ body.signed-in .lw-footer .shell-progress-heading{font-size:11px!important}
+ body.signed-in .lw-footer .shell-progress-heading small{font-size:9px!important}
+ body.signed-in .lw-footer .shell-progress-stats{display:none!important}
+ body.signed-in .lw-footer .mini-status{display:none!important} /* "Saved on this device" remains in account */
+ body.signed-in .lw-footer .sidebar-version{padding:2px 1px!important;margin:0!important;font-size:9px!important}
+ body.signed-in .topbar .hb11-pulse-trigger,body.signed-in .topbar #topAvatar{display:none!important} /* Both remain in sidebar/account and keyboard shortcuts */
+ body.signed-in .topbar .hb12-undo-top:disabled{display:none!important}
+ body.signed-in .topbar .topbar-divider{display:none!important}
+}
+@media(min-width:761px) and (max-height:770px){
+ body.signed-in .lw-footer .shell-progress{min-height:44px!important}
+ body.signed-in .lw-footer .sidebar-version{display:none!important}
+ body.signed-in .lw-footer .lw-account{min-height:45px!important;max-height:45px!important}
+}
+/* Rowanvale soft-button states; keep text legible in both appearances. */
+body.signed-in[data-theme="rowan"] .hb12-pack-status{color:var(--hb12-text)!important}
+body.signed-in[data-theme="rowan"] .hb12-theme-studio .hb12-pack-text small{color:var(--hb12-muted)!important}
+body.signed-in[data-theme="rowan"] :is(.hb12-mode-button,.hb12-pack,.rv-home-places button):focus-visible{outline:3px solid var(--accent)!important;outline-offset:2px!important}
+
+/* Regression fixes: match v14 accessible target sizes and immersive Quiet Room semantics. */
+@media(min-width:761px){body.signed-in .lw-sidebar .nav-item{min-height:44px!important}}
+body.signed-in.hb13-quiet .lw-sidebar,body.signed-in.hb13-quiet .topbar{display:none!important}
+body.signed-in.hb13-quiet .main-area{margin-left:0!important;width:100%!important}

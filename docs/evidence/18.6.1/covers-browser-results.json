@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-26T04:14:18.686Z",
+  "checks": [
+    {
+      "name": "Opening Discover automatically loads unsaved game covers without saving or clicking lookup",
+      "pass": true
+    },
+    {
+      "name": "Opening Books Directory loads actual images for entries without a cover ID",
+      "pass": true
+    },
+    {
+      "name": "Fan Lounge automatically loads unsaved Movie artwork on category changes",
+      "pass": true
+    },
+    {
+      "name": "Fan Lounge automatically loads unsaved Show artwork on category changes",
+      "pass": true
+    },
+    {
+      "name": "Fan Lounge automatically loads unsaved Anime artwork on category changes",
+      "pass": true
+    },
+    {
+      "name": "All five saved formats receive persisted covers and credits without metadata credentials",
+      "pass": true
+    },
+    {
+      "name": "The same saved covers render in Your Orbit and the legacy Watch Room and game gallery",
+      "pass": true
+    },
+    {
+      "name": "Saved cover URLs survive reload and display without another resolver request",
+      "pass": true
+    },
+    {
+      "name": "Disabling automatic covers persists and prevents new title lookups",
+      "pass": true
+    },
+    {
+      "name": "Re-enabling covers starts the pending page lookup without refreshing",
+      "pass": true
+    },
+    {
+      "name": "Protected custom artwork and deliberate removal never trigger automatic replacements",
+      "pass": true
+    },
+    {
+      "name": "Pending secondary-source results are polled and displayed automatically",
+      "pass": true
+    },
+    {
+      "name": "A returning internet connection resumes covers without duplicate saved records",
+      "pass": true
+    },
+    {
+      "name": "Broken pre-existing saved and unsaved cover URLs automatically fall through to the resolver",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "networkRequests": 12,
+  "note": "Controlled provider/image responses. Genuine live image checks are recorded separately."
+}

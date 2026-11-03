@@ -1,0 +1,12 @@
+/* 17.2.4 diagnostics use existing component tokens, with clear failure contrast. */
+.rv1724-file-warning{margin:10px 16px 18px;padding:15px 17px;border:1px solid #edb56b; border-left:4px solid #edb56b;border-radius:13px;background:#443221;color:#fff5dc;font-size:13px;line-height:1.55;max-width:920px;box-shadow:0 6px 22px #0003}
+.rv1724-file-warning strong{display:block;font-size:15px;margin-bottom:5px}.rv1724-file-warning p{margin:6px 0}.rv1724-file-warning code{color:#ffe8bd}.auth-entry>.rv1724-file-warning{margin:0 0 16px;max-width:600px}
+.rv1724-health-dialog{width:min(560px,calc(100vw - 24px));max-height:90dvh;overflow:auto;padding:23px;color:var(--text,#f4efe5)}
+.rv1724-health-dialog>p{line-height:1.55;color:var(--muted,#b4c8c6)}
+.rv1724-health-results{display:grid;gap:7px;margin:15px 0;max-height:55vh;overflow:auto}
+.rv1724-health-row{display:flex;gap:11px;align-items:start;padding:10px 12px;border:1px solid var(--line,#33535b);background:var(--panel-2,#192f39);border-radius:11px;line-height:1.4}
+.rv1724-health-row>strong{color:#74e0b8;font-size:20px;line-height:1}.rv1724-health-row.is-fail>strong{color:#ffbb81}
+.rv1724-health-row b{font-size:13px;display:block}.rv1724-health-row small{display:block;color:var(--muted,#bccacb);font-size:11px;margin-top:3px;white-space:normal}
+.rv1724-result-summary{font-weight:700;font-size:13px;margin:0 0 5px!important}
+.rv1724-health-dialog .modal-actions{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:760px){.rv1724-file-warning{margin:8px 12px;padding:12px}.rv1724-health-dialog{padding:15px}}

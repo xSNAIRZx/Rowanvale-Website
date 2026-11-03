@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "name": "Opening conversion preserves original thought",
+      "passed": true
+    },
+    {
+      "name": "Escape and reload preserve original thought",
+      "passed": true
+    },
+    {
+      "name": "Conversion resets stale recurring selection",
+      "passed": true
+    },
+    {
+      "name": "Failed conversion retains original thought",
+      "passed": true
+    },
+    {
+      "name": "Failed conversion does not create quest",
+      "passed": true
+    },
+    {
+      "name": "Failed conversion remains editable",
+      "passed": true
+    },
+    {
+      "name": "Retry creates exactly one quest",
+      "passed": true
+    },
+    {
+      "name": "Successful conversion removes source thought",
+      "passed": true
+    },
+    {
+      "name": "Converted quest survives reload",
+      "passed": true
+    },
+    {
+      "name": "Unrelated quest leaves cancelled conversion intact",
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "total": 10
+}

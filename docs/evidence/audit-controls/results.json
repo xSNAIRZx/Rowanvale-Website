@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Calm View hides current decorative effects and persists across reload",
+    "Live appearance preview updates without saving; discard restores saved appearance",
+    "Calm View is discoverable in Comfort settings and applies after save",
+    "New media and book destinations can be chosen as the starting page",
+    "Mobile settings tabs expose preview, remain within viewport and save across restart",
+    "Settings remain within phone, tablet and desktop viewports",
+    "Keyboard skip link stays hidden until focused and moves focus to page content"
+  ],
+  "errors": []
+}

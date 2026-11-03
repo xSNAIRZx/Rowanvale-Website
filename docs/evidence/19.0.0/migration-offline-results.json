@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-01T10:25:36.904Z",
+  "results": [
+    {
+      "name": "Actual 18.3 migration preserves 2,501 events, original XP, theme, achievements and book progress",
+      "pass": true
+    },
+    {
+      "name": "Legacy Books Directory still logs progress and prevents duplicate awards",
+      "pass": true
+    },
+    {
+      "name": "Legacy Watch Room shares configured XP and undoes completion awards",
+      "pass": true
+    },
+    {
+      "name": "Existing Books Directory page two selects the actual clicked title",
+      "pass": true
+    },
+    {
+      "name": "Corrupt stored workspace is protected from overwrite",
+      "pass": true
+    },
+    {
+      "name": "Complete service worker shell installs without missing files",
+      "pass": true
+    },
+    {
+      "name": "Offline startup and all five media tabs work with the server unreachable",
+      "pass": true
+    }
+  ]
+}

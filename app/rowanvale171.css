@@ -1,0 +1,28 @@
+/* Profiles that feel personal, but never force distractions or third-party scripts. */
+.rv171-coverage{padding:20px 24px;margin:14px 0 20px;display:grid;gap:12px}
+.rv171-coverage h2,.rv171-social h2{margin:5px 0 7px;font-size:clamp(1.15rem,2vw,1.5rem)}
+.rv171-coverage p,.rv171-social p{margin:0;line-height:1.55}
+.rv171-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.rv171-stats span{display:grid;gap:2px;padding:12px;background:var(--surface-soft,rgba(110,150,140,.09));border:1px solid rgba(145,175,165,.21);border-radius:13px}
+.rv171-stats b{font-size:1.5rem;font-variant-numeric:tabular-nums}.rv171-stats small{font-size:.75rem;opacity:.81}
+.rv171-social{padding:24px;margin:14px 0 20px;position:relative;overflow:visible}
+.rv171-social-head{display:flex;align-items:start;justify-content:space-between;gap:18px;margin-bottom:16px}
+.rv171-social-head>div{max-width:620px}.rv171-profile-settings{width:min(100%,290px);flex-shrink:0;border:1px solid rgba(140,170,165,.3);border-radius:12px;padding:10px;background:var(--panel,rgba(23,36,38,.7))}
+.rv171-profile-settings summary{cursor:pointer;font-weight:700;font-size:.86rem}.rv171-profile-settings label{display:block;font-size:.84rem;margin:12px 0}
+.rv171-profile-settings input[type=text]{display:block;width:100%;min-width:0;margin-top:6px;border:1px solid #8dada5;background:var(--input-bg,#183131);color:var(--text,#fff);border-radius:8px;padding:9px}
+.rv171-profile-settings fieldset{border:0;padding:0;margin:9px 0 14px;display:flex;flex-wrap:wrap;gap:6px 12px}.rv171-profile-settings legend{margin-bottom:5px;font-weight:650}.rv171-profile-settings fieldset label{margin:0;white-space:nowrap}
+.rv171-spotlight-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(200px,1fr);gap:15px}
+.rv171-spot-main,.rv171-top8{min-width:0;padding:18px;border-radius:16px;background:rgba(90,155,140,.075);border:1px solid rgba(150,185,175,.2)}
+.rv171-mini-identity{display:flex;align-items:center;gap:12px}.rv171-mini-identity strong{display:block;font-size:1.2rem}.rv171-mini-identity small{display:block;opacity:.83}.rv171-avatar{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:16px;background:rgba(152,203,169,.16);font-size:1.7rem}
+.rv171-bio{margin:13px 0 0!important}.rv171-music{margin-top:13px;padding:10px 12px;border-radius:10px;background:rgba(145,175,160,.13);display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-size:.83rem}.rv171-music a,.rv171-social-links a{color:inherit}
+.rv171-social-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.rv171-social-links a{padding:8px 12px;border-radius:100px;border:1px solid rgba(150,185,175,.35);font-size:.81rem;text-decoration:none}
+.rv171-top8>b{display:block}.rv171-top8>small{opacity:.78;display:block;margin-top:5px}.rv171-crew-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}.rv171-crew-grid>div{text-align:center;min-width:0}.rv171-crew-grid span{display:grid;place-items:center;background:rgba(145,180,170,.18);width:38px;height:38px;margin:auto;border-radius:12px;font-weight:750}.rv171-crew-grid small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.69rem;margin-top:4px}
+.rv171-footnote{margin-top:12px!important;font-size:.75rem;opacity:.8}
+.rv171-classic .rv171-spot-main,.rv171-classic .rv171-top8{border-radius:4px;border-style:dashed;background:rgba(124,98,166,.08)}
+.rv171-classic .rv171-avatar{border-radius:4px}.rv171-classic .rv171-social-links a{border-radius:4px}
+.rv171-minimal .rv171-spot-main,.rv171-minimal .rv171-top8{background:transparent;border-color:transparent;padding:10px}
+.rv171-minimal .rv171-music{background:transparent;padding-left:0}
+.rv171-profile-settings :focus-visible,.rv171-social-links a:focus-visible{outline:3px solid #f3ba73;outline-offset:3px}
+@media(max-width:760px){.rv171-social-head{display:block}.rv171-profile-settings{margin-top:16px;width:100%}.rv171-spotlight-grid{grid-template-columns:1fr}.rv171-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:410px){.rv171-stats{grid-template-columns:1fr}.rv171-social{padding:16px}}
+@media(prefers-reduced-motion:reduce){.rv171-social *{animation:none!important;transition:none!important}}

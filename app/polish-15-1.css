@@ -1,0 +1,15 @@
+/* Rowanvale 15.1: desktop polish. This layer does not remove old themes or destinations. */
+@media (min-width:761px){
+  body.signed-in .main-area :is(.panel,.hb12-widget,.hb12-controls){min-width:0}
+  body.signed-in .main-area :is(.panel,.hb12-widget) :is(h2,h3,p){overflow-wrap:break-word}
+  body.signed-in .main-area :is(.inline-actions,.modal-actions){display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+  body.signed-in .main-area :is(input,select,textarea){max-width:100%;min-width:0}
+  body.signed-in .main-area .button{min-height:40px;line-height:1.35}
+  body.signed-in .main-area :is(.page-heading,.panel-head){min-width:0}
+}
+body :is(button,input,textarea,select,[role="button"],a):focus-visible{outline:3px solid var(--accent,#e6a26b);outline-offset:3px}
+body button:disabled,body [aria-disabled="true"]{cursor:not-allowed;opacity:.55}
+.rv151-recovery-warning{margin-top:16px;padding:16px;border:2px solid #e6a26b;border-radius:14px;background:color-mix(in srgb,#e6a26b 9%,var(--hb12-surface));color:var(--hb12-text)}
+.rv151-recovery-warning p{max-width:65ch;line-height:1.5}
+@media (prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto} .main-area :is(button,.button){transition:none!important}}
+@media (forced-colors:active){.rv151-recovery-warning{border:2px solid CanvasText} body :is(button,a,input,select):focus-visible{outline:3px solid Highlight}}

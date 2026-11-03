@@ -1,0 +1,62 @@
+/* Hearthbyte 12.1 · Pocket Edition: narrow-screen layout only, no feature removal. */
+:root{--hb-mobile-radius:18px}
+.hb-mobile-pocket,.hb-mobile-hub-banner{display:none}
+.hb-mobile-install-dialog{width:min(510px,calc(100vw - 24px));padding:24px!important;max-height:min(88dvh,820px);overflow-y:auto;color:var(--hb12-text,var(--text))!important;background:var(--hb12-surface,#12262b)!important;border:1px solid var(--hb12-outline,#395454)!important;border-radius:22px!important}
+.hb-mobile-install-dialog::backdrop{background:rgba(2,10,16,.74);backdrop-filter:blur(5px)}
+.hb-mobile-install-intro{display:flex;align-items:center;gap:13px;padding:14px;margin:10px 0;border-radius:15px;background:var(--hb12-raised,rgba(255,255,255,.06));border:1px solid var(--hb12-outline,rgba(255,255,255,.1))}
+.hb-mobile-install-intro img{width:58px;height:58px;border-radius:16px;flex:0 0 auto}.hb-mobile-install-intro b{display:block;font-size:15px}.hb-mobile-install-intro p{font-size:13px;margin:4px 0 0;line-height:1.5;color:var(--hb12-muted,var(--muted))}
+.hb-mobile-status{font-size:13px;color:var(--hb12-text,var(--text));font-weight:680}
+.hb-mobile-install-steps{display:grid;gap:10px;margin:15px 0}.hb-mobile-step{padding:13px 14px;border-radius:14px;border:1px solid var(--hb12-outline,rgba(255,255,255,.11));background:var(--hb12-raised,rgba(255,255,255,.04))}.hb-mobile-step b{font-size:13px}.hb-mobile-step p{font-size:13px;line-height:1.6;margin:5px 0 0;color:var(--hb12-muted,var(--muted))}.hb-mobile-install-buttons{display:flex;gap:10px;flex-wrap:wrap}.hb-mobile-connect-pill{font-weight:450;color:var(--hb12-muted,var(--muted))}
+@media(max-width:760px){
+  html{overscroll-behavior-x:none}body{max-width:100%;overscroll-behavior-x:none}
+  body.signed-in{padding-bottom:calc(98px + env(safe-area-inset-bottom))!important}
+  body.signed-in .main-area{min-width:0!important;padding:0 9px calc(68px + env(safe-area-inset-bottom))!important}
+  body.signed-in .content{min-width:0!important;width:100%!important;max-width:100%!important;padding:14px 3px 26px!important}
+  body.signed-in .topbar{margin:0 0 2px!important;padding:0 max(6px,env(safe-area-inset-left))!important;height:56px!important;min-height:56px!important}
+  body.signed-in .topbar .mobile-brand strong{font-size:11px!important}
+  body.signed-in .hb12-wayfinder{margin:0!important;padding:8px 7px 7px!important}
+  body.signed-in .hb12-wayfinder-related{display:none!important}
+  body.signed-in .hb12-wayfinder-areas{gap:3px!important;justify-content:stretch!important}
+  body.signed-in .hb12-area-tab{min-height:40px!important;padding:7px 3px!important;gap:2px!important;border-radius:12px!important}
+  body.signed-in .hb12-area-tab span{font-size:10px!important;line-height:1.2}
+  body.signed-in .mobile-nav{position:fixed!important;left:max(7px,env(safe-area-inset-left))!important;right:max(7px,env(safe-area-inset-right))!important;bottom:calc(6px + env(safe-area-inset-bottom))!important;padding:6px!important;border-radius:22px!important;background:var(--hb12-shell,#102328)!important;color:var(--hb12-text,#ecf6f0)!important;border:1px solid var(--hb12-outline,#355454)!important;box-shadow:0 12px 32px rgba(0,0,0,.25)!important;backdrop-filter:blur(18px)!important;z-index:80!important}
+  body.signed-in .mobile-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1 1 0;min-width:0;min-height:56px!important;padding:6px 1px!important;gap:4px!important;border-radius:15px!important;color:var(--hb12-muted,#b8c8c2)!important}
+  body.signed-in .mobile-nav button span{font-size:20px!important;line-height:1.1!important}
+  body.signed-in .mobile-nav button small{font-size:clamp(9px,2.7vw,11px)!important;line-height:1.1!important;color:inherit!important}
+  body.signed-in .mobile-nav button.active{color:var(--hb12-text,#fff)!important;background:var(--hb12-raised,#234047)!important;border-color:var(--hb12-outline,#365c5e)!important}
+  body.signed-in :is(.content button,.content select,.content input[type=checkbox],.content input[type=radio],.mobile-nav button){touch-action:manipulation}
+  body.signed-in .content :is(input:not([type=checkbox]):not([type=radio]),select,textarea){font-size:max(16px,1em)!important;max-width:100%}
+  body.signed-in .content :is(button,.button){min-height:42px}
+  body.signed-in .content :is(.grid,.form-grid,.hb12-widget-grid,.panel,.hb10-collection){min-width:0}
+  body.signed-in .content :is(img,video,canvas){max-width:100%}
+  body.signed-in .content :is(table,.table){display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  body.signed-in .content :is(.inline-actions,.modal-actions){flex-wrap:wrap;row-gap:8px}
+  .hb-mobile-pocket{display:block;margin-bottom:16px;border:1px solid var(--hb12-outline,rgba(119,186,167,.25));border-radius:22px;background:var(--hb12-surface,#172b2c);overflow:hidden;color:var(--hb12-text,#edf8f2)}
+  .hb-mobile-pocket-top{padding:19px 18px 13px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .hb-mobile-eyebrow{font-size:10px;font-weight:780;letter-spacing:.12em;color:var(--accent,#87ebce)}
+  .hb-mobile-pocket h2{font-size:clamp(22px,6vw,29px);letter-spacing:-.045em;line-height:1.16;margin:6px 0 5px!important;color:var(--hb12-text,#edf8f2)}
+  .hb-mobile-pocket p{font-size:13px;line-height:1.5;margin:0;color:var(--hb12-muted,#b7c9c6)}
+  .hb-mobile-pocket-flower{font-size:36px;line-height:1.3;color:var(--accent,#83d9bd);opacity:.72}
+  .hb-mobile-pocket-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:0 12px 14px}
+  .hb-mobile-pocket-actions button{display:grid!important;justify-items:start;align-content:start;text-align:left;gap:4px;min-width:0;padding:13px 12px!important;min-height:104px!important;border:1px solid var(--hb12-outline,rgba(200,230,224,.14));background:var(--hb12-raised,#243939)!important;border-radius:16px;color:var(--hb12-text,#edf8f2)!important}
+  .hb-mobile-pocket-actions button span{font-size:21px;line-height:1.2;color:var(--accent,#86e2c3)}
+  .hb-mobile-pocket-actions button b{font-size:14px;line-height:1.2}
+  .hb-mobile-pocket-actions button small{font-size:11px;line-height:1.25;color:var(--hb12-muted,#abcac0)}
+  .hb-mobile-pocket-foot{padding:12px 15px;border-top:1px solid var(--hb12-outline,rgba(190,232,223,.16));display:flex;gap:8px;align-items:center;justify-content:space-between}
+  .hb-mobile-online{display:flex;gap:6px;align-items:center;font-size:11px;color:var(--hb12-muted,#aacbc1)}
+  .hb-mobile-online i{height:7px;width:7px;border-radius:50%;background:#76caaa;flex:none}.hb-mobile-online i[data-online=false]{background:#e9b77b}
+  #hbMobilePocketInstall{border:0;background:none;color:var(--accent,#92edce);font-weight:750;font-size:11px;padding:7px 2px;white-space:nowrap}
+  .hb-mobile-hub-banner{display:flex;align-items:center;gap:10px;margin:4px 0 15px;padding:12px;border-radius:14px;border:1px solid var(--hb12-outline,#365c59);background:var(--hb12-raised,#244344)}
+  .hb-mobile-hub-banner>span:first-child{font-size:27px}.hb-mobile-hub-banner>span:nth-child(2){flex:1;display:grid;gap:2px;min-width:0}.hb-mobile-hub-banner b{font-size:13px}.hb-mobile-hub-banner small{font-size:11px;line-height:1.4;color:var(--hb12-muted,#a9c4bd)}
+  .hb-mobile-hub-banner .button{min-width:62px;padding:8px}
+  dialog.modal{max-width:calc(100vw - 12px)!important;max-height:calc(100dvh - env(safe-area-inset-top) - 18px)!important;overflow-y:auto;overscroll-behavior:contain}
+  dialog#sectionHubDialog,dialog#commandDialog,dialog#hbMobileInstallDialog{width:100%!important;max-width:none!important;position:fixed!important;inset:auto 0 0 0!important;margin:0!important;border-radius:23px 23px 0 0!important;padding:21px 16px calc(20px + env(safe-area-inset-bottom))!important;max-height:min(89dvh,880px)!important}
+  dialog#sectionHubDialog .section-hub-grid{grid-template-columns:1fr!important;gap:9px!important}
+  dialog#sectionHubDialog .hb12-hub-items{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  dialog#sectionHubDialog .section-hub-item{min-height:72px;padding:11px!important;gap:7px}
+  dialog#commandDialog input{min-height:48px}
+  body:not(.signed-in) .mobile-nav,body:not(.signed-in) .hb-mobile-pocket{display:none!important}
+  .guide-launcher{bottom:calc(91px + env(safe-area-inset-bottom))!important;right:12px!important}
+}
+@media(max-width:360px){body.signed-in .mobile-nav button small{font-size:9px!important}.hb-mobile-pocket-actions{gap:7px;padding:0 9px 10px}.hb-mobile-pocket-actions button{min-height:96px!important;padding:11px 10px!important}.hb-mobile-pocket-top{padding:16px 12px 10px}}
+@media(prefers-reduced-motion:reduce){.hb-mobile-pocket *,.hb-mobile-install-dialog *{animation:none!important;transition:none!important}}

@@ -1,0 +1,134 @@
+{
+  "checks": [
+    {
+      "name": "1440 expanded has one search",
+      "passed": true
+    },
+    {
+      "name": "Visible search opens command dialog",
+      "passed": true
+    },
+    {
+      "name": "View options visible",
+      "passed": true
+    },
+    {
+      "name": "No duplicate menu destinations",
+      "passed": true
+    },
+    {
+      "name": "Escape closes options",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1024 expanded has one search",
+      "passed": true
+    },
+    {
+      "name": "Visible search opens command dialog",
+      "passed": true
+    },
+    {
+      "name": "View options visible",
+      "passed": true
+    },
+    {
+      "name": "No duplicate menu destinations",
+      "passed": true
+    },
+    {
+      "name": "Escape closes options",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 collapsed has one search",
+      "passed": true
+    },
+    {
+      "name": "Visible search opens command dialog",
+      "passed": true
+    },
+    {
+      "name": "View options visible",
+      "passed": true
+    },
+    {
+      "name": "No duplicate menu destinations",
+      "passed": true
+    },
+    {
+      "name": "Escape closes options",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 collapsed has one search",
+      "passed": true
+    },
+    {
+      "name": "Visible search opens command dialog",
+      "passed": true
+    },
+    {
+      "name": "View options visible",
+      "passed": true
+    },
+    {
+      "name": "No duplicate menu destinations",
+      "passed": true
+    },
+    {
+      "name": "Escape closes options",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Workspace dialog opens",
+      "passed": true
+    },
+    {
+      "name": "Reading comfort saves",
+      "passed": true
+    },
+    {
+      "name": "Focus view saves",
+      "passed": true
+    },
+    {
+      "name": "Undo restores quest",
+      "passed": true
+    },
+    {
+      "name": "Sidebar appearance destination works",
+      "passed": true
+    },
+    {
+      "name": "Sign out remains reachable",
+      "passed": true
+    },
+    {
+      "name": "Sign out keeps saved data",
+      "passed": true
+    },
+    {
+      "name": "No page errors",
+      "passed": true
+    }
+  ],
+  "passed": 32,
+  "total": 32
+}

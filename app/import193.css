@@ -1,0 +1,46 @@
+.import193-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+}
+.import193-tools > span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+dialog.import193-dialog {
+  width: min(900px, 94vw);
+  max-height: 90dvh;
+  overflow: auto;
+  padding: 20px;
+}
+.import193-rows article {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.import193-rows p {
+  margin: 0.3rem 0;
+  overflow-wrap: anywhere;
+}
+.import193-rows select {
+  width: 100%;
+}
+.import193-dialog [role="alert"] {
+  color: #ffb4ab;
+}
+.import193-dialog .modal-actions {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media (max-width: 600px) {
+  .import193-rows article {
+    grid-template-columns: 1fr;
+  }
+  .import193-tools > * {
+    max-width: 100%;
+  }
+}

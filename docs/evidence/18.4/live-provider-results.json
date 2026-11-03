@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25T21:24:28.390Z",
+  "provider": "Open Library",
+  "checks": [
+    {
+      "name": "Live title search",
+      "pass": true,
+      "count": 12
+    },
+    {
+      "name": "Live work synopsis",
+      "pass": true
+    },
+    {
+      "name": "Live selected cover download and signature validation",
+      "pass": true,
+      "bytes": 35195,
+      "error": null
+    }
+  ],
+  "source": "https://openlibrary.org/works/OL66554W"
+}

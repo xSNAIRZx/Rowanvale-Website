@@ -1,0 +1,51 @@
+/* Rowanvale 15.1 — warm, legible desktop arrival. Existing local profile flows remain intact. */
+.auth-gate{background:#0b1f2a;color:#f5f1e6;grid-template-columns:minmax(0,1.13fr) minmax(440px,.87fr);min-height:100dvh}
+.auth-scene{background:linear-gradient(180deg,rgba(8,29,35,.48) 0%,rgba(8,29,35,.22) 42%,rgba(7,24,28,.9) 100%),url('./assets/rowanvale-welcome-151.webp') center center/cover no-repeat,#0b1f2a;padding:clamp(25px,3.8vw,60px)}
+.auth-scene:before{display:none}.auth-scene:after{display:none}
+.auth-scene-brand .brand-mark{background:#142a2d96;border:1px solid #b3c5aa55;border-radius:15px;padding:6px;width:54px;height:54px}
+.auth-scene-brand strong{font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,2.2vw,32px);font-weight:650;color:#f5f1e6;letter-spacing:-.04em}
+.auth-scene-brand small{color:#dae7d7;letter-spacing:.14em}
+.auth-scene-copy{margin:auto 0 48px;max-width:740px;text-shadow:0 2px 18px #04181b8f}
+.auth-early-tag{color:#f3c59e;font-size:11px;letter-spacing:.12em}
+.auth-scene h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(46px,5.1vw,86px);letter-spacing:-.046em;line-height:1.06;max-width:700px}
+.auth-scene h2 em{font-style:italic;color:#f3c59e}
+.auth-scene-copy>p{font-size:clamp(15px,1.2vw,18px);line-height:1.7;color:#f4f1e9;max-width:580px}
+.auth-identity-stage{display:none}
+.auth-scene-foot{color:#e3e7de;font-family:inherit;font-size:11px;letter-spacing:.08em;text-shadow:0 2px 6px #000}
+.auth-entry{background:radial-gradient(ellipse at 18% 0%,#213c38 0%,transparent 57%),#0b1f2a;padding:clamp(16px,3vw,50px)}
+.auth-card{background:#122b31;border:1px solid #8da98f4f;border-radius:24px;box-shadow:0 25px 80px #05171d99;padding:clamp(22px,3vw,44px);width:min(100%,585px)}
+.auth-card-top{margin-bottom:clamp(20px,2.5vw,34px)}.auth-label{color:#bfd4b9;letter-spacing:.1em;font-size:11px}.auth-label-dot{background:#e6a26b;box-shadow:0 0 0 4px #e6a26b22}.auth-card-edition{color:#adc0b6;font-size:10px;letter-spacing:.04em}
+.auth-card h1{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.042em;line-height:1.08;font-weight:600;font-size:clamp(39px,3.25vw,58px);margin:12px 0 16px;color:#f5f1e6}
+.auth-card h1 em{font-style:italic;color:#f3c59e}.auth-copy{color:#dce7da;font-size:15px;line-height:1.65}
+.auth-gate .button-primary{background:#e6a26b;color:#102b29;font-weight:800;box-shadow:none;border:1px solid #f3c59e}
+.auth-gate .button-primary:hover{background:#f3c59e}.auth-gate .button-quiet{background:#1a383e;border-color:#8da98f62;color:#f5f1e6}
+.auth-gate .eyebrow{color:#c2d5b8}.auth-big-button{min-height:54px}.auth-skip-button,.auth-wizard-skip,.auth-back-link{color:#f3c59e;font-size:13px;min-height:44px}
+.auth-divider{color:#bccdc6;margin:21px 0 12px;letter-spacing:.06em;font-size:10px}.auth-divider:before,.auth-divider:after{background:#8da98f42}
+.auth-form-grid{grid-template-columns:1fr;gap:13px}.auth-form label,.auth-field-label{font-size:13px;color:#e8eee6}
+.auth-form input,.auth-wizard input:not([type=checkbox]),.auth-wizard select{font-size:15px;min-height:47px;color:#f5f1e6;background:#0d232b;border:1px solid #8da98f70;border-radius:11px}
+.auth-form input::placeholder,.auth-wizard input::placeholder{color:#aabdbb}.auth-optional{font-size:11px;color:#b8c9b1;font-weight:400}
+.auth-form .auth-submit{min-height:48px;margin-top:8px}.auth-entry-caption{color:#cbd8ce;font-size:12px;line-height:1.55;margin:0 0 11px}
+.auth-return-card{display:flex;align-items:center;gap:12px;background:#203d3d;border:1px solid #9dbb9c66;border-radius:14px;padding:12px;margin-bottom:16px;min-width:0}
+.auth-return-card[hidden]{display:none}.auth-return-icon{flex:none;border-radius:12px;background:#e6a26b20;color:#f3c59e;width:40px;height:40px;display:grid;place-items:center;font-size:20px}
+.auth-return-label{display:flex;flex-direction:column;min-width:0;flex:1}.auth-return-label strong{font-size:14px;color:#f5f1e6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.auth-return-label small{font-size:11px;color:#bdcfc5;line-height:1.4}.auth-return-card button{min-height:40px;white-space:nowrap}
+.auth-device-notice{border-top:1px solid #8da98f33;margin-top:23px;padding-top:17px}.auth-device-notice>span{color:#e6a26b}.auth-device-notice p{color:#c6d6cf;font-size:11px;line-height:1.6}.auth-device-notice b{color:#f5f1e6}
+.auth-entry-footer{color:#b8c9b1;font-family:inherit;font-size:10px}.auth-entry-footer span{color:#f3c59e}
+.auth-theme-option:has(.theme-rowan){border-color:#8da98f55}.auth-theme-preview.theme-rowan{background:linear-gradient(135deg,#0b1f2a 5%,#2e4d3b 50%,#e6a26b 100%)}
+.auth-gate :is(button,input,select):focus-visible{outline:3px solid #f3c59e;outline-offset:3px}
+@media(max-width:1000px){.auth-gate{grid-template-columns:minmax(0,1fr)}.auth-scene{min-height:290px;padding:23px 28px;background-position:center 57%}.auth-scene h2{font-size:clamp(32px,6vw,54px);margin:14px 0}.auth-scene-copy{margin:22px 0 15px}.auth-scene-copy>p{max-width:670px}.auth-scene-foot{display:none}.auth-entry{padding:28px 18px 45px}.auth-card{max-width:710px}}
+@media(max-width:520px){.auth-scene{min-height:200px;padding:16px 20px}.auth-scene-brand .brand-mark{height:37px;width:37px}.auth-scene-brand strong{font-size:22px}.auth-scene h2{font-size:34px}.auth-scene-copy>p{font-size:13px;line-height:1.45}.auth-card{padding:20px 17px;border-radius:18px}.auth-card h1{font-size:36px}.auth-card-top{flex-wrap:wrap;gap:8px}.auth-return-card{flex-wrap:wrap}.auth-return-card button{width:100%}.auth-entry-footer{padding-bottom:env(safe-area-inset-bottom,0px)}}
+@media(prefers-reduced-motion:reduce){.auth-gate *, .auth-gate *:before,.auth-gate *:after{animation:none!important;transition:none!important}}
+
+/* Scenic art and an honest local-profile entry screen, no fake online sign-in. */
+.auth-scene{background-position:center 50%;isolation:isolate}
+.auth-scene:before{content:'';display:block;position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(90deg,rgba(6,21,26,.56),rgba(6,21,26,.21) 73%),linear-gradient(0deg,rgba(6,22,28,.75),transparent 55%)}
+.auth-scene-copy{position:relative;z-index:1}.auth-scene-copy>p{max-width:52ch}
+.auth-gate .auth-card .button{border-radius:11px}
+.auth-gate .auth-return-card .button{flex-shrink:0}
+@media(max-width:1000px){.auth-scene{background-position:center 48%;}.auth-scene:before{background:linear-gradient(90deg,#06171bbc,#06171b77)}}
+/* Keep the entire sign-in card scrollable at 720/900px Windows window heights. */
+.auth-gate{overflow:visible}
+.auth-scene-copy{margin:auto 0;max-width:690px;transform:none}
+.auth-scene h2{font-size:clamp(43px,3.7vw,65px);line-height:1.08;margin:20px 0 18px;max-width:630px}
+@media(max-width:1000px){.auth-scene-copy{margin:24px 0 12px}.auth-scene h2{font-size:clamp(34px,5vw,51px)}}
+@media(max-width:520px){.auth-scene-copy{margin:16px 0 8px}.auth-scene h2{font-size:33px}}

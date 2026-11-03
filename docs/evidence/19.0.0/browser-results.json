@@ -1,0 +1,88 @@
+{
+  "browser": "156.0.8078.80",
+  "date": "2026-11-03T01:45:31.543Z",
+  "checks": [
+    {
+      "name": "Fresh hub loads with the 19.0.0 release label",
+      "pass": true
+    },
+    {
+      "name": "Manual entry saves all five formats in the existing workspace",
+      "pass": true
+    },
+    {
+      "name": "Unified search finds title, creator and genre across formats",
+      "pass": true
+    },
+    {
+      "name": "Reading progress saves 75 pages and awards exactly 15 XP",
+      "pass": true
+    },
+    {
+      "name": "Repeating progress does not award XP again",
+      "pass": true
+    },
+    {
+      "name": "Completing a book saves its journal and milestone XP",
+      "pass": true
+    },
+    {
+      "name": "Corrections reconcile XP without creating replacement awards",
+      "pass": true
+    },
+    {
+      "name": "Saved progress and ledger survive a real browser reload",
+      "pass": true
+    },
+    {
+      "name": "Storage write failure keeps the form and committed workspace intact",
+      "pass": true
+    },
+    {
+      "name": "Movie completion, TV and anime episode progress award once",
+      "pass": true
+    },
+    {
+      "name": "Game completion flows into the same XP balance",
+      "pass": true
+    },
+    {
+      "name": "Opt-in preferences save local mood choices and reminder settings",
+      "pass": true
+    },
+    {
+      "name": "Online matching requires explicit confirmation and protects manual descriptions",
+      "pass": true
+    },
+    {
+      "name": "Suggestions explain mood relevance and allow dismissal",
+      "pass": true
+    },
+    {
+      "name": "Session timer survives reload and break awards cannot be farmed",
+      "pass": true
+    },
+    {
+      "name": "Ending a short session saves its reflection without session XP",
+      "pass": true
+    },
+    {
+      "name": "Bulk enhancement shows previews and never writes unapproved matches",
+      "pass": true
+    },
+    {
+      "name": "All eight specialization tracks use the unified saved ledger",
+      "pass": true
+    },
+    {
+      "name": "Existing game, book, watch, fan, wellness, fitness, quests and profile views render",
+      "pass": true
+    },
+    {
+      "name": "Responsive library, recommendations, maintenance and journey fit 390, 768 and 1440 pixels",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "externalServices": "Metadata responses mocked for deterministic browser tests. No live IGDB or TMDB credentials supplied."
+}

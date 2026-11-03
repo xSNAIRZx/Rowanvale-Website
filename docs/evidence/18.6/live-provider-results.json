@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-26T02:54:15.577Z",
+  "version": "18.6.0",
+  "checks": [
+    {
+      "name": "Live connectivity endpoint",
+      "pass": true
+    },
+    {
+      "name": "Live Open Library title search",
+      "pass": true,
+      "count": 12
+    },
+    {
+      "name": "Live work details and synopsis",
+      "pass": true
+    },
+    {
+      "name": "Live selected cover fetch and image signature validation",
+      "pass": true,
+      "bytes": 35195,
+      "error": null
+    }
+  ],
+  "reachability": {
+    "providers": [
+      {
+        "name": "Open Library",
+        "ready": true,
+        "kinds": [
+          "Book"
+        ],
+        "cache": "Selected private artwork only",
+        "reachability": "Reachable",
+        "checkedAt": "2026-10-26T02:54:16.027Z"
+      },
+      {
+        "name": "IGDB",
+        "ready": false,
+        "kinds": [
+          "Game"
+        ],
+        "cache": "Online artwork only",
+        "reachability": "Setup needed"
+      },
+      {
+        "name": "TMDB",
+        "ready": false,
+        "kinds": [
+          "Movie",
+          "Show",
+          "Anime"
+        ],
+        "cache": "Online artwork only",
+        "reachability": "Setup needed"
+      },
+      {
+        "name": "Steam (optional store endpoint)",
+        "ready": false,
+        "kinds": [
+          "Game"
+        ],
+        "cache": "Online artwork only",
+        "reachability": "Setup needed"
+      }
+    ],
+    "checkedAt": "2026-10-26T02:54:16.028Z",
+    "cached": false
+  },
+  "source": "https://openlibrary.org/works/OL66554W"
+}

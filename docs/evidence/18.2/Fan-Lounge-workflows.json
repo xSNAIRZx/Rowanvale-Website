@@ -1,0 +1,317 @@
+{
+  "checks": [
+    {
+      "name": "Watch Room opens Fan Lounge through visible portal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Bundled film / TV / anime directory present",
+      "passed": true,
+      "detail": "{\"Movie\":1199,\"Show\":499,\"Anime\":500}"
+    },
+    {
+      "name": "Directory paginates to 24 cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Next page changes cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Previous returns first page",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Offline search filters titles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Directory save enters existing watch collection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Saved action prevents duplicate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Compare shows two real titles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Comparison becomes a persisted plan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Separate guest ballots persist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Guest selector remains on current voter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Changing vote replaces instead of duplicates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Group favorite reflects votes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Budget overrun visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Missing duration warning visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Running order can change",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unknown preceding duration does not invent time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shared plan excludes private workspace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Invitation includes lineup and location",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Import requires reviewing local copy",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Import adds copy without overwriting existing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Duplicate guests rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Removing guest removes their votes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shelf created with chosen title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shelf edit persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shelf export contains titles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Games share directory",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Game saved with compatible game status",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mixed media night accepts games",
+      "passed": true,
+      "detail": "[{\"id\":\"cf55e11d-82fb-4558-940d-bc93880e5bcf\",\"types\":[\"Movie\",\"Movie\"]},{\"id\":\"787421dd-0a39-4301-858f-a3c0a4e55c62\",\"types\":[\"Movie\",\"Movie\",\"Game\"]}]"
+    },
+    {
+      "name": "Anime filter works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "TV filter works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Saved filter joins game and film collection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Runtime sorting retains results",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Can create additional empty night",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Plan deletion leaves other nights",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Shelf deletion preserves collection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Remove from comparison works",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Remove contender preserves other picks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Workspace JSON backup restores plans, votes and shelves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Full storage leaves dialog and existing data intact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nights and shelves survive restart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Malformed portable plan rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Imported text is retained for escaping",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Imported markup is escaped in preview",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Imported markup stays inert in planner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Stale tab cannot overwrite external changes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "320 directory no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "320 planner no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "320 plan dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390 directory no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390 planner no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390 plan dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768 directory no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768 planner no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768 plan dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 directory no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 planner no horizontal overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 plan dialog fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cold offline restart searches bundled films",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Voting works fully offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No uncaught browser errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "passed": 62,
+  "total": 62
+}

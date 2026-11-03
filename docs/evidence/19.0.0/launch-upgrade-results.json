@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-01T10:27:00.475Z",
+  "checks": [
+    {
+      "name": "A stale 18.6 service-worker shell is bypassed by the new launcher while saved profile data and unrelated caches survive",
+      "pass": true
+    }
+  ]
+}

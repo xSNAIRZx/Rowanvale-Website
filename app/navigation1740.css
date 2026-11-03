@@ -1,0 +1,46 @@
+/* One coherent desktop tree; collapsed rail and mobile retain their existing controllers. */
+@media(min-width:761px){
+body.signed-in #appSidebar.rv174-sidebar{padding:14px!important}
+body.signed-in #appSidebar .lw-sidehead{min-height:62px!important;border:0!important;margin:0 0 12px!important;padding:0!important}
+body.signed-in #appSidebar .brand-wordmark strong{font-size:25px!important}
+body.signed-in #appSidebar .brand-wordmark small{font-size:8px!important;letter-spacing:.12em!important}
+body.signed-in #appSidebar .rv174-search{display:flex;align-items:center;gap:9px;flex:0 0 auto;width:100%;min-height:42px;padding:10px 11px;border:1px solid var(--hb12-outline);border-radius:10px;background:var(--hb12-raised);color:var(--hb12-muted);font:500 12px var(--hb12-font,system-ui);cursor:pointer;margin-bottom:18px}
+body.signed-in #appSidebar .rv174-search kbd{margin-left:auto;font:10px system-ui;border:1px solid var(--hb12-outline);border-radius:4px;padding:2px 4px}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .rv-primary-nav,body.signed-in #appSidebar #rvAreaTitle{display:none!important}
+body.signed-in #appSidebar #lwNavScroll{gap:0!important;padding:0 3px 12px 0!important;overscroll-behavior:contain}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .sidebar-pinned{display:block!important;margin:0 0 16px!important;border:0!important;padding:0!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .lw-browse-title{display:flex!important;padding:0 11px 8px!important;margin:0!important}
+body.signed-in #appSidebar .lw-blockhead{font-size:9px!important;letter-spacing:.12em!important;color:var(--hb12-muted)!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-item[data-view="myday"]{display:flex!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section{display:block!important;border:0!important;margin:0 0 5px!important;padding:0!important;background:transparent!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section>summary.side-label{display:flex!important;align-items:center;justify-content:space-between;padding:10px 11px!important;margin:0!important;min-height:40px;color:var(--hb12-text)!important;font:650 12px var(--hb12-font,system-ui)!important;letter-spacing:0!important;border-radius:9px;cursor:pointer;list-style:none}
+body.signed-in #appSidebar summary::-webkit-details-marker{display:none}
+body.signed-in #appSidebar .nav-section>summary:hover{background:var(--hb12-raised)}
+body.signed-in #appSidebar .lw-group-symbol{display:none!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section>.nav-list{padding:0 0 5px 11px!important;margin:0 0 0 13px!important;border-left:1px solid var(--hb12-outline)!important}
+body.signed-in #appSidebar .nav-section:not([open])>.nav-list{display:none!important}
+body.signed-in #appSidebar .nav-section[open]>.nav-list{display:grid!important;gap:2px!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section[data-nav-section="world"]>summary,body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section[data-nav-section="tools"]{display:none!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section[data-nav-section="world"]>.nav-list{display:grid!important;border:0!important;margin:5px 0!important;padding:0!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-item{display:flex!important;align-items:center;gap:11px!important;min-height:41px!important;height:auto!important;padding:9px 11px!important;border:1px solid transparent!important;border-radius:9px!important;background:transparent!important;color:var(--hb12-muted)!important;box-shadow:none!important}
+body.signed-in #appSidebar .nav-item .nav-label{font:500 12px/1.35 var(--hb12-font,system-ui)!important}
+body.signed-in #appSidebar .nav-icon{display:grid;place-items:center;width:18px!important;min-width:18px!important;height:20px;background:transparent!important;color:inherit!important}
+body.signed-in #appSidebar .nav-icon svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-item:hover{background:var(--hb12-raised)!important;color:var(--hb12-text)!important}
+body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-item[aria-current="page"]{background:color-mix(in srgb,var(--accent) 12%,var(--hb12-surface))!important;color:var(--accent)!important;border-color:color-mix(in srgb,var(--accent) 30%,transparent)!important;box-shadow:inset 3px 0 var(--accent)!important}
+body.signed-in #appSidebar .nav-count{font:10px system-ui!important;padding:2px 6px!important;background:var(--hb12-raised)!important;border-radius:6px!important;margin-left:auto}
+body.signed-in #appSidebar #lwPinBlock{margin:14px 0 0!important;padding:14px 0 0!important;border-top:1px solid var(--hb12-outline)!important}
+body.signed-in #appSidebar #lwPinned{grid-template-columns:1fr!important;gap:2px!important;padding:0 0 0 3px}
+body.signed-in #appSidebar #lwPinned .lw-pin-item{background:transparent!important;border:0!important;min-height:34px!important;padding:7px 10px!important;color:var(--hb12-muted)!important;font:500 11px/1.4 var(--hb12-font,system-ui)!important}
+body.signed-in #appSidebar #lwPinned .lw-pin-item::before{content:'↗';font-size:13px;margin-right:10px;color:var(--accent)}
+body.signed-in #appSidebar #lwPinned .lw-pin-item:hover{background:var(--hb12-raised)!important}
+body.signed-in #appSidebar .rv-rail-tools{padding:10px 0 5px!important;gap:4px!important}
+body.signed-in #appSidebar .rv-rail-tool{min-height:42px!important}
+body.signed-in #appSidebar .lw-footer{padding-top:9px!important}
+body.signed-in #appSidebar .lw-footer .lw-account{border-radius:10px!important;min-height:54px!important}
+body.signed-in #appSidebar :is(button,summary,a):focus-visible{outline:2px solid var(--accent)!important;outline-offset:2px!important}
+body.signed-in #appShell.sidebar-collapsed #appSidebar .rv174-search{display:none!important}
+body.signed-in #appShell.sidebar-collapsed #appSidebar .rv-primary-nav{display:grid!important}
+}
+@media(max-width:760px){#appSidebar .rv174-search{display:none}}
+@media(min-width:761px){body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section>summary.side-label{border:0!important;background:transparent!important;box-shadow:none!important}body.signed-in #appShell:not(.sidebar-collapsed) #appSidebar .nav-section>summary.side-label:hover{background:var(--hb12-raised)!important}}

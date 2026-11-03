@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "Library item titles are not indexed as page sections",
+    "Mobile shell has one navigation strip with all sidebar destinations available in More",
+    "More opens People, Settings, Watch Room and Games & Media using visible controls",
+    "Compact library brings search into the phone viewport and retains hero actions",
+    "Real section headings remain keyboard reachable; card and hidden headings are omitted",
+    "Mobile library remains within viewport at 320px; desktop retains sidebar navigation"
+  ],
+  "errors": []
+}

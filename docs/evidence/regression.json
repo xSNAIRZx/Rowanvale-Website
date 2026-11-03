@@ -1,0 +1,1153 @@
+{
+  "browser": "chrome",
+  "started": "2026-10-25T07:32:41.016Z",
+  "checks": [
+    {
+      "name": "local server health",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "DNS rebinding Host blocked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "encoded Windows path blocked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private resource blocked /.env",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private resource blocked /server.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private resource blocked /tests/resource_test.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private resource blocked /QA_1726_SAFE_ACTIONS.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Discover failure reports error",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Discover failure preserves persisted workspace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "persistent storage warning visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "navigation cannot persist phantom game",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "retry saves exactly one game",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "successful retry clears storage warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "game survives reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "failed quest stays editable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "failed quest not persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "quest retry saves once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "quest completes with XP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "repeated completion cannot farm XP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "failed deletion retains quest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Undo restores deleted quest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "failed gallery upload retains earlier image in memory and storage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reject backup null quest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reject backup duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reject backup bad title type",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JSON export preserves game and quest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JSON roundtrip preserves records",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "imported profile name survives reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px myday renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px dashboard renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px quests renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px discover renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px backlog renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px fitness renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px focus renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px wellness renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px resources renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px clubhouse renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px friends renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px connections renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px space renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px customize renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px safety renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px updates renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px myday renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px dashboard renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px quests renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px discover renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px backlog renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px fitness renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px focus renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px wellness renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px resources renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px clubhouse renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px friends renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px connections renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px space renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px customize renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px safety renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px updates renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px myday renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px dashboard renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px quests renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px discover renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px backlog renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px fitness renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px focus renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px wellness renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px resources renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px clubhouse renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px friends renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px connections renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px space renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px customize renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px safety renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px updates renders without overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "command search keyboard shortcut",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Escape closes command search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "installed shell starts fully offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "saved game available offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "new browser context retains records from saved storage state",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "corrupt saved bytes remain untouched",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "corrupt data recovery warning visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1500 game workspace stays intact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "large collection renders first 48 cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Load more reveals next 48 cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "search finds a title beyond loaded cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "clearing search resets to 48 cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection survives loading more cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sorting resets page and retains every saved record",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no uncaught page errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pageErrors": [],
+  "inventory": [
+    {
+      "width": 390,
+      "view": "myday",
+      "text": 2050,
+      "buttons": 63,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "dashboard",
+      "text": 1465,
+      "buttons": 34,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "quests",
+      "text": 3785,
+      "buttons": 44,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "discover",
+      "text": 10556,
+      "buttons": 195,
+      "inputs": 2,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "backlog",
+      "text": 2588,
+      "buttons": 53,
+      "inputs": 10,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "fitness",
+      "text": 4978,
+      "buttons": 39,
+      "inputs": 10,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "focus",
+      "text": 1123,
+      "buttons": 22,
+      "inputs": 2,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "wellness",
+      "text": 7540,
+      "buttons": 58,
+      "inputs": 12,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "resources",
+      "text": 2426,
+      "buttons": 58,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "clubhouse",
+      "text": 1317,
+      "buttons": 17,
+      "inputs": 8,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "friends",
+      "text": 1494,
+      "buttons": 17,
+      "inputs": 9,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "connections",
+      "text": 2634,
+      "buttons": 11,
+      "inputs": 13,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "space",
+      "text": 3080,
+      "buttons": 26,
+      "inputs": 5,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "customize",
+      "text": 1824,
+      "buttons": 32,
+      "inputs": 31,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "safety",
+      "text": 2304,
+      "buttons": 18,
+      "inputs": 9,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 390,
+      "view": "updates",
+      "text": 1449,
+      "buttons": 10,
+      "inputs": 0,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "myday",
+      "text": 1853,
+      "buttons": 58,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "dashboard",
+      "text": 1231,
+      "buttons": 29,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "quests",
+      "text": 3785,
+      "buttons": 44,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "discover",
+      "text": 10556,
+      "buttons": 195,
+      "inputs": 2,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "backlog",
+      "text": 2651,
+      "buttons": 53,
+      "inputs": 10,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "fitness",
+      "text": 5005,
+      "buttons": 39,
+      "inputs": 10,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "focus",
+      "text": 1123,
+      "buttons": 22,
+      "inputs": 2,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "wellness",
+      "text": 7540,
+      "buttons": 58,
+      "inputs": 12,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "resources",
+      "text": 2426,
+      "buttons": 58,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "clubhouse",
+      "text": 1317,
+      "buttons": 17,
+      "inputs": 8,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "friends",
+      "text": 1494,
+      "buttons": 17,
+      "inputs": 9,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "connections",
+      "text": 2634,
+      "buttons": 11,
+      "inputs": 13,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "space",
+      "text": 3080,
+      "buttons": 26,
+      "inputs": 5,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "customize",
+      "text": 1909,
+      "buttons": 32,
+      "inputs": 31,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "safety",
+      "text": 2304,
+      "buttons": 18,
+      "inputs": 9,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 768,
+      "view": "updates",
+      "text": 1449,
+      "buttons": 10,
+      "inputs": 0,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "myday",
+      "text": 1853,
+      "buttons": 58,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "dashboard",
+      "text": 1231,
+      "buttons": 29,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "quests",
+      "text": 3785,
+      "buttons": 44,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "discover",
+      "text": 10556,
+      "buttons": 195,
+      "inputs": 2,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "backlog",
+      "text": 2651,
+      "buttons": 53,
+      "inputs": 10,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "fitness",
+      "text": 5005,
+      "buttons": 39,
+      "inputs": 10,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "focus",
+      "text": 1123,
+      "buttons": 22,
+      "inputs": 2,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "wellness",
+      "text": 7540,
+      "buttons": 58,
+      "inputs": 12,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "resources",
+      "text": 2426,
+      "buttons": 58,
+      "inputs": 3,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "clubhouse",
+      "text": 1317,
+      "buttons": 17,
+      "inputs": 8,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "friends",
+      "text": 1494,
+      "buttons": 17,
+      "inputs": 9,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "connections",
+      "text": 2634,
+      "buttons": 11,
+      "inputs": 13,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "space",
+      "text": 3080,
+      "buttons": 26,
+      "inputs": 5,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "customize",
+      "text": 1909,
+      "buttons": 32,
+      "inputs": 31,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "safety",
+      "text": 2304,
+      "buttons": 18,
+      "inputs": 9,
+      "overflow": false,
+      "unnamed": 0
+    },
+    {
+      "width": 1440,
+      "view": "updates",
+      "text": 1449,
+      "buttons": 10,
+      "inputs": 0,
+      "overflow": false,
+      "unnamed": 0
+    }
+  ],
+  "timings": [
+    {
+      "name": "startup until initialized",
+      "ms": 261
+    },
+    {
+      "name": "navigate discover",
+      "ms": 230
+    },
+    {
+      "name": "navigate backlog",
+      "ms": 139
+    },
+    {
+      "name": "navigate discover",
+      "ms": 140
+    },
+    {
+      "name": "navigate quests",
+      "ms": 109
+    },
+    {
+      "name": "navigate safety",
+      "ms": 103
+    },
+    {
+      "name": "navigate myday",
+      "ms": 93
+    },
+    {
+      "name": "navigate myday",
+      "ms": 118
+    },
+    {
+      "name": "navigate dashboard",
+      "ms": 87
+    },
+    {
+      "name": "navigate quests",
+      "ms": 90
+    },
+    {
+      "name": "navigate discover",
+      "ms": 154
+    },
+    {
+      "name": "navigate backlog",
+      "ms": 106
+    },
+    {
+      "name": "navigate fitness",
+      "ms": 120
+    },
+    {
+      "name": "navigate focus",
+      "ms": 89
+    },
+    {
+      "name": "navigate wellness",
+      "ms": 123
+    },
+    {
+      "name": "navigate resources",
+      "ms": 90
+    },
+    {
+      "name": "navigate clubhouse",
+      "ms": 90
+    },
+    {
+      "name": "navigate friends",
+      "ms": 90
+    },
+    {
+      "name": "navigate connections",
+      "ms": 90
+    },
+    {
+      "name": "navigate space",
+      "ms": 107
+    },
+    {
+      "name": "navigate customize",
+      "ms": 102
+    },
+    {
+      "name": "navigate safety",
+      "ms": 88
+    },
+    {
+      "name": "navigate updates",
+      "ms": 75
+    },
+    {
+      "name": "navigate myday",
+      "ms": 97
+    },
+    {
+      "name": "navigate dashboard",
+      "ms": 89
+    },
+    {
+      "name": "navigate quests",
+      "ms": 90
+    },
+    {
+      "name": "navigate discover",
+      "ms": 155
+    },
+    {
+      "name": "navigate backlog",
+      "ms": 104
+    },
+    {
+      "name": "navigate fitness",
+      "ms": 106
+    },
+    {
+      "name": "navigate focus",
+      "ms": 74
+    },
+    {
+      "name": "navigate wellness",
+      "ms": 106
+    },
+    {
+      "name": "navigate resources",
+      "ms": 87
+    },
+    {
+      "name": "navigate clubhouse",
+      "ms": 88
+    },
+    {
+      "name": "navigate friends",
+      "ms": 88
+    },
+    {
+      "name": "navigate connections",
+      "ms": 90
+    },
+    {
+      "name": "navigate space",
+      "ms": 88
+    },
+    {
+      "name": "navigate customize",
+      "ms": 90
+    },
+    {
+      "name": "navigate safety",
+      "ms": 73
+    },
+    {
+      "name": "navigate updates",
+      "ms": 74
+    },
+    {
+      "name": "navigate myday",
+      "ms": 90
+    },
+    {
+      "name": "navigate dashboard",
+      "ms": 88
+    },
+    {
+      "name": "navigate quests",
+      "ms": 90
+    },
+    {
+      "name": "navigate discover",
+      "ms": 154
+    },
+    {
+      "name": "navigate backlog",
+      "ms": 89
+    },
+    {
+      "name": "navigate fitness",
+      "ms": 87
+    },
+    {
+      "name": "navigate focus",
+      "ms": 74
+    },
+    {
+      "name": "navigate wellness",
+      "ms": 107
+    },
+    {
+      "name": "navigate resources",
+      "ms": 88
+    },
+    {
+      "name": "navigate clubhouse",
+      "ms": 91
+    },
+    {
+      "name": "navigate friends",
+      "ms": 75
+    },
+    {
+      "name": "navigate connections",
+      "ms": 74
+    },
+    {
+      "name": "navigate space",
+      "ms": 89
+    },
+    {
+      "name": "navigate customize",
+      "ms": 88
+    },
+    {
+      "name": "navigate safety",
+      "ms": 91
+    },
+    {
+      "name": "navigate updates",
+      "ms": 89
+    },
+    {
+      "name": "navigate myday",
+      "ms": 89
+    },
+    {
+      "name": "navigate fitness",
+      "ms": 94
+    },
+    {
+      "name": "navigate safety",
+      "ms": 85
+    },
+    {
+      "name": "navigate wellness",
+      "ms": 93
+    },
+    {
+      "name": "navigate customize",
+      "ms": 84
+    },
+    {
+      "name": "navigate myday",
+      "ms": 109
+    },
+    {
+      "name": "navigate backlog",
+      "ms": 97
+    },
+    {
+      "name": "1500 game collection render",
+      "ms": 210
+    }
+  ],
+  "finished": "2026-10-25T07:32:54.354Z",
+  "passed": 91,
+  "failed": 0
+}

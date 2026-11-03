@@ -1,0 +1,78 @@
+{
+  "id": "./",
+  "name": "Rowanvale 19.3.0",
+  "short_name": "Rowanvale",
+  "description": "Offline-first games, film, TV, anime and book discovery, personal libraries, progress and XP",
+  "start_url": "./?source=homescreen",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1f2a",
+  "theme_color": "#0b1f2a",
+  "categories": [
+    "games",
+    "health",
+    "fitness",
+    "lifestyle",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "shortcuts": [
+    {
+      "name": "My Day",
+      "short_name": "Today",
+      "url": "./?view=myday",
+      "icons": [
+        {
+          "src": "./assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Quiet Room",
+      "short_name": "Focus",
+      "url": "./?view=focus",
+      "icons": [
+        {
+          "src": "./assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Game Collection",
+      "short_name": "Games",
+      "url": "./?view=backlog",
+      "icons": [
+        {
+          "src": "./assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

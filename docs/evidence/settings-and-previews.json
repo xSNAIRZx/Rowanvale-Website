@@ -1,0 +1,473 @@
+{
+  "checks": [
+    {
+      "name": "One Settings studio and no legacy editors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Six canonical categories",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages forest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves forest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints forest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages midnight",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves midnight",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints midnight",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages autumn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves autumn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints autumn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages lavender",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves lavender",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints lavender",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages ocean",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves ocean",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints ocean",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages blossom",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves blossom",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints blossom",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages retro",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves retro",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints retro",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages minimal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves minimal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints minimal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages academia",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves academia",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints academia",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Preview stages neon",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme saves neon",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme paints neon",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Undo last theme save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Discard leaves saved appearance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Search spans app and profile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Profile preview has unsaved name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Profile draft does not change saved identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile preview uses 390px viewport",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Desktop preview uses 1000px viewport",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Identity saves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unsafe link rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Safe link saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "SVG rejected with useful error",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Decoded PNG avatar saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Hide guestbook preserves profile and removes section",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Username shown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reject theme unknown property",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reject theme script color",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reject theme unsupported font",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reject theme broken JSON",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme export excludes personal identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Theme export/import roundtrip",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Quota failure keeps persisted profile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Quota error does not claim success",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Concurrent disk write protected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Conflict explains recovery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Restart restores latest profile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reset is staged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High contrast changes surface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Personal greeting renders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Starting page persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Specialized page controls retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Account controls retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px appearance no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px space no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px profile no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px comfort no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px data no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "390px advanced no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px appearance no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px space no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px profile no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px comfort no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px data no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "768px advanced no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px appearance no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px space no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px profile no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px comfort no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px data no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px advanced no overflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New profile works on offline restart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New studio available offline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No uncaught errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "timings": [
+    {
+      "name": "first launch",
+      "ms": 420
+    },
+    {
+      "name": "preview and save forest",
+      "ms": 558
+    },
+    {
+      "name": "preview and save midnight",
+      "ms": 406
+    },
+    {
+      "name": "preview and save autumn",
+      "ms": 416
+    },
+    {
+      "name": "preview and save lavender",
+      "ms": 401
+    },
+    {
+      "name": "preview and save ocean",
+      "ms": 387
+    },
+    {
+      "name": "preview and save blossom",
+      "ms": 414
+    },
+    {
+      "name": "preview and save retro",
+      "ms": 433
+    },
+    {
+      "name": "preview and save minimal",
+      "ms": 404
+    },
+    {
+      "name": "preview and save academia",
+      "ms": 409
+    },
+    {
+      "name": "preview and save neon",
+      "ms": 415
+    }
+  ],
+  "passed": 84,
+  "total": 84
+}

@@ -1,0 +1,44 @@
+/* Rowanvale 17.2.5 / Move Studio: practical history, weekly and monthly clarity */
+.rv-fitness-jump{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.rv-fitness-jump a{display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:var(--text,#e8f5f1);background:rgba(22,49,55,.72);border:1px solid rgba(120,202,182,.22);border-radius:12px;padding:10px 14px;font-size:12px;font-weight:650}
+.rv-fitness-jump a:hover,.rv-fitness-jump a:focus-visible{background:rgba(35,73,73,.94);outline-color:#f2bb78}
+.rv-fitness-fourweek{padding:20px 23px;margin-bottom:16px;display:grid;grid-template-columns:minmax(210px,1fr) minmax(290px,1.4fr);gap:13px 24px;align-items:center;background:linear-gradient(120deg,rgba(13,46,48,.85),rgba(21,39,57,.89))}
+.rv-fitness-fourweek h3{font-size:clamp(19px,2vw,25px);margin:7px 0}
+.rv-fitness-fourweek p{font-size:12px;line-height:1.55;color:#bdcdd0;max-width:470px;margin:0}
+.rv-fitness-fourweek-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.rv-fitness-fourweek-metrics>div{background:rgba(12,26,39,.55);border:1px solid rgba(147,217,204,.14);border-radius:13px;padding:13px 10px;text-align:center}
+.rv-fitness-fourweek-metrics strong{font-size:clamp(22px,2.5vw,33px);display:block;font-variant-numeric:tabular-nums}
+.rv-fitness-fourweek-metrics span{font-size:11px;color:#bbcaca}
+.rv-fitness-activity-tags{grid-column:1/-1;display:flex;gap:7px;flex-wrap:wrap}
+.rv-fitness-activity-tags span{border-radius:100px;background:rgba(102,180,159,.13);border:1px solid rgba(125,201,174,.18);padding:5px 10px;color:#c7e4d6;font-size:11px}
+.rv-fitness-history-tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,.65fr);gap:11px;margin:12px 0}
+.rv-fitness-history-tools label{font-size:11px;display:grid;gap:5px;color:#bccbcc}
+.rv-fitness-history-tools input,.rv-fitness-history-tools select{min-width:0;width:100%}
+.rv-fitness-history-count{color:#b8cac9;font-size:11px;margin:12px 0}
+.rv-fitness-history-actions{display:flex;flex-direction:column;gap:6px;justify-content:center}
+.fitness-log-row{grid-template-columns:34px minmax(0,1fr) auto}
+.rv-fitness-edit{min-width:48px;padding:5px 8px;font-size:11px}
+.rv-fitness-show-more{margin-top:10px;width:100%}
+#rvFitnessProgress,#rvFitnessHistory,#rvFitnessPlans,#fitnessNutrition{scroll-margin-top:115px}
+@media(max-width:880px){.rv-fitness-fourweek{grid-template-columns:1fr}.rv-fitness-fourweek-metrics{max-width:640px}}
+@media(max-width:480px){.rv-fitness-jump{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.rv-fitness-jump a{font-size:10px;padding:10px 9px}.rv-fitness-fourweek{padding:15px}.rv-fitness-fourweek-metrics>div{padding:9px 5px}.rv-fitness-fourweek-metrics span{font-size:9px}.rv-fitness-history-tools{grid-template-columns:1fr}.rv-fitness-history-actions{gap:8px}}
+@media(prefers-reduced-motion:reduce){.rv-fitness-jump a{transition:none!important}}
+
+/* Dense, task-first fitness entry: keep the visual identity without burying history below a second hero. */
+.fitness-hero{min-height:220px;padding:clamp(18px,2.4vw,28px)}
+.fitness-hero h2{font-size:clamp(30px,3.7vw,49px);margin:9px 0;line-height:1.05}
+.fitness-orbit{width:184px}
+.fitness-hero .fitness-orbit-core{width:96px;height:96px}
+.fitness-hero .fitness-orbit .ring-a{width:175px;height:103px}
+.fitness-hero .fitness-orbit .ring-b{width:172px;height:172px}
+.fitness-hero .fitness-orbit .ring-c{width:130px;height:194px}
+.fitness-day{padding:0 2px;background:none;border:1px solid transparent;border-radius:8px;color:inherit;font:inherit;cursor:pointer}
+.fitness-day:not(:disabled):hover,.fitness-day:not(:disabled):focus-visible{border-color:rgba(145,243,217,.65);background:rgba(145,243,217,.055);outline:2px solid transparent}
+.fitness-day:disabled{cursor:default;opacity:.55}
+@media(max-width:760px){.fitness-hero{min-height:0}.fitness-orbit{display:none}.fitness-hero h2{font-size:clamp(30px,8vw,43px)}}
+
+.rv-fitness-plans{margin:16px 0 22px;scroll-margin-top:115px}
+.rv-fitness-plans-intro{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.rv-fitness-plans-intro h2{font-size:clamp(18px,2vw,25px);margin:7px 0}
+.rv-fitness-plans-intro p{font-size:12px;color:#c1cecd;max-width:560px;line-height:1.6}
+.rv-fitness-recipes-single{grid-template-columns:1fr}

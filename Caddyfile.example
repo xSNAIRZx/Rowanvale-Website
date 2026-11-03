@@ -1,0 +1,5 @@
+# Replace with your real domain, install Caddy from its official source,
+# and point DNS to your server. Caddy terminates HTTPS and preserves Host.
+your-rowanvale-domain.example {
+    reverse_proxy 127.0.0.1:8080
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-03T01:56:07.129Z",
+  "checks": [
+    {
+      "name": "Lineup suggestion is reviewable and cancel leaves saved choices untouched",
+      "pass": true
+    },
+    {
+      "name": "Applying a suggestion saves the reviewed order and preserves votes across reload",
+      "pass": true
+    },
+    {
+      "name": "Calendar download contains chosen schedule and excludes individual guests and ballots",
+      "pass": true
+    },
+    {
+      "name": "A storage refusal leaves prior lineup intact and review open for retry",
+      "pass": true
+    },
+    {
+      "name": "Night planner remains usable at phone and desktop widths",
+      "pass": true
+    }
+  ]
+}

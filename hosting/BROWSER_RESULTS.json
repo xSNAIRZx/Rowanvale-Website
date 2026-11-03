@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-03T10:25:30.825Z",
+  "checks": [
+    "Browser owner authentication and device sign-in work",
+    "Library, workout, wellbeing, focus and customization screens render through hosted entry point",
+    "Real browser POST Origin and intent are accepted by hosted gateway",
+    "Hosted mobile settings fit390px",
+    "Installed PWA restarts offline and preserves saved library",
+    "No page errors"
+  ],
+  "limits": "Local HTTP loopback simulation of owner-private hosted entry. Docker, production HTTPS and live third-party providers were not tested."
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-01T10:27:42.172Z",
+  "browser": "156.0.8078.76",
+  "checks": [
+    "Save current query/type/status/sort",
+    "Density and shelf criteria survive reload",
+    "Saved query automatically includes new matching titles",
+    "Duplicate name rejected without losing prior shelf",
+    "Rename preserves criteria",
+    "Storage failure keeps form and committed shelves intact",
+    "Empty dynamic query can be saved for future additions",
+    "Removing a shelf preserves all library titles",
+    "Real workspace JSON export/import restores Smart Shelves and density",
+    "3000-title search returns correct result and rendering stays capped at24",
+    "All three densities fit390/768/1440",
+    "No page errors"
+  ],
+  "searchMs": 104,
+  "dataset": 3000,
+  "limits": "Synthetic local workspace; external network blocked. Search timing is one local sample, not a benchmark guarantee. Physical devices and assistive technology not tested."
+}

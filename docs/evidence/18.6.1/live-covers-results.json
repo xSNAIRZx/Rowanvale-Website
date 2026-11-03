@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-26T04:14:39.540Z",
+  "version": "18.6.1",
+  "checks": [
+    {
+      "id": "real-game",
+      "pass": true,
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Celeste_box_art_full.png/960px-Celeste_box_art_full.png",
+      "width": 960,
+      "height": 1539,
+      "credit": "https://en.wikipedia.org/wiki/File:Celeste_box_art_full.png"
+    },
+    {
+      "id": "real-film",
+      "pass": true,
+      "src": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png",
+      "width": 265,
+      "height": 376,
+      "credit": "https://en.wikipedia.org/wiki/File:Spirited_Away_Japanese_poster.png"
+    },
+    {
+      "id": "real-anime",
+      "pass": true,
+      "src": "https://upload.wikimedia.org/wikipedia/en/a/a9/Cowboy_Bebop_key_visual.jpg",
+      "width": 256,
+      "height": 389,
+      "credit": "https://en.wikipedia.org/wiki/File:Cowboy_Bebop_key_visual.jpg"
+    },
+    {
+      "id": "real-tv",
+      "pass": true,
+      "src": "https://static.tvmaze.com/uploads/images/original_untouched/501/1253519.jpg",
+      "width": 1250,
+      "height": 1800,
+      "credit": "https://www.tvmaze.com/shows/169/breaking-bad"
+    },
+    {
+      "id": "real-book",
+      "pass": true,
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/960px-PrideAndPrejudiceTitlePage.jpg",
+      "width": 960,
+      "height": 1551,
+      "credit": "https://en.wikipedia.org/wiki/File:PrideAndPrejudiceTitlePage.jpg"
+    }
+  ],
+  "errors": [],
+  "mode": "Genuine internet provider responses and genuine image pixels; no provider or image mocks. No TMDB/IGDB keys, no manual artwork search, metadata backfill disabled."
+}

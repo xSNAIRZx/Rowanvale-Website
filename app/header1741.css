@@ -1,0 +1,21 @@
+/* Complementary roles: navigation in the sidebar, view controls in the header. */
+body.signed-in .topbar .top-actions>#hb12ThemeOpen{display:none!important}
+body.signed-in #shellAccountMenu :is([data-view],[data-action="export"],[data-action="hb12-theme-open"],[data-action="open-pulse"],#rv163Launcher,.shell-account-head){display:none!important}
+body.signed-in #shellAccountMenu .shell-menu-divider{margin:7px 0}
+body.signed-in #shellAccountMenu{width:270px}
+body.signed-in .rv1741-version{font:500 10px system-ui;color:var(--rv173-muted);white-space:nowrap;letter-spacing:.04em}
+body.signed-in .topbar-context{flex-direction:column!important;align-items:flex-start!important;gap:5px!important}
+body.signed-in .topbar-context-kicker>span{display:none!important}
+body.signed-in .topbar-context-kicker #pageCrumb{font-size:16px!important;font-weight:650!important;letter-spacing:0!important}
+body.signed-in #appSidebar .rv-rail-tools [data-action="open-command"]{display:none!important}
+@media(min-width:761px){
+ body.signed-in #appShell:not(.sidebar-collapsed) .topbar{grid-template-columns:minmax(0,1fr) auto!important;height:72px!important}
+ body.signed-in #appShell:not(.sidebar-collapsed) #commandLaunch{display:none!important}
+ body.signed-in #appShell:not(.sidebar-collapsed) .topbar-leading{display:flex!important}
+ body.signed-in #appShell.sidebar-collapsed .topbar{grid-template-columns:minmax(140px,1fr) minmax(180px,360px) auto!important}
+}
+@media(max-width:760px){body.signed-in .topbar .topbar-leading{display:none!important}body.signed-in #commandLaunch{display:flex!important}body.signed-in #shellAccountToggle{padding:0 10px!important;font-size:11px!important}}
+body.signed-in #shellAccountMenu #hb12UndoButton::before{display:none!important}
+body.signed-in #shellAccountMenu #hb12UndoButton{gap:8px!important}
+/* Phones navigate with the bottom bar and its complete More portal. */
+@media(max-width:760px){body.signed-in .hb12-wayfinder{display:none!important}}

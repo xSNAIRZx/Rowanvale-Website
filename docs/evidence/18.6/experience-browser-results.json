@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-26T02:54:44.081Z",
+  "results": [
+    {
+      "name": "The new sign-in presentation fits a small phone",
+      "pass": true
+    },
+    {
+      "name": "The complete three-step onboarding creates and restores a named local workspace",
+      "pass": true
+    },
+    {
+      "name": "Route and title: My Day",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Overview",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Games & Media",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Discover Games",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Game Collection",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Books Directory",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Watch Room",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Fan Lounge",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Quests",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Movement",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Quiet Room",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Reset Studio",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Offline Guides",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Clubhouse",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Friends",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Connections",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Your Orbit",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Settings",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Backups & Data",
+      "pass": true
+    },
+    {
+      "name": "Route and title: Help & Updates",
+      "pass": true
+    },
+    {
+      "name": "Every destination fits a 320px viewport",
+      "pass": true
+    },
+    {
+      "name": "Every destination fits a 768px viewport",
+      "pass": true
+    },
+    {
+      "name": "Every destination fits a 1440px viewport",
+      "pass": true
+    },
+    {
+      "name": "All six Reset Studio areas preserve their working tools",
+      "pass": true
+    },
+    {
+      "name": "Reflection drafts survive section changes and save to existing private records",
+      "pass": true
+    },
+    {
+      "name": "Guided grounding permits skipped senses and saves exactly once",
+      "pass": true
+    },
+    {
+      "name": "The guided reset dialog fits a phone, traps keyboard focus and respects reduced motion",
+      "pass": true
+    },
+    {
+      "name": "Breathing sessions start, pause, resume and finish using elapsed time",
+      "pass": true
+    },
+    {
+      "name": "A failed care-session save preserves the completed session for retry",
+      "pass": true
+    },
+    {
+      "name": "Screen rest survives closing and reload without resuming automatically",
+      "pass": true
+    },
+    {
+      "name": "Discovery trails open a reviewable real title without silently adding it",
+      "pass": true
+    },
+    {
+      "name": "Three sourced book additions appear in the actual Books Directory",
+      "pass": true
+    },
+    {
+      "name": "Reset Studio and Personal Atlas support light appearance",
+      "pass": true
+    },
+    {
+      "name": "Reset Studio and Personal Atlas support dark appearance",
+      "pass": true
+    },
+    {
+      "name": "Reset Studio and Personal Atlas support system appearance",
+      "pass": true
+    },
+    {
+      "name": "Visible artwork starts before slow probes and despite an exhausted bulk budget",
+      "pass": true
+    },
+    {
+      "name": "Arriving cover art patches the existing page without replacing its root",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "artwork": {
+    "firstRequestMs": 413,
+    "requests": [
+      {
+        "title": "Priority book 40",
+        "at": 1792983283926
+      }
+    ]
+  }
+}

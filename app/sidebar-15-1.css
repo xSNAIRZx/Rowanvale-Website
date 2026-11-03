@@ -1,0 +1,117 @@
+/* Rowanvale 15.0.1 desktop navigation & visual consistency.
+   All legacy routes, data, buttons and profiles remain. */
+@media (min-width:761px){
+  body.signed-in .lw-sidebar{
+    --rv-radius:12px;
+    padding:12px 12px 12px!important;
+    display:flex!important;flex-direction:column!important;
+    overflow:visible!important;
+    background:var(--hb12-shell,var(--hb12-surface))!important;
+  }
+  body.signed-in .lw-sidehead{min-height:64px!important; margin:0 0 8px!important;padding:0 0 10px!important;border-bottom:1px solid var(--hb12-outline)!important;gap:9px!important}
+  body.signed-in .lw-brand .brand-wordmark strong{font-size:24px!important;letter-spacing:-.035em!important;white-space:nowrap}
+  body.signed-in .lw-sidehead .brand-mark{width:44px!important;height:44px!important;flex-basis:44px!important}
+  body.signed-in .lw-sidehead .brand-mark img{width:44px!important;height:44px!important}
+  body.signed-in #sidebarToggle{border-radius:10px!important;min-width:35px!important;width:35px!important;height:36px!important}
+  body.signed-in .rv-primary-nav{display:grid;gap:3px;flex:0 0 auto;min-height:0;margin:4px 0 13px;padding:0 0 12px;border-bottom:1px solid var(--hb12-outline)}
+  body.signed-in .rv-area-button{
+    display:flex;align-items:center;gap:12px;width:100%;min-height:47px;
+    border:1px solid transparent;border-radius:12px;padding:7px 11px;
+    font-family:var(--hb12-font,system-ui);font-size:14px;line-height:1.25;text-align:left;
+    color:var(--hb12-text);background:transparent;cursor:pointer;
+    transition:background .15s ease,border-color .15s ease;
+  }
+  body.signed-in .rv-area-button:hover{background:var(--hb12-raised);border-color:var(--hb12-outline)}
+  body.signed-in .rv-area-button.is-current{background:color-mix(in srgb,var(--accent) 12%,var(--hb12-raised));border-color:color-mix(in srgb,var(--accent) 45%,var(--hb12-outline))}
+  body.signed-in .rv-area-button .rv-area-icon{width:31px;height:31px;flex:0 0 31px;display:grid;place-items:center;border-radius:9px;background:var(--hb12-raised);color:var(--hb12-muted);font:600 21px/1 Georgia,serif}
+  body.signed-in .rv-area-button.is-current .rv-area-icon{background:color-mix(in srgb,var(--accent) 22%,var(--hb12-surface));color:var(--accent)}
+  body.signed-in .rv-area-label{font-weight:700;letter-spacing:0;color:var(--hb12-text)}
+  body.signed-in .rv-area-label small{display:block;margin-top:2px;font-size:10px;font-weight:500;line-height:1.3;color:var(--hb12-muted)}
+  body.signed-in .rv-area-title{color:var(--hb12-muted);font-size:10px;font-weight:800;letter-spacing:.12em;padding:2px 8px 8px}
+  /* The original command buttons remain wired; their matching actions now live in the bottom utility strip. */
+  body.signed-in .lw-utility-row{display:none!important}
+  body.signed-in .lw-filter-wrap{flex:0 0 auto;min-height:42px!important;margin:0 0 8px!important;border-radius:10px!important}
+  body.signed-in .sidebar-nav-scroll{display:flex!important;flex:1 1 auto;flex-direction:column;overflow-y:auto!important;overflow-x:hidden!important;min-height:40px!important;padding:1px 2px 6px!important;gap:1px;scrollbar-width:thin;scrollbar-color:var(--hb12-outline) transparent}
+  body.signed-in .sidebar-pinned{order:0}
+  body.signed-in #hb12NavGroups{order:1;display:block!important}
+  body.signed-in .lw-pin-block{order:2;margin:12px 0 0!important;border-bottom:0!important;border-top:1px solid var(--hb12-outline);padding:11px 0 0!important}
+  body.signed-in .lw-pinned{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  body.signed-in .lw-pin-item{min-height:39px!important;padding:8px!important;text-align:left!important;display:flex!important;justify-content:flex-start;align-items:center;border-radius:9px!important;font-size:11px!important;line-height:1.25!important}
+  body.signed-in .lw-pin-item.active{background:color-mix(in srgb,var(--accent) 13%,var(--hb12-raised))!important}
+  /* Only show the destinations in the selected area; never delete legacy buttons or IDs. */
+  body.signed-in .sidebar-pinned{display:none!important}
+  body.signed-in .lw-sidebar[data-rv-area="today"] .sidebar-pinned{display:block!important}
+  body.signed-in .lw-sidebar .nav-section{display:none!important}
+  body.signed-in .lw-sidebar[data-rv-area="games"] .nav-section[data-nav-section="games"],
+  body.signed-in .lw-sidebar[data-rv-area="balance"] .nav-section[data-nav-section="reset"],
+  body.signed-in .lw-sidebar[data-rv-area="people"] .nav-section[data-nav-section="social"],
+  body.signed-in .lw-sidebar[data-rv-area="studio"] .nav-section[data-nav-section="world"]{display:block!important}
+  body.signed-in .lw-sidebar .nav-section>summary.side-label{display:none!important}
+  body.signed-in .lw-sidebar .nav-section>.nav-list{border:0!important;margin:0!important;padding:0!important}
+  body.signed-in .lw-sidebar .nav-item{width:100%;min-height:42px!important;border-radius:9px!important;padding:8px 10px!important}
+  body.signed-in .lw-sidebar .nav-label{font-size:12.5px!important;line-height:1.32!important}
+  body.signed-in .lw-sidebar[data-rv-area="today"]:not(.lw-searching) .nav-item[data-view="myday"]{display:none!important} /* already represented by the main Today button */
+  body.signed-in .lw-sidebar .lw-browse-title{display:none!important}
+  body.signed-in .lw-sidebar.lw-searching .nav-section,body.signed-in .lw-sidebar.lw-searching .sidebar-pinned{display:block!important}
+  body.signed-in .lw-sidebar.lw-searching .lw-pin-block{display:none!important}
+  body.signed-in .rv-rail-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;flex:0 0 auto;border-top:1px solid var(--hb12-outline);padding:10px 0 8px}
+  body.signed-in .rv-rail-tool{display:grid;justify-items:center;align-items:center;gap:3px;min-width:0;min-height:48px;border:1px solid transparent;background:transparent;border-radius:10px;padding:5px 1px;color:var(--hb12-muted);cursor:pointer;font-family:var(--hb12-font,system-ui)}
+  body.signed-in .rv-rail-tool span{font-size:18px;line-height:1.05}
+  body.signed-in .rv-rail-tool b{font-size:9px;font-weight:650}
+  body.signed-in .rv-rail-tool:hover,body.signed-in .rv-rail-tool:focus-visible{background:var(--hb12-raised);color:var(--hb12-text);border-color:var(--hb12-outline)}
+  body.signed-in .lw-footer{flex:0 0 auto;gap:0!important;padding:8px 0 0!important;border-top:1px solid var(--hb12-outline)!important}
+  body.signed-in .lw-footer .lw-account{order:0;min-height:53px!important;max-height:57px!important;margin:0!important;padding:7px 9px!important}
+  body.signed-in .lw-footer .shell-progress{display:none!important}
+  body.signed-in .lw-footer .mini-status,body.signed-in .lw-footer .sidebar-version{display:none!important}
+  body.signed-in .rv-area-flyout{position:absolute;z-index:500;left:calc(100% + 7px);top:88px;width:260px;max-height:min(70vh,570px);overflow:auto;border:1px solid var(--hb12-outline);border-radius:17px;padding:11px;background:var(--hb12-surface);box-shadow:0 18px 48px #0008;color:var(--hb12-text)}
+  body.signed-in .rv-area-flyout[hidden]{display:none!important}
+  .rv-flyout-head{display:flex;justify-content:space-between;align-items:center;padding:4px 5px 11px;margin-bottom:6px;border-bottom:1px solid var(--hb12-outline)}
+  .rv-flyout-head b{font:600 19px/1.2 Georgia,serif}
+  .rv-flyout-head button{width:35px;height:35px;border:1px solid var(--hb12-outline);border-radius:9px;color:var(--hb12-text);background:var(--hb12-raised);cursor:pointer;font-size:20px}
+  .rv-flyout-links{display:grid;gap:5px}
+  .rv-flyout-link{min-height:43px;text-align:left;padding:8px 12px;border:1px solid transparent;background:transparent;color:var(--hb12-text);border-radius:10px;cursor:pointer;font:600 13px var(--hb12-font,system-ui)}
+  .rv-flyout-link:hover,.rv-flyout-link.is-current{background:var(--hb12-raised);border-color:var(--hb12-outline)}
+  body.signed-in .rv-area-button:focus-visible,body.signed-in .rv-flyout-link:focus-visible,body.signed-in .rv-rail-tool:focus-visible{outline:3px solid var(--accent)!important;outline-offset:2px!important}
+  #appShell.sidebar-collapsed .lw-sidebar{width:80px!important;padding:10px 8px!important}
+  #appShell.sidebar-collapsed .rv-primary-nav{gap:7px;padding-bottom:12px;margin:8px 0 10px}
+  #appShell.sidebar-collapsed .rv-area-button{justify-content:center!important;width:100%;padding:5px!important;min-height:50px!important;border-radius:12px}
+  #appShell.sidebar-collapsed .rv-area-icon{width:36px;height:36px;flex-basis:36px;font-size:21px}
+  #appShell.sidebar-collapsed .rv-area-label,#appShell.sidebar-collapsed .rv-area-title,#appShell.sidebar-collapsed .lw-utility-row,#appShell.sidebar-collapsed .lw-filter-wrap,#appShell.sidebar-collapsed .sidebar-nav-scroll{display:none!important}
+  #appShell.sidebar-collapsed .rv-rail-tools{display:grid!important;grid-template-columns:1fr 1fr;gap:5px;padding:7px 0}
+  #appShell.sidebar-collapsed .rv-rail-tool{min-height:43px}
+  #appShell.sidebar-collapsed .rv-rail-tool b{display:none}
+  #appShell.sidebar-collapsed .rv-rail-tool span{font-size:19px}
+  #appShell.sidebar-collapsed .lw-footer{padding-top:7px!important}
+  #appShell.sidebar-collapsed .lw-footer .lw-account{min-height:50px!important;max-height:50px!important;justify-content:center!important;padding:4px!important}
+  #appShell.sidebar-collapsed .lw-footer .workspace-copy,#appShell.sidebar-collapsed .lw-footer .workspace-arrow{display:none!important}
+  #appShell.sidebar-collapsed .lw-footer .workspace-avatar{width:36px!important;height:36px!important;flex-basis:36px!important}
+  /* 15.0 visual vocabulary shared by sections; user-selected theme, font, density and shape settings stay authoritative. */
+  body.signed-in .main-area :is(.panel,.hb12-widget,.hb12-controls){border-color:var(--hb12-outline)!important}
+  body.signed-in .main-area :is(.page-heading,.panel-head,.hb12-widget-head){row-gap:10px}
+  body.signed-in .main-area :is(button,.button,select,input,textarea){font-family:var(--hb12-font,system-ui)}
+  body.signed-in .main-area :is(button,.button){transition-duration:.14s}
+}
+@media (min-width:761px) and (max-height:710px){
+ body.signed-in .lw-sidehead{min-height:50px!important;margin-bottom:2px!important;padding-bottom:5px!important}
+ body.signed-in .rv-primary-nav{gap:0;padding-bottom:6px;margin:2px 0 6px}
+ body.signed-in .rv-area-button{min-height:42px}
+ body.signed-in .rv-area-title{padding-bottom:3px}
+ body.signed-in .rv-rail-tools{padding-top:4px;padding-bottom:4px}
+ body.signed-in .lw-footer{padding-top:4px!important}
+}
+@media(max-width:760px){.rv-primary-nav,.rv-area-title,.rv-rail-tools,.rv-area-flyout{display:none!important}}
+@media(prefers-reduced-motion:reduce){.rv-area-button,.rv-rail-tool{transition:none!important}}
+
+/* Clear optical alignment and theme-driven typography across existing components. */
+@media (min-width:761px){
+ body.signed-in .rv-area-icon svg,body.signed-in .rv-rail-tool svg{width:20px;height:20px;display:block;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+ body.signed-in .rv-area-icon svg{width:21px;height:21px}
+ body.signed-in .main-area :is(.panel,.hb12-widget,.hb12-controls,.rv-home-places button){border-radius:var(--hb12-r2,16px)}
+ body.signed-in .rv-rail-tool svg{margin:0 auto}
+}
+
+/* Respect the existing navigation-priority preference, without removing any route. */
+@media(min-width:761px){
+ body.signed-in[data-nav-priority="people"] .rv-area-button[data-rv-area="people"]{order:-1}
+ body.signed-in[data-nav-priority="profile"] .rv-area-button[data-rv-area="studio"]{order:-1}
+}

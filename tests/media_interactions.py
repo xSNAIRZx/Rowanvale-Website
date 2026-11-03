@@ -1,0 +1,132 @@
+from playwright.sync_api import sync_playwright
+from render_harness import page_html,ROOT
+from pathlib import Path
+checks=[]
+def run(name,func):
+ try:func();checks.append((name,True));print('PASS',name,flush=True)
+ except Exception as e:checks.append((name,False));print('FAIL',name,str(e)[:200],flush=True)
+
+def main():
+ with sync_playwright() as p:
+  b=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+  page=b.new_page(viewport={'width':1440,'height':900})
+  errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+  page.set_content(page_html(),wait_until='domcontentloaded',timeout=15000)
+  page.locator('#authSkipIntro').click(timeout=3000)
+  page.evaluate("document.querySelector('.nav-item[data-view=books]').click()")
+  assert page.locator('.media-books-page').count()==1
+  run('Offline book directory has 100+ entries',lambda:assert_true(page.evaluate('window.RV_BOOK_STARTERS.length')>=100))
+  def add_book():
+   page.locator('#media-book-query').fill('Pride and Prejudice')
+   page.get_by_role('button',name='＋ Add to library').first.click()
+   page.locator('#media-book-edit input[name=pages]').fill('300')
+   page.locator('#media-book-edit button[type=submit]').click()
+   page.wait_for_timeout(100)
+   assert_true(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).backlog.some(x=>x.type==="Book" && x.book.pages===300)'))
+  run('Add and save reading edition',add_book)
+  def progress():
+   page.get_by_role('button',name='Log pages').first.click(timeout=1500)
+   page.locator('#media-progress-dialog input[name=progress]').fill('75')
+   page.locator('#media-progress-dialog button[type=submit]').click();page.wait_for_timeout(100)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),15)
+  run('Read 75 pages awards 15 XP',progress)
+  def redo():
+   page.get_by_role('button',name='Log pages').first.click(timeout=1500)
+   page.locator('#media-progress-dialog input[name=progress]').fill('75')
+   page.locator('#media-progress-dialog button[type=submit]').click();page.wait_for_timeout(100)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),15)
+  run('Repeating page value gives no extra XP',redo)
+  def finish():
+   page.get_by_role('button',name='Log pages').first.click(timeout=1500)
+   page.locator('#media-progress-dialog input[name=progress]').fill('300')
+   page.locator('#media-progress-dialog input[name=finished]').check()
+   page.locator('#media-progress-dialog button[type=submit]').click();page.wait_for_timeout(100)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),100)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).backlog.find(x=>x.type==="Book").status'),'Finished')
+  run('Finishing 300 pages awards capped milestones and one completion',finish)
+  def no_farm():
+   page.get_by_role('button',name='Log pages').first.click(timeout=1500)
+   page.locator('#media-progress-dialog input[name=progress]').fill('300')
+   page.locator('#media-progress-dialog input[name=finished]').check()
+   page.locator('#media-progress-dialog button[type=submit]').click();page.wait_for_timeout(100)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),100)
+  run('Re-finishing cannot farm XP',no_farm)
+  def failed_save():
+   before=page.evaluate('localStorage.getItem("mindforge.momentum.data")')
+   page.evaluate("(()=>{window.__realWrite=localStorage.setItem;localStorage.setItem=()=>{throw Error('Simulated storage quota exceeded')};return true;})()")
+   page.get_by_role('button',name='Log pages').first.click()
+   page.locator('#media-progress-dialog input[name=progress]').fill('280')
+   page.locator('#media-progress-dialog button[type=submit]').click()
+   page.wait_for_timeout(60)
+   assert_equal(page.evaluate('localStorage.getItem("mindforge.momentum.data")'),before)
+   assert_true(page.locator('.media-dialog-error').is_visible())
+   page.evaluate('(()=>{localStorage.setItem=window.__realWrite;return true;})()')
+   page.locator('#media-progress-dialog [data-book-close]').first.click()
+  run('Blocked storage preserves prior reading record and displays an error',failed_save)
+  def movie_xp():
+   page.evaluate('window.crypto.randomUUID ||= ()=>"test-"+Math.random().toString(36).slice(2)')
+   page.evaluate("document.querySelector('.nav-item[data-view=watch]').click()")
+   page.locator('.watch-room [data-watch-action=add]').click()
+   page.locator('#watch-edit-form input[name=title]').fill('My Media XP Test Film')
+   page.locator('#watch-edit-form button[type=submit]').click()
+   page.wait_for_timeout(80)
+   assert_true(page.get_by_text('My Media XP Test Film').count()>0)
+   first=page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp')
+   page.locator('.watch-card').filter(has_text='My Media XP Test Film').get_by_role('button',name='Watched').click()
+   page.wait_for_timeout(80)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),first+20)
+   page.locator('.watch-card').filter(has_text='My Media XP Test Film').get_by_role('button',name='Log rewatch').click()
+   page.wait_for_timeout(80)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),first+20)
+  run('Watch Room movie completion grants XP once, not on rewatch',movie_xp)
+  def television_xp():
+   page.evaluate("document.querySelector('.nav-item[data-view=watch]').click()")
+   page.locator('.watch-room [data-watch-action=add]').click()
+   page.locator('#watch-edit-form input[name=title]').fill('My TV Test Series')
+   page.locator('#watch-edit-form select[name=type]').select_option('Show')
+   page.locator('#watch-edit-form input[name=totalEpisodes]').fill('2')
+   page.locator('#watch-edit-form button[type=submit]').click()
+   page.wait_for_timeout(90)
+   before=page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp')
+   card=page.locator('.watch-card').filter(has_text='My TV Test Series')
+   card.get_by_role('button',name='Log next episode').click()
+   page.wait_for_timeout(90)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),before+4)
+   page.locator('.watch-card').filter(has_text='My TV Test Series').get_by_role('button',name='Log next episode').click()
+   page.wait_for_timeout(90)
+   assert_equal(page.evaluate('JSON.parse(localStorage.getItem("mindforge.momentum.data")).xp'),before+28)
+  run('TV episodes and season completion earn +4/+20 XP',television_xp)
+  def fan_books():
+   page.evaluate("document.querySelector('.nav-item[data-view=fan]').click()")
+   page.locator('#fan-format').select_option('Book')
+   page.locator('#fan-search').fill('Pride and Prejudice')
+   assert_true(page.locator('.fan-card[data-kind=Book]').count()>0)
+  run('Books included in Fan Lounge discovery',fan_books)
+  page.evaluate("document.querySelector('.nav-item[data-view=books]').click()")
+  def online():
+   page.locator('#media-online-query').fill('Dune')
+   page.locator('#media-online-form button[type=submit]').click();page.wait_for_timeout(170)
+   assert_true(page.locator('.media-book-card').count()>0)
+   assert_true(page.get_by_text('Dune',exact=True).count()>0)
+  run('Open Library search results appear on request',online)
+  def all_views():
+   for v in ['media','discover','backlog','watch','fan','books','fitness','myday']:
+    page.evaluate(f"document.querySelector('.nav-item[data-view={v}]').click()")
+    page.wait_for_timeout(40)
+   assert_equal(len(errors),0)
+  run('All eight existing and new view integrations render',all_views)
+  for w in [390,768,1280]:
+   def check(w=w):
+    page.set_viewport_size({'width':w,'height':844})
+    page.evaluate("document.querySelector('.nav-item[data-view=books]').click()")
+    assert_true(not page.evaluate('document.documentElement.scrollWidth>window.innerWidth+2'))
+   run(f'Book directory has no overflow at {w}px',check)
+  run('No unexpected JS exceptions',lambda:assert_equal(len(errors),0))
+  b.close()
+ print('FINAL',sum(ok for _,ok in checks),'/',len(checks),flush=True)
+ if not all(ok for _,ok in checks):raise SystemExit(1)
+def assert_true(v):
+ if not v:raise AssertionError('expected truthy')
+def assert_equal(a,b):
+ if a!=b:raise AssertionError(f'{a!r} != {b!r}')
+if __name__=='__main__':main()

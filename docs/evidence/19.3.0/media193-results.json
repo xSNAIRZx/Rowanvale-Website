@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-03T01:56:56.979Z",
+  "checks": [
+    "Individual episode logs retain gaps and exact dates",
+    "Caught up is distinct from series completion",
+    "Specials and rewatches preserve prior summary and XP",
+    "Editing a dated episode updates its existing record",
+    "Diary creates and corrects a backdated experience",
+    "Failed save preserves previous history and typed draft",
+    "Edition, owned copy and rereading records preserve independent page progress",
+    "Detailed media history survives real reload",
+    "History dialog fits three viewport widths",
+    "Watch Room and Books entry points open the same detailed history"
+  ],
+  "errors": [],
+  "network": "External requests blocked; synthetic workspace only."
+}

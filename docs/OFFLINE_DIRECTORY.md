@@ -1,0 +1,7 @@
+# Offline title directory
+
+Built 2026-10-25 from Wikidata public structured metadata (CC0): https://www.wikidata.org/wiki/Wikidata:Licensing . Frozen data is bundled in app/offline-directory182.js; each record retains its Wikidata Q identifier. Rights in films/shows and trademarks remain with their owners; no posters or video are redistributed.
+
+1,199 film labels, 499 TV labels, 500 anime labels were retained. The initial queries used film (Q11424), television series (Q5398426), anime television series (Q63952888) and anime film (Q20650540). English labels were requested; unlabeled Q-only rows were omitted. Film/TV snapshots used sitelink thresholds to select a bounded subset, not a popularity ranking. Anime years were enriched through wbgetentities. Uncertain series episode runtimes are left unknown; film duration is one reported edition's duration.
+
+The existing game index is reused, not downloaded from another service. Your own saved records supplement the directory. This is a partial snapshot, not a complete or automatically updated database. A work can appear in more than one category. Genres/classifications/years are source metadata and may be incomplete or inaccurate. Ratings, content warnings and current streaming availability are not supplied. Add missing titles manually in the Watch Room or Games collection. Optional online Watch Room search remains available and opt-in.

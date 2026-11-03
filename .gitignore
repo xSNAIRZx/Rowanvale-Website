@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.hosted
+.env.*.local
+build/
+*.log
+runtime/

@@ -1,0 +1,67 @@
+/* Rowanvale 16.3 - The Flow Update. Reuse theme tokens and user typography. */
+#viewRoot .rv163-starter, #viewRoot .rv163-skip, #viewRoot .rv163-studio-nav, #viewRoot .rv163-edit-day{font-family:var(--hb12-font,inherit)}
+.rv163-edit-day{border:1px solid var(--line, #446064);border-radius:var(--radius-lg,16px);background:var(--panel,#13272d);margin:0 0 14px;overflow:hidden}
+.rv163-edit-day>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:61px;padding:12px 20px;color:var(--text,#f4f1e8);outline-offset:-3px}
+.rv163-edit-day>summary::-webkit-details-marker{display:none}
+.rv163-edit-day>summary>span:nth-child(2){display:grid;gap:2px;flex:1}.rv163-edit-day>summary strong{font-size:14px}.rv163-edit-day>summary small{font-size:12px;color:var(--muted,#a7c1bb)}
+.rv163-edit-day>summary>span:first-child{color:var(--accent,#e6a26b);font-size:20px}.rv163-summary-arrow{transition:transform .15s}.rv163-edit-day[open] .rv163-summary-arrow{transform:rotate(180deg)}
+.rv163-edit-day>.rv162-workbench{border:0;border-radius:0;margin:0!important;box-shadow:none;padding-top:8px}
+.rv163-starter{padding:clamp(16px,2vw,25px);margin:0 0 18px;background:var(--panel,#13272d)}
+.rv163-starter-head{display:flex;flex-wrap:wrap;align-items:start;gap:10px;justify-content:space-between;margin-bottom:13px}
+.rv163-starter-head h2{font-size:clamp(22px,2vw,29px);margin:5px 0}.rv163-starter-head p{margin:0;color:var(--muted,#adc3bc)}
+.rv163-starter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.rv163-task{display:flex;align-items:center;text-align:left;gap:10px;width:100%;min-height:66px;border:1px solid var(--line,#486166);border-radius:12px;padding:11px;color:var(--text,#fff);background:var(--panel-2,rgba(255,255,255,.035));cursor:pointer;font:inherit}
+.rv163-task:hover,.rv163-go-route:hover,.rv163-studio-shortcuts button:hover{border-color:var(--accent,#e6a26b);background:color-mix(in srgb,var(--accent,#e6a26b) 10%,transparent)}
+.rv163-task:focus-visible,.rv163-go-route:focus-visible,.rv163-edit-day>summary:focus-visible,.rv163-launcher:focus-visible,.rv163-skip button:focus-visible{outline:3px solid var(--accent,#e6a26b);outline-offset:2px}
+.rv163-task span:nth-child(2){flex:1;min-width:0;display:grid;gap:2px}.rv163-task b{font-size:13px;line-height:1.35}.rv163-task small{color:var(--muted,#bbcbc7);font-size:11px;line-height:1.3}.rv163-task-icon{font-size:20px;min-width:25px;text-align:center}
+.rv163-skip{margin:10px 0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;flex-wrap:wrap}
+.rv163-skip-label{font-size:12px;letter-spacing:.07em;font-weight:700;color:var(--text,#eee)}.rv163-skip-actions{display:flex;flex-wrap:wrap;gap:8px}.rv163-skip-actions .button{min-height:40px;padding:9px 13px;font-size:12px}
+#viewRoot.rv163-compact-discover .discover-hero,#viewRoot.rv163-compact-discover .discover-stats,#viewRoot.rv163-compact-wellness .wellness-hero,#viewRoot.rv163-compact-fitness .fitness-hero{display:none!important}
+.rv163-studio-nav{padding:17px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rv163-studio-nav>div:first-child{display:grid;gap:4px}.rv163-studio-nav b{font-size:14px}.rv163-studio-shortcuts{display:flex;flex-wrap:wrap;gap:7px}
+.rv163-studio-shortcuts button{cursor:pointer;min-height:42px;border:1px solid var(--line,#486166);background:var(--panel-2,transparent);color:var(--text,#fff);padding:9px 12px;border-radius:9px;font:inherit;font-size:12px}
+.rv163-launcher{display:flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid var(--line,#486166);border-radius:10px;min-height:39px;background:var(--panel,#1a3237);color:var(--text,#fff);cursor:pointer;font-size:12px;font-weight:650;white-space:nowrap}
+.rv163-launcher span:first-child{color:var(--accent,#e6a26b)}
+.rv163-go-dialog{width:min(690px,calc(100vw - 28px));max-height:min(85vh,780px);padding:0;border:1px solid var(--line,#486166);border-radius:22px;background:var(--panel,#102731);color:var(--text,#faf5ed);box-shadow:0 26px 100px #000b}
+.rv163-go-dialog::backdrop{background:rgba(0,9,13,.75);backdrop-filter:blur(4px)}
+.rv163-go-title{display:flex;justify-content:space-between;padding:25px 26px 5px;gap:15px}.rv163-go-title h2{font-size:30px;margin:5px 0}.rv163-go-title p{color:var(--muted,#afc5bf);margin:0}.rv163-go-close{color:inherit;background:transparent;border:1px solid var(--line,#486166);cursor:pointer;border-radius:50%;height:40px;width:40px;font-size:24px}
+.rv163-search-label{display:block;margin:16px 25px 10px;font-size:12px;color:var(--muted,#b8c6c2)}.rv163-search-label input{width:100%;display:block;min-height:48px;margin-top:8px;background:var(--panel-2,#20363d);border:1px solid var(--line,#486166);border-radius:10px;color:var(--text,#fff);font:inherit;padding:12px}
+.rv163-go-list{max-height:54vh;overflow:auto;padding:0 25px 12px}.rv163-go-group{font-size:11px;color:var(--accent,#e6a26b);text-transform:uppercase;letter-spacing:.12em;font-weight:750;margin:15px 0 8px}
+.rv163-go-list .rv163-task{margin-bottom:6px}.rv163-go-route{width:100%;display:flex;justify-content:space-between;align-items:center;min-height:43px;margin-bottom:6px;border:1px solid var(--line,#486166);border-radius:9px;background:transparent;color:inherit;padding:10px;cursor:pointer;font:inherit;text-align:left;font-size:13px}
+.rv163-go-tip{font-size:11px;padding:12px 25px 20px;color:var(--muted,#b6c5c1);margin:0}.rv163-no-match{color:var(--muted,#b6c5c1)}
+#viewRoot :is(.rv163-starter,.rv163-edit-day,.rv163-studio-nav,.rv163-skip){scroll-margin-top:100px}
+@media(min-width:960px) and (max-width:1420px){.rv163-starter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rv163-launcher span:last-child{display:none}}
+@media(max-width:959px){.rv163-launcher{display:none}.rv163-starter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rv163-studio-nav{display:block}.rv163-studio-shortcuts{margin-top:12px}}
+@media(max-width:500px){.rv163-starter-grid{grid-template-columns:1fr}.rv163-skip{align-items:stretch}.rv163-skip-actions{width:100%}.rv163-skip-actions .button{flex:1}.rv163-edit-day>summary{padding:12px}.rv163-go-title{padding:20px 16px 0}.rv163-search-label{margin:15px 16px}.rv163-go-list{padding:0 16px}.rv163-starter{padding:15px}}
+@media(prefers-reduced-motion:reduce){.rv163-edit-day>summary .rv163-summary-arrow{transition:none}}
+
+/* Offline kitchen: compact, searchable and equally legible in every theme. */
+#viewRoot .rv163-recipe-section{min-width:0}
+.rv163-recipe-filters{display:grid;grid-template-columns:minmax(180px,2fr) repeat(2,minmax(130px,1fr));gap:10px;padding:14px;margin:12px 0}
+.rv163-recipe-filters label{min-width:0;color:var(--muted,#b4c7c2);font-size:12px;display:grid;gap:7px}
+.rv163-recipe-filters :is(input,select){width:100%;min-height:43px;font:inherit;color:var(--text,#f5f1e6)}
+.rv163-recipe-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rv163-recipe-card{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:15px 16px;min-width:0}
+.rv163-recipe-card h3{margin:0;font-size:clamp(16px,1.25vw,19px)}
+.rv163-recipe-card .rv163-recipe-meta{display:flex;gap:7px;flex-wrap:wrap}
+.rv163-recipe-card details{flex:1;color:var(--text,#f4f1ea)}
+.rv163-recipe-card summary{cursor:pointer;color:var(--accent,#e6a26b);font-weight:650;min-height:35px;padding-top:7px}
+.rv163-recipe-card summary:focus-visible,.rv163-recipe-filters :is(input,select):focus-visible,.rv163-recipe-more:focus-visible{outline:3px solid var(--accent,#e6a26b);outline-offset:2px}
+.rv163-recipe-card p{margin:8px 0;line-height:1.55;font-size:13px}
+.rv163-recipe-card button{margin-top:auto;min-height:42px}
+.rv163-recipe-card button:disabled{opacity:.7;cursor:default}
+.rv163-recipe-count{font-size:12px;color:var(--muted,#b4c7c2);margin:10px 0}
+.rv163-recipe-more{display:block;margin:14px auto 20px;min-height:44px}
+.rv163-recipe-card[hidden],.rv163-recipe-more[hidden]{display:none!important}
+@media(max-width:1320px){.rv163-recipe-list{grid-template-columns:1fr}}
+@media(max-width:720px){.rv163-recipe-filters{grid-template-columns:1fr}.rv163-recipe-list{grid-template-columns:1fr}}
+
+/* Give recipes the whole reading width, with movement starters below instead of an empty right column. */
+#viewRoot .hb12-resource-grid:has(.rv163-recipe-section){grid-template-columns:minmax(0,1fr);align-items:start}
+#viewRoot .hb12-resource-grid:has(.rv163-recipe-section)>section{min-width:0;width:100%}
+#viewRoot .hb12-resource-grid:has(.rv163-recipe-section)>section:not(.rv163-recipe-section){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#viewRoot .hb12-resource-grid:has(.rv163-recipe-section)>section:not(.rv163-recipe-section)>.hb12-section-title{grid-column:1/-1}
+@media(min-width:1500px){.rv163-recipe-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){#viewRoot .hb12-resource-grid:has(.rv163-recipe-section)>section:not(.rv163-recipe-section){grid-template-columns:1fr}}
+
+#viewRoot.rv163-compact-resources .hb12-resources-intro{display:none!important}

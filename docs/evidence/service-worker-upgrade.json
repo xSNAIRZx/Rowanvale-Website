@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "name": "old release created persisted records",
+      "passed": true
+    },
+    {
+      "name": "real service-worker upgrade activated 18.0.0",
+      "passed": true
+    },
+    {
+      "name": "obsolete shell cache removed",
+      "passed": true
+    },
+    {
+      "name": "upgrade preserves profile, theme and legacy saved look",
+      "passed": true
+    },
+    {
+      "name": "upgrade preserves game and quest bytes",
+      "passed": true
+    },
+    {
+      "name": "real browser-process restart preserves records",
+      "passed": true
+    }
+  ],
+  "passed": 6,
+  "failed": 0
+}

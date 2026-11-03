@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    try{var early=JSON.parse(localStorage.getItem('mindforge.momentum.data')||'{}').settings||{},earlyMode=early.appearanceMode||'theme',earlyLight=earlyMode==='light'||earlyMode==='system'&&matchMedia('(prefers-color-scheme: light)').matches;document.documentElement.dataset.initialAppearance=earlyLight?'light':'dark';document.documentElement.style.colorScheme=earlyLight?'light':'dark';}catch{}
+
+    // Keep sign-in in-page. If the app handler is unavailable, prevent GET navigation
+    // and store a local profile before a clean reload as a last-resort recovery path.
+    window.vytronSignInFallback = function (event) {
+      if (event) event.preventDefault();
+      if (typeof window.vytronHandleDeviceSignIn === 'function') {
+        return window.vytronHandleDeviceSignIn(event);
+      }
+      var name = document.getElementById('signInName').value.trim();
+      var emailInput = document.getElementById('signInEmail');
+      var email = emailInput.value.trim();
+      if (!name || (email && !emailInput.checkValidity())) {
+        if (emailInput) emailInput.reportValidity();
+        return false;
+      }
+      try {
+        localStorage.setItem('vytron.device.profile', JSON.stringify({name:name, email:email, createdAt:new Date().toISOString()}));
+      } catch (err) {
+        alert('Rowanvale cannot save a device profile because browser storage is blocked. Please enable site storage and try again.');
+        return false;
+      }
+      // Remove query parameters that a previous broken build may have appended.
+      var cleanUrl = window.location.href.split(/[?#]/)[0] + window.location.hash;
+      window.location.replace(cleanUrl);
+      return false;
+    };
+  </script>
+  <meta name="theme-color" content="#0b1f2a">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Rowanvale 19.3.0 Desktop: a crafted local-first home for games, friends, focus, movement, and wellbeing.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Rowanvale">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./mobile.css">
+  <link rel="stylesheet" href="./desktop.css">
+  <link rel="stylesheet" href="./liltwood.css">
+  <link rel="stylesheet" href="./rowanvale.css">
+  <link rel="stylesheet" href="./sidebar-15-1.css">
+  <link rel="stylesheet" href="./polish-15-1.css">
+  <link rel="stylesheet" href="./auth-15-1.css">
+  <link rel="stylesheet" href="./rowanvale16.css">
+  <link rel="stylesheet" href="./rowanvale161.css">
+  <link rel="stylesheet" href="./rowanvale162.css">
+  <link rel="stylesheet" href="./rowanvale163.css">
+  <link rel="stylesheet" href="./rowanvale17.css">
+  <link rel="stylesheet" href="./rowanvale17calm.css">
+  <link rel="stylesheet" href="./rowanvale171.css">
+  <link rel="stylesheet" href="./rowanvale172.css">
+  <link rel="stylesheet" href="./rowanvale1721.css">
+  <link rel="stylesheet" href="./rowanvale173.css">
+  <link rel="stylesheet" href="./rowanvale1724.css">
+  <link rel="stylesheet" href="./rowanvale1725.css">
+  <title>Rowanvale 19.3.0 · Play, grow, unwind</title>
+<link rel="stylesheet" href="./release1727.css">
+<link rel="stylesheet" href="./polish1730.css">
+<link rel="stylesheet" href="./navigation1740.css">
+<link rel="stylesheet" href="./header1741.css">
+<link rel="stylesheet" href="./yourworld18.css">
+<link rel="stylesheet" href="./watch181.css">
+  <link rel="stylesheet" href="./fan182.css">
+<link rel="stylesheet" href="./media183.css">
+<link rel="stylesheet" href="./living184.css">
+<link rel="stylesheet" href="./profile185.css">
+<link rel="stylesheet" href="./connectivity185.css">
+<link rel="stylesheet" href="./experience186.css">
+<link rel="stylesheet" href="./covers1861.css">
+  <link rel="stylesheet" href="./health19.css">
+<link rel="stylesheet" href="./wellbeing193.css">
+<link rel="stylesheet" href="./training193.css">
+<link rel="stylesheet" href="./import193.css">
+</head>
+<body>
+  <a class="skip-link" href="#authTitle">Skip to main content</a>
+  <section id="authGate" class="auth-gate" aria-labelledby="authTitle">
+    <div class="auth-scene">
+      <a class="brand auth-scene-brand" href="#signin" aria-label="Rowanvale home"><span class="brand-mark"><img src="./assets/rowanvale-mark.svg" alt=""></span><span><strong>Rowanvale</strong><small>PLAY. GROW. UNWIND.</small></span></a>
+      <div class="auth-scene-copy">
+        <div class="auth-early-tag"><span class="auth-status-pulse" aria-hidden="true"></span> A SPACE THAT FEELS LIKE YOURS</div>
+        <h2>A softer place to <em>play, grow, and unwind.</em></h2>
+        <p>Your games, goals, friends, and quiet moments belong together. Come as you are. Stay as long as you like.</p>
+        <div class="auth-identity-stage" aria-hidden="true">
+          <div class="auth-stage-orbit"></div>
+          <div class="auth-stage-center">✦</div>
+          <div class="auth-stage-chip auth-stage-games"><span>◈</span><b>Your collection</b><small>Find your next favorite</small></div>
+          <div class="auth-stage-chip auth-stage-quests"><span>✳</span><b>Quest Circuit</b><small>Progress at your pace</small></div>
+          <div class="auth-stage-chip auth-stage-space"><span>◎</span><b>Personal Canvas</b><small>Your corner of the web</small></div>
+        </div>
+      </div>
+      <div class="auth-scene-foot"><span>YOUR SPACE · YOUR PACE</span><span>ROWANVALE 19.3.0</span></div>
+    </div>
+    <div class="auth-entry">
+      <div class="auth-card">
+        <div class="auth-card-top"><span class="auth-label"><span class="auth-label-dot"></span> YOUR OWN LITTLE CORNER</span><span class="auth-card-edition">PRIVATE ON THIS DEVICE</span></div>
+        <div id="authLanding" class="auth-screen">
+          <p class="eyebrow">WELCOME HOME</p>
+          <h1 id="authTitle">A life in stories.<br><em>A world of your own.</em></h1>
+          <p class="auth-copy">Games, books, films and little moments of calm. Build a collection, make your atlas, and find a corner that feels like you.</p>
+          <div class="auth-primary-actions">
+            <button class="button button-primary auth-big-button" id="authGetStarted" type="button">Create my space <span aria-hidden="true">→</span></button>
+            <button class="auth-skip-button" id="authSkipIntro" type="button">Explore on this device →</button>
+          </div>
+          <div class="auth-divider"><span>ALREADY USED ROWANVALE HERE?</span></div>
+          <div class="auth-return-card" id="authReturnCard" hidden><span class="auth-return-icon" aria-hidden="true">✦</span><span class="auth-return-label"><strong id="authReturnName">Your local space</strong><small>Continue your saved workspace on this browser</small></span><button type="button" class="button button-primary" id="authContinueSaved">Continue →</button></div>
+          <p class="auth-entry-caption">Or enter a display name to open a local space. No password or online account is needed.</p>
+          <form id="localSignInForm" class="auth-form" onsubmit="return window.vytronSignInFallback(event)">
+            <div class="auth-form-grid">
+              <label for="signInName">Display name<input id="signInName" name="name" maxlength="40" autocomplete="nickname" placeholder="Your name or handle" required></label>
+              <label for="signInEmail">Email address <span class="auth-optional">Optional · never verified</span><input id="signInEmail" name="email" type="email" autocomplete="email" placeholder="Optional" ></label>
+            </div>
+            <button class="button button-quiet auth-submit" type="submit">Open local space <span aria-hidden="true">→</span></button>
+          </form>
+        </div>
+        <div id="authWizard" class="auth-screen auth-wizard" hidden aria-labelledby="authWizardTitle">
+          <div class="auth-wizard-heading"><button type="button" class="auth-back-link" id="authWizardExit">← Back</button><div id="authStepLabel" aria-live="polite">STEP 1 OF 3</div></div>
+          <div class="auth-step-tracks" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+          <h1 id="authWizardTitle">Create your corner.</h1>
+          <p class="auth-copy" id="authStepDescription">Start with the name that feels right to you.</p>
+          <form id="authWizardForm" novalidate>
+            <div class="auth-wizard-step" data-onboard-step="0">
+              <div class="auth-preview-identity"><span id="authPreviewAvatar">✦</span><div><b id="authPreviewName">Your Orbit</b><small id="authPreviewTagline">Your corner of the universe</small></div></div>
+              <label for="onboardName" class="auth-field-label">Display name <span>Required</span></label>
+              <input id="onboardName" maxlength="40" autocomplete="nickname" required placeholder="e.g. Sacred, Nova, Pixel...">
+              <label for="onboardTagline" class="auth-field-label">Profile tagline <span>Optional</span></label>
+              <input id="onboardTagline" maxlength="100" placeholder="The vibe you're bringing">
+              <label for="onboardAvatar" class="auth-field-label">Avatar symbol <span>Optional</span></label>
+              <select id="onboardAvatar"><option value="✦">✦ Star</option><option value="🎮">🎮 Gamer</option><option value="🌙">🌙 Moon</option><option value="⚡">⚡ Lightning</option><option value="🪐">🪐 Orbit</option><option value="🌸">🌸 Blossom</option><option value="🔥">🔥 Flame</option></select>
+            </div>
+            <div class="auth-wizard-step" data-onboard-step="1" hidden>
+              <p class="auth-step-subtitle">Choose your starting atmosphere. You can redesign everything later in Profile Studio.</p>
+              <div class="auth-theme-grid" role="radiogroup" aria-label="Choose your starter theme">
+                <button class="auth-theme-option selected" type="button" data-onboard-theme="rowan" role="radio" aria-checked="true"><span class="auth-theme-preview theme-rowan"></span><b>Forest Dusk</b><small>Warm and grounded</small></button>
+                <button class="auth-theme-option" type="button" data-onboard-theme="afterglow" role="radio" aria-checked="false"><span class="auth-theme-preview theme-afterglow"></span><b>Afterglow</b><small>Midnight + mint</small></button>
+                <button class="auth-theme-option" type="button" data-onboard-theme="redline" role="radio" aria-checked="false"><span class="auth-theme-preview theme-redline"></span><b>Redline</b><small>Classic ember</small></button>
+                <button class="auth-theme-option" type="button" data-onboard-theme="indigo" role="radio" aria-checked="false"><span class="auth-theme-preview theme-indigo"></span><b>Dreamscape</b><small>Violet dusk</small></button>
+                <button class="auth-theme-option" type="button" data-onboard-theme="moss" role="radio" aria-checked="false"><span class="auth-theme-preview theme-moss"></span><b>Moss Glow</b><small>Forest neon</small></button>
+              </div>
+              <label class="auth-toggle-row" for="onboardReduceMotion"><input id="onboardReduceMotion" type="checkbox"><span><b>Keep things still</b><small>Reduce animated interface effects</small></span></label>
+            </div>
+            <div class="auth-wizard-step" data-onboard-step="2" hidden>
+              <p class="auth-step-subtitle">What belongs in your universe? Choose anything that sounds like you, or leave these blank.</p>
+              <div class="auth-interest-grid" aria-label="Select profile interests">
+                <label><input type="checkbox" value="Gaming" checked><span>🎮 Gaming</span></label>
+                <label><input type="checkbox" value="RPGs"><span>🗡️ RPGs</span></label>
+                <label><input type="checkbox" value="Competition"><span>🏆 Competition</span></label>
+                <label><input type="checkbox" value="Cozy games"><span>🌿 Cozy games</span></label>
+                <label><input type="checkbox" value="Fitness"><span>💪 Fitness</span></label>
+                <label><input type="checkbox" value="Music"><span>🎧 Music</span></label>
+                <label><input type="checkbox" value="Creativity"><span>🎨 Creativity</span></label>
+                <label><input type="checkbox" value="Wellness"><span>🌙 Wellness</span></label>
+              </div>
+              <p class="auth-privacy-tip">Your choices stay on this device. There's no verified online account or shared profile until you set up a supported service separately.</p>
+            </div>
+            <p id="authWizardError" class="auth-wizard-error" role="alert" hidden></p>
+            <div class="auth-wizard-actions"><button id="authWizardPrev" type="button" class="button button-quiet" hidden>← Previous</button><button id="authWizardNext" class="button button-primary" type="button">Continue →</button><button id="authWizardFinish" class="button button-primary" type="submit" hidden>Open my Rowanvale ↗</button></div>
+          </form>
+          <button type="button" class="auth-wizard-skip" id="authWizardSkip">Skip for now, enter as guest</button>
+        </div>
+        <div class="auth-device-notice"><span aria-hidden="true">◇</span><p><b>Private device mode</b> · Your saved progress stays in this browser by default. This is a local profile, not a secure sign-in. Anyone with access to this browser profile can open its data. Cloud accounts and cross-device sync require separate setup.</p></div>
+      </div>
+      <div class="auth-entry-footer">YOUR SPACE, YOUR RULES <span>✦</span> TAKE YOUR TIME</div>
+    </div>
+  </section>
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar lw-sidebar" id="appSidebar" aria-label="Rowanvale navigation">
+      <div class="lw-sidehead sidebar-head">
+        <a class="brand lw-brand" href="#dashboard" aria-label="Rowanvale home">
+          <span class="brand-mark"><img src="./assets/rowanvale-mark.svg" alt=""></span>
+          <span class="brand-wordmark"><strong>Rowanvale</strong><small>PLAY · GROW · UNWIND</small></span>
+        </a>
+        <button class="sidebar-collapse" id="sidebarToggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse or expand navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M9 9l3 3-3 3"/></svg></button>
+      </div>
+      <nav class="rv-primary-nav" aria-label="Main places">
+        <button type="button" class="rv-area-button" data-rv-area="today" aria-label="Today and Home"><span class="rv-area-icon" aria-hidden="true">⌂</span><span class="rv-area-label">Today<small>Your home</small></span></button>
+        <button type="button" class="rv-area-button" data-rv-area="games" aria-label="Games"><span class="rv-area-icon" aria-hidden="true">♧</span><span class="rv-area-label">Games &amp; Media<small>Your story universe</small></span></button>
+        <button type="button" class="rv-area-button" data-rv-area="balance" aria-label="Balance"><span class="rv-area-icon" aria-hidden="true">☾</span><span class="rv-area-label">Balance<small>Focus and wellbeing</small></span></button>
+        <button type="button" class="rv-area-button" data-rv-area="people" aria-label="People"><span class="rv-area-icon" aria-hidden="true">♧</span><span class="rv-area-label">People<small>Friends and links</small></span></button>
+        <button type="button" class="rv-area-button" data-rv-area="studio" aria-label="Studio"><span class="rv-area-icon" aria-hidden="true">✦</span><span class="rv-area-label">Studio<small>Make it yours</small></span></button>
+      </nav>
+      <div class="rv-area-title" id="rvAreaTitle" aria-live="polite">YOUR HOME</div>
+      <div class="lw-utility-row shell-shortcuts" role="group" aria-label="Find things and quick tools">
+        <button type="button" class="shell-shortcut lw-find" data-action="open-command" title="Search everywhere, Ctrl K" aria-label="Search the whole app"><span class="shortcut-glyph">⌕</span><span class="shortcut-label">Find anything</span><kbd>Ctrl K</kbd></button>
+        <button type="button" class="shell-shortcut lw-pulse" data-action="open-pulse" aria-label="Open Pulse Deck" title="Quick actions"><span class="shortcut-glyph">✳</span><span class="shortcut-label">Quick</span></button>
+      </div>
+      <div class="lw-filter-wrap"><label class="sr-only" for="lwSidebarSearch">Filter sidebar destinations</label><span aria-hidden="true">⌕</span><input id="lwSidebarSearch" type="search" placeholder="Find a page…" autocomplete="off" spellcheck="false"><button id="lwClearSearch" type="button" aria-label="Clear sidebar search" title="Clear sidebar search" hidden>×</button></div>
+      <div class="sidebar-nav-scroll" id="lwNavScroll" tabindex="-1">
+        <div class="lw-pin-block" id="lwPinBlock"><div class="lw-blockhead"><span>YOUR SHORTCUTS</span><button type="button" id="lwEditPins" title="Choose your quick links" aria-label="Edit quick shortcuts">Edit</button></div><nav class="lw-pinned" id="lwPinned" aria-label="Your chosen shortcuts"></nav></div>
+        <div class="sidebar-pinned"><div class="lw-blockhead lw-browse-title"><span>YOUR PLACES</span></div><nav class="nav-list" id="sideNav" aria-label="Start here">
+          <button class="nav-item" data-view="myday"><span class="nav-icon" aria-hidden="true">☀</span><span class="nav-label">Today</span></button>
+          <button class="nav-item" data-view="dashboard"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Home base</span></button>
+        </nav></div>
+        <div class="sidebar-group-stack" id="hb12NavGroups">
+          <details class="nav-section" data-nav-section="games" open><summary class="side-label" data-short="PLAY"><span><span class="lw-group-symbol" aria-hidden="true">◇</span> Games &amp; Media</span><span class="nav-chevron" aria-hidden="true">⌄</span></summary><nav class="nav-list" id="lwGamesNav" aria-label="Games and media">
+            <button class="nav-item" data-view="media"><span class="nav-icon" aria-hidden="true">✦</span><span class="nav-label">Games &amp; Media Hub</span></button>
+            <button class="nav-item" data-view="books"><span class="nav-icon" aria-hidden="true">▥</span><span class="nav-label">Books Directory</span></button>
+            <button class="nav-item" data-view="discover" data-hint="Browse games and find your next favorite."><span class="nav-icon" aria-hidden="true">⌕</span><span class="nav-label">Discover</span></button>
+            <button class="nav-item rv-watch-nav" data-view="watch"><span class="nav-icon" aria-hidden="true">▣</span><span class="nav-label">Movies, Anime & TV</span></button>
+            <button class="nav-item" data-view="fan"><span class="nav-icon" aria-hidden="true">✦</span><span class="nav-label">Fan Lounge</span></button>
+            <button class="nav-item" data-view="backlog" data-hint="Open your saved collection and play history."><span class="nav-icon" aria-hidden="true">▤</span><span class="nav-label">Collection</span><span class="nav-count" id="collectionNavCount">0</span></button>
+            <button class="nav-item" data-view="quests"><span class="nav-icon" aria-hidden="true">✧</span><span class="nav-label">Quest Circuit</span><span class="nav-count" id="questNavCount">0</span></button>
+          </nav></details>
+          <details class="nav-section" data-nav-section="reset" open><summary class="side-label" data-short="CARE"><span><span class="lw-group-symbol" aria-hidden="true">✳</span> Balance</span><span class="nav-chevron" aria-hidden="true">⌄</span></summary><nav class="nav-list" id="playNav" aria-label="Balance">
+            <button class="nav-item" data-view="fitness"><span class="nav-icon" aria-hidden="true">✺</span><span class="nav-label">Fitness & Movement</span></button>
+            <button class="nav-item" data-view="focus"><span class="nav-icon" aria-hidden="true">☾</span><span class="nav-label">Quiet Room</span></button>
+            <button class="nav-item" data-view="wellness"><span class="nav-icon" aria-hidden="true">☼</span><span class="nav-label">Reset Studio</span></button>
+            <button class="nav-item" data-view="resources"><span class="nav-icon" aria-hidden="true">▧</span><span class="nav-label">Offline Guides</span></button>
+          </nav></details>
+          <details class="nav-section" data-nav-section="social"><summary class="side-label" data-short="CREW"><span><span class="lw-group-symbol" aria-hidden="true">♡</span> People</span><span class="nav-chevron" aria-hidden="true">⌄</span></summary><nav class="nav-list" id="socialNav" aria-label="People">
+            <button class="nav-item" data-view="clubhouse"><span class="nav-icon" aria-hidden="true">♜</span><span class="nav-label">Clubhouse</span></button>
+            <button class="nav-item" data-view="friends"><span class="nav-icon" aria-hidden="true">♧</span><span class="nav-label">Friends</span></button>
+            <button class="nav-item" data-view="connections"><span class="nav-icon" aria-hidden="true">⌁</span><span class="nav-label">Connections</span></button>
+            <button class="nav-item" data-view="space"><span class="nav-icon" aria-hidden="true">✦</span><span class="nav-label">Your Orbit</span></button>
+          </nav></details>
+          <details class="nav-section" data-nav-section="world"><summary class="side-label" data-short="STYLE"><span><span class="lw-group-symbol" aria-hidden="true">✿</span> Studio</span><span class="nav-chevron" aria-hidden="true">⌄</span></summary><nav class="nav-list" id="spaceNav" aria-label="Studio">
+            <button class="nav-item" data-view="customize"><span class="nav-icon" aria-hidden="true">◈</span><span class="nav-label">Profile Studio & Themes</span></button>
+          </nav></details>
+          <details class="nav-section" data-nav-section="tools"><summary class="side-label" data-short="HELP"><span><span class="lw-group-symbol" aria-hidden="true">⚙</span> Settings & Help</span><span class="nav-chevron" aria-hidden="true">⌄</span></summary><nav class="nav-list" id="toolNav" aria-label="Settings and help">
+            <button class="nav-item" data-view="safety"><span class="nav-icon" aria-hidden="true">♙</span><span class="nav-label">Data & Beta</span></button>
+            <button class="nav-item" data-view="updates"><span class="nav-icon" aria-hidden="true">⟳</span><span class="nav-label">Update Center</span><span class="update-dot" id="updateDot"></span></button>
+          </nav></details>
+        </div>
+        <p id="lwNoResults" class="lw-no-results" hidden>No pages match. Try another word.</p>
+      </div>
+      <nav class="rv-rail-tools" aria-label="Utilities">
+        <button type="button" class="rv-rail-tool" data-action="open-command" title="Search everything" aria-label="Search everything"><span aria-hidden="true">⌕</span><b>Search</b></button>
+        <button type="button" class="rv-rail-tool" data-action="open-pulse" title="Quick actions" aria-label="Open quick actions"><span aria-hidden="true">✧</span><b>Quick</b></button>
+        <button type="button" class="rv-rail-tool" data-view="safety" title="Data and backup" aria-label="Open data and backups"><span aria-hidden="true">▣</span><b>Backups</b></button>
+        <button type="button" class="rv-rail-tool" data-view="updates" title="Help and updates" aria-label="Open help and updates"><span aria-hidden="true">?</span><b>Help</b></button>
+      </nav>
+      <div class="rv-area-flyout" id="rvAreaFlyout" role="dialog" aria-modal="false" aria-label="Section pages" hidden><div class="rv-flyout-head"><b id="rvFlyoutTitle">Pages</b><button type="button" id="rvFlyoutClose" aria-label="Close section menu">×</button></div><div id="rvFlyoutLinks" class="rv-flyout-links"></div></div>
+      <div class="sidebar-bottom lw-footer">
+              <button class="workspace-chip lw-account" id="sidebarProfile" type="button" data-view="space" aria-label="Open your personal profile">
+        <span class="workspace-avatar" id="sidebarAvatarMark">✦</span>
+        <span class="workspace-copy"><b id="sidebarProfileName">Your place</b><small><span class="workspace-status-dot"></span> <span id="workspaceSaveText">Saved on this device</span></small></span>
+        <svg class="workspace-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+        <button class="shell-progress" type="button" data-view="quests" aria-label="View your level progress"><span class="shell-progress-heading"><span class="shell-progress-emblem">✦</span><span><small>YOUR JOURNEY</small><b id="shellPlayerLevel">Level 1 · Bronze</b></span><span class="shell-progress-arrow" aria-hidden="true">↗</span></span><span class="shell-progress-track" role="progressbar" aria-label="Progress toward next level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="shellLevelTrack"><i id="shellLevelFill" style="width:0%"></i></span><span class="shell-progress-stats"><small id="shellNextLevel">100 XP to level up</small><small id="shellWeeklyXP">0 XP this week</small></span></button>
+        <div class="mini-status"><span class="status-led"></span><span class="mini-status-copy"><b id="connectionLabel">Saved locally</b><small>Private to this browser</small></span></div>
+        <div class="sidebar-version"><span class="sidebar-version-label">ROWANVALE · BETA</span><span id="sidebarVersion">19.3.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar" aria-label="Workspace toolbar">
+        <div class="topbar-leading">
+          <div class="mobile-brand"><span class="brand-mark"><img src="./assets/rowanvale-mark.svg" alt=""></span><strong>Rowanvale</strong></div>
+          <div class="topbar-context">
+            <div class="topbar-context-kicker"><span class="rv173-place-pin" aria-hidden="true">✧</span><span>YOUR PLACE</span><span class="context-divider" aria-hidden="true">›</span><b id="pageCrumb">HOME BASE</b></div>
+          </div>
+        </div>
+        <button class="command-launch" id="commandLaunch" type="button" data-action="open-command" aria-label="Search your games, quests, friends and sections, shortcut Ctrl K" data-hint="Search all sections and common actions without hunting through menus."><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span class="command-launch-label">Search everything</span><kbd>Ctrl K</kbd></button>
+        <div class="top-actions"><button id="hb13WorkspaceOpen" type="button" class="hb13-workspace-launch" aria-haspopup="dialog" aria-controls="hb13WorkspaceDialog" title="Desktop workspace display settings"><span aria-hidden="true">▦</span><b>Workspace</b></button><button id="hb12ThemeOpen" type="button" class="hb12-appearance-top" data-action="hb12-theme-open" aria-label="Customize the whole app" title="Complete app themes and appearance">◈ <span>Appearance</span></button><button id="comfortToggle" type="button" class="hb13-comfort-toggle" data-action="toggle-comfort" aria-pressed="true" title="Toggle comfortable reading across Rowanvale">☼ Comfortable</button>
+          <div class="shell-level-pill" aria-label="Player level"><span class="shell-level-spark">✦</span><span id="topPlayerLevel">LVL 1</span></div>
+          <button class="hb11-pulse-trigger" data-action="open-pulse" type="button" aria-label="Open Pulse Deck" title="Open Pulse Deck (Alt P)">✳ <span>Pulse Deck</span></button>
+          <button class="hb12-undo-top" id="hb12UndoButton" data-action="hb12-undo" disabled type="button" aria-label="Undo last deletion" title="Undo last deletion">↶ <span>Undo</span></button><button class="focus-view-toggle" id="focusModeToggle" type="button" data-action="toggle-focus-mode" aria-pressed="true" title="Reduce dashboard clutter" data-hint="Keep only the most useful Home Base panels in view."><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3"/></svg><span id="focusModeLabel">Focus on</span></button>
+          <div class="topbar-divider" aria-hidden="true"></div>
+          <div class="date-pill" data-hint="A small timestamp to orient you—no streaks or daily pressure."><span class="date-icon" aria-hidden="true">◷</span><span id="todayLabel">YOUR DAY, YOUR PACE</span></div>
+          <button class="avatar-button" id="topAvatar" type="button" aria-label="Open Your Orbit" data-hint="Open your personal space and profile customization">✦</button>
+          <div class="shell-account-wrap">
+            <button class="shell-account-trigger" id="shellAccountToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="shellAccountMenu" aria-label="Open account menu" title="Account and settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></button>
+            <div id="shellAccountMenu" class="shell-account-menu" aria-label="Account actions" hidden>
+              <div class="shell-account-head"><span id="shellAccountAvatar">✦</span><span><b id="shellAccountName">Your space</b><small>Saved on this device</small></span></div>
+              <button type="button" data-view="space">✦ <span>Your Orbit</span><span aria-hidden="true">↗</span></button>
+              <button type="button" id="hb13WorkspaceMenuOpen">▦ <span>Desktop workspace</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-action="hb12-theme-open">◈ <span>App themes</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-view="customize">⚙ <span>Profile Studio</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-action="export">⇩ <span>Export backup</span><span aria-hidden="true">↗</span></button>
+              <div class="shell-menu-divider"></div>
+              <div class="rv173-menu-caption">COMFORT & QUICK TOOLS</div>
+              <button type="button" data-action="toggle-focus-mode"><span aria-hidden="true">◎</span><span>Toggle focus view</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-action="toggle-comfort"><span aria-hidden="true">☼</span><span>Toggle reading comfort</span><span aria-hidden="true">↗</span></button>
+              <button type="button" data-action="open-pulse"><span aria-hidden="true">✳</span><span>Open quick action deck</span><span aria-hidden="true">↗</span></button>
+              <div class="shell-menu-divider"></div>
+              <button class="signout-top" id="signOutTop" type="button" data-hint="Sign out of this device profile. Saved app data will be kept."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H10M14 8l4 4-4 4M18 12H9"/></svg><span>Sign out</span></button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="hb12-wayfinder" id="hb12Wayfinder" aria-label="Workspace areas and related pages"></div>
+      <aside class="content small-note" aria-label="Website storage notice" style="padding-block:10px;margin-block:0">Private website beta · collections and journals stay in this browser; cached artwork is stored on your private host. Moving from the desktop app? Import your JSON or artwork backup in Data &amp; Beta.</aside>
+      <div class="content" id="viewRoot" tabindex="-1"></div>
+      <footer class="footer"><span>PLAY. GROW. UNWIND. <span class="copyright-notice">© 2026 Rowanvale. All rights reserved.</span></span><span>ROWANVALE <b id="footerVersion">19.3.0</b></span></footer>
+    </main>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Quick navigation">
+    <button class="active" data-view="myday"><span>☀</span><small>My Day</small></button>
+    <button data-view="discover"><span>⌘</span><small>Discover</small></button>
+    <button data-view="backlog"><span>▤</span><small>Library</small></button>
+    <button data-view="fitness"><span>✺</span><small>Fitness</small></button>
+    <button data-view="wellness"><span>✧</span><small>Reset</small></button>
+    <button data-action="open-section-hub"><span>＋</span><small>More</small></button>
+  </nav>
+  <button class="guide-launcher" type="button" data-action="open-help" aria-label="Open Rowanvale Guide"><span>✦</span><b>Need a hand?</b></button>
+  <input type="file" id="rv16KitImport" accept=".json,application/json" hidden><input type="file" id="rv16LookImport" accept=".json,application/json" hidden>
+  <input type="file" id="importFile" accept=".json,application/json" hidden><input type="file" id="gamePackFile" accept=".json,.csv,application/json,text/csv" hidden><input type="file" id="libraryFile" accept=".json,.csv,application/json,text/csv" hidden><input type="file" id="spaceAvatarFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden><input type="file" id="spaceBannerFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden><input type="file" id="spaceGalleryFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden><input type="file" id="spaceBackgroundFile" accept="image/png,image/jpeg,image/webp,image/gif" hidden><input type="file" id="friendImportFile" accept=".json,application/json" hidden><div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="friendCardDialog" class="modal hb13-friend-dialog" aria-labelledby="friendCardTitle"><div class="modal-head"><div><span class="eyebrow">SHARED PROFILE CARD</span><h2 id="friendCardTitle">Add someone to your crew</h2></div><button class="icon-button" type="button" data-close-dialog="friendCardDialog" aria-label="Close profile preview">✕</button></div><div id="friendCardPreview" class="hb13-friend-preview"></div><p class="small-note">This card was created by whoever shared the link. Names are not verified and no live friend invitation is sent. Adding it only saves a local entry.</p><div class="inline-actions"><button class="button button-primary" type="button" data-action="friend-card-accept">Save to my friends</button><button class="button button-quiet" type="button" data-close-dialog="friendCardDialog">Not now</button></div></dialog>
+  <dialog id="hbMobileInstallDialog" class="modal hb-mobile-install-dialog" aria-labelledby="hbMobileInstallTitle">
+    <div class="modal-head"><div><span class="eyebrow">ROWANVALE IN YOUR POCKET</span><h2 id="hbMobileInstallTitle">Your mobile Rowanvale</h2></div><button class="icon-button" type="button" data-close-dialog="hbMobileInstallDialog" aria-label="Close mobile guide">✕</button></div>
+    <div class="hb-mobile-install-intro"><img src="./assets/icon-192.png" alt="Rowanvale app icon"><div><b>One app. Your whole space.</b><p>Keep your games, Quiet Room, wellness tools and personal dashboard close, with the same themes you love.</p></div></div>
+    <p id="hbMobileInstallStatus" class="hb-mobile-status" role="status">Checking this device…</p>
+    <div class="hb-mobile-install-steps" id="hbMobileInstallSteps"></div>
+    <div class="hb-mobile-install-buttons"><button type="button" class="button button-primary" id="hbMobileInstallNow">Install Rowanvale</button><button type="button" class="button button-quiet" data-close-dialog="hbMobileInstallDialog">Not now</button></div>
+    <p class="small-note">Your profile is stored in this browser on this device. It does not sync with your PC automatically. Online searches require a connection. Secure HTTPS hosting is needed for reliable installation on a phone.</p>
+  </dialog>
+  <dialog id="lwPinDialog" class="modal lw-pin-dialog" aria-labelledby="lwPinTitle"><div class="modal-head"><div><span class="eyebrow">MAKE IT YOURS</span><h2 id="lwPinTitle">Your quick links</h2><p>Pick up to five favorite places. Everything else stays in Explore.</p></div><button type="button" id="lwPinClose" aria-label="Close shortcut editor">×</button></div><div id="lwPinOptions" class="lw-pin-options"></div><div class="inline-actions"><button type="button" class="button button-quiet" id="lwPinReset">Restore defaults</button><button type="button" class="button button-primary" id="lwPinDone">Done</button></div></dialog>
+  <dialog id="hb13WorkspaceDialog" class="modal hb13-workspace-dialog" aria-labelledby="hb13WorkspaceTitle">
+    <div class="modal-head"><div><span class="eyebrow">DESKTOP DISPLAY</span><h2 id="hb13WorkspaceTitle">Make room for what matters.</h2><p>Choose how much fits on screen. Your games, profile, and progress stay exactly as they are.</p></div><button class="icon-button" type="button" id="hb13WorkspaceClose" aria-label="Close desktop settings">✕</button></div>
+    <fieldset class="hb13-density-options"><legend>Workspace spacing</legend>
+      <label><input type="radio" name="hb13Density" value="relaxed"><span><strong>Roomy</strong><small>More breathing room and larger spacing</small></span></label>
+      <label><input type="radio" name="hb13Density" value="balanced" checked><span><strong>Balanced</strong><small>Comfortable reading without wasted space</small></span></label>
+      <label><input type="radio" name="hb13Density" value="compact"><span><strong>Compact</strong><small>More on screen, less scrolling</small></span></label>
+    </fieldset>
+    <label class="hb13-workspace-switch"><input type="checkbox" id="hb13SectionMap" checked><span><strong>Show section map</strong><small>Keep related destinations below the toolbar. Turn off for a quieter desktop.</small></span></label>
+    <p class="small-note">Your choice is saved in this browser. App themes, profile styling, and Comfort & Control still work independently.</p>
+    <div class="modal-actions"><button class="button button-primary" type="button" id="hb13WorkspaceDone">Done</button></div>
+  </dialog>
+  <button type="button" id="hb13BackTop" class="hb13-back-top" aria-label="Back to the top of this page" title="Back to top">↑ <span>Top</span></button>
+  <dialog id="sectionHubDialog" class="modal section-hub-dialog">
+    <div class="modal-head"><div><span class="eyebrow">THE QUICK PORTAL</span><h2>Where to next?</h2><p class="small-note">All sections, clearly grouped. Or press Ctrl K from anywhere to jump.</p></div><button class="icon-button" type="button" data-close-dialog="sectionHubDialog" aria-label="Close">✕</button></div>
+    <div class="hb-mobile-hub-banner"><span aria-hidden="true">📱</span><span><b>Rowanvale Mobile</b><small>Set up your phone home screen and offline access</small></span><button type="button" class="button button-quiet" id="hbMobileInstallFromHub">Setup</button></div>
+    <div class="section-hub-grid hb12-hub-groups">
+      <section class="hb12-hub-group"><h3>Your day</h3><div class="hb12-hub-items"><button class="section-hub-item" data-view="myday"><span>☀</span><b>My Day</b><small>Your everyday hub</small></button><button class="section-hub-item" data-view="dashboard"><span>◈</span><b>Home Base</b><small>Your overview and shortcuts</small></button></div></section>
+      <section class="hb12-hub-group"><h3>Play & progress</h3><div class="hb12-hub-items"><button class="section-hub-item" data-view="media"><span>✦</span><b>Games &amp; Media Hub</b><small>Five worlds, one collection</small></button><button class="section-hub-item" data-view="books"><span>▥</span><b>Books Directory</b><small>Find a book and log reading XP</small></button><button class="section-hub-item" data-view="discover"><span>⌘</span><b>Discover</b><small>Search the local game archive</small></button><button class="section-hub-item" data-view="fan"><span>✦</span><b>Fan Lounge</b><small>Offline titles &amp; nights together</small></button><button class="section-hub-item" data-view="watch"><span>▣</span><b>Movies, Anime & TV</b><small>Your local watchlist</small></button><button class="section-hub-item" data-view="backlog"><span>▤</span><b>Collection</b><small>Wishlist, backlog, history</small></button><button class="section-hub-item" data-view="quests"><span>✳</span><b>Quests</b><small>Small wins and plans</small></button></div></section>
+      <section class="hb12-hub-group"><h3>Body & balance</h3><div class="hb12-hub-items"><button class="section-hub-item" data-view="fitness"><span>✺</span><b>Fitness & movement</b><small>Plans and activity log</small></button><button class="section-hub-item" data-view="focus"><span>◷</span><b>Quiet Room</b><small>Focus without pressure</small></button><button class="section-hub-item" data-view="wellness"><span>✧</span><b>Reset Studio</b><small>Mood, grounding, reflection</small></button><button class="section-hub-item" data-view="resources"><span>▦</span><b>Offline Guides</b><small>Recipes and movement starters</small></button></div></section>
+      <section class="hb12-hub-group"><h3>People & identity</h3><div class="hb12-hub-items"><button class="section-hub-item" data-view="space"><span>✦</span><b>Your Orbit</b><small>Personal profile and favorites</small></button><button class="section-hub-item" data-view="clubhouse"><span>♜</span><b>Clubhouse</b><small>Game nights and quest kits</small></button><button class="section-hub-item" data-view="friends"><span>♧</span><b>Friends</b><small>Your private play roster</small></button><button class="section-hub-item" data-view="connections"><span>⛓</span><b>Connections</b><small>Platforms and music</small></button></div></section>
+      <section class="hb12-hub-group"><h3>Make it yours</h3><div class="hb12-hub-items"><button class="section-hub-item" data-view="customize"><span>⚙</span><b>Profile Studio</b><small>Appearance and preferences</small></button><button class="section-hub-item" data-view="safety"><span>♙</span><b>Data & Beta</b><small>Backup, recovery, beta tips</small></button><button class="section-hub-item" data-view="updates"><span>↻</span><b>Update Center</b><small>Build and reliability</small></button></div></section>
+    </div>
+  </dialog>
+  <dialog id="commandDialog" class="modal command-dialog" aria-labelledby="commandTitle">
+    <div class="modal-head"><div><span class="eyebrow">ROWANVALE QUICK JUMP</span><h2 id="commandTitle">Go where you need to go.</h2><p class="small-note">Find games, quests, friends, meals, workouts, and sections.</p></div><button class="icon-button" type="button" data-close-dialog="commandDialog" aria-label="Close">✕</button></div>
+    <label class="command-search-label" for="commandSearch">Search your Rowanvale<input id="commandSearch" class="field-input" type="search" autocomplete="off" placeholder="Try “fitness”, “games”, or “profile”…"></label>
+    <div id="commandResults" class="command-results" role="listbox" aria-label="Navigation results"></div>
+    <p class="small-note command-footnote">Keyboard shortcut: Ctrl K / ⌘ K</p>
+  </dialog>
+  <dialog id="guideDialog" class="modal guide-dialog" aria-labelledby="guideTitle">
+    <div class="modal-head"><div><span class="eyebrow">A LITTLE HELP, WITHOUT JUDGMENT</span><h2 id="guideTitle">Rowanvale Guide</h2><p class="small-note">Tell me what you’re trying to do. I’ll point you toward a useful next step.</p></div><button class="icon-button" type="button" data-close-dialog="guideDialog" aria-label="Close">✕</button></div>
+    <label class="guide-question-label" for="guideQuestion">What would help right now?<input id="guideQuestion" class="field-input" type="text" maxlength="180" autocomplete="off" placeholder="e.g. I feel overwhelmed, find a co-op game, build a workout…"></label>
+    <div class="guide-prompts"><button class="filter-chip" data-action="guide-topic" data-value="I'm overwhelmed and need one small next step">I feel overwhelmed</button><button class="filter-chip" data-action="guide-topic" data-value="Help me find a game">Find a game</button><button class="filter-chip" data-action="guide-topic" data-value="Help me start fitness">Start moving</button><button class="filter-chip" data-action="guide-topic" data-value="Help me personalize my profile">Make it mine</button></div>
+    <div id="guideResponse" class="guide-response" aria-live="polite"></div>
+    <p class="small-note guide-disclaimer">This guide uses local, rule-based suggestions; it is not a live AI, clinician, or emergency service. Your question stays in this browser.</p>
+  </dialog>
+  <dialog id="foodLogDialog" class="modal hb-nutri-dialog"><form id="foodLogForm" method="dialog">
+   <div class="modal-head"><div><span class="eyebrow">YOUR PRIVATE DIARY</span><h2>Log food</h2><p class="small-note">Enter nutrition per serving. Rowanvale multiplies by the number of servings.</p></div><button class="icon-button" type="button" data-close-dialog="foodLogDialog" aria-label="Close">✕</button></div>
+   <label>Food name<input id="foodName" maxlength="100" required placeholder="e.g. eggs and toast"></label>
+   <div class="form-grid"><label>Meal<select id="foodMeal"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option></select></label><label>Date<input type="date" id="foodDate" required></label></div>
+   <div class="form-grid"><label>Serving description<input id="foodServingLabel" maxlength="60" value="serving" required></label><label>Number of servings<input id="foodServings" type="number" min="0.1" max="100" step="0.1" value="1" required></label></div>
+   <div class="form-grid"><label>Calories per serving (kcal)<input type="number" id="foodCalories" min="0" max="10000" step="0.1" value="0" required></label><label>Protein (g)<input type="number" id="foodProtein" min="0" max="10000" step="0.1" value="0" required></label><label>Carbs (g)<input type="number" id="foodCarbs" min="0" max="10000" step="0.1" value="0" required></label><label>Fat (g)<input type="number" id="foodFat" min="0" max="10000" step="0.1" value="0" required></label></div>
+   <div class="modal-actions"><button class="button button-quiet" type="button" data-close-dialog="foodLogDialog">Cancel</button><button class="button button-primary" type="submit">Save food</button></div>
+  </form></dialog>
+  <dialog id="barcodeDialog" class="modal"><form id="barcodeForm" method="dialog"><div class="modal-head"><div><span class="eyebrow">OPEN FOOD FACTS</span><h2>Find food by barcode</h2><p class="small-note">Printed barcode lookup, not camera scanning. Always verify nutrition on the package.</p></div><button class="icon-button" type="button" data-close-dialog="barcodeDialog" aria-label="Close">✕</button></div><label>Barcode (8–14 digits)<input id="barcodeCode" inputmode="numeric" pattern="[0-9]{8,14}" maxlength="14" required placeholder="Enter barcode"></label><p role="status" class="small-note" id="barcodeStatus"></p><div class="modal-actions"><button type="button" class="button button-quiet" data-close-dialog="barcodeDialog">Cancel</button><button type="submit" class="button button-primary">Find product</button></div></form></dialog>
+  <dialog id="workoutPlanDialog" class="modal"><form id="workoutPlanForm" method="dialog"><div class="modal-head"><div><span class="eyebrow">REPEATABLE & FLEXIBLE</span><h2 id="planDialogTitle">Build a workout routine</h2><input type="hidden" id="planId"></div><button type="button" class="icon-button" data-close-dialog="workoutPlanDialog" aria-label="Close">✕</button></div><label>Routine name<input id="planName" maxlength="100" required placeholder="Full body basics"></label><label>Movements · sets · reps · rest<textarea id="planMoves" maxlength="1000" rows="5" required placeholder="Squat: 2×8, comfortable range&#10;Row: 2×10&#10;Easy walk: 5 minutes"></textarea></label><label>Optional note<textarea id="planNote" rows="2" maxlength="300" placeholder="Equipment or modifications"></textarea></label><div class="modal-actions"><button class="button button-quiet" type="button" data-close-dialog="workoutPlanDialog">Cancel</button><button class="button button-primary" id="planSaveButton" type="submit">Save routine</button></div></form></dialog>
+  <dialog id="fitnessLogDialog" class="modal fitness-log-dialog">
+    <form id="fitnessLogForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">MOVEMENT, YOUR WAY</span><h2 id="fitnessDialogTitle">Log a movement session</h2><input type="hidden" id="fitnessId"><p class="small-note">Manual logging only. No GPS, heart rate, or body data is collected.</p></div><button class="icon-button" type="button" data-close-dialog="fitnessLogDialog" aria-label="Close">✕</button></div>
+      <div class="form-grid"><label>Date of session<input type="date" id="fitnessDate" required></label><label>Session name<input id="fitnessTitle" maxlength="100" required placeholder="A walk around the block"></label></div>
+      <div class="form-grid"><label>Movement type<select id="fitnessActivity"><option>Walking</option><option>Cardio</option><option>Strength</option><option>Mobility</option><option>Yoga</option><option>Dance</option><option>Sport</option><option>Recovery</option><option>Other</option></select></label><label>Minutes<input id="fitnessMinutes" type="number" min="1" max="600" value="15" required></label></div>
+      <label>How did it feel? <select id="fitnessEffort"><option value="Easy">Easy / restorative</option><option value="Steady" selected>Steady / comfortable</option><option value="Challenging">Challenging but manageable</option><option value="Hard">Hard effort</option></select></label>
+      <label>Optional note<textarea id="fitnessNote" rows="2" maxlength="300" placeholder="What felt good? Anything to adjust next time?"></textarea></label>
+      <div class="modal-actions"><button class="button button-quiet" type="button" data-close-dialog="fitnessLogDialog">Cancel</button><button class="button button-primary" id="fitnessSaveButton" type="submit">Save session</button></div>
+    </form>
+  </dialog>
+  <dialog id="hb11PulseDialog" class="modal hb11-pulse-dialog" aria-label="Rowanvale Pulse Deck">
+    <div class="modal-head"><div><span class="eyebrow">ROWANVALE / QUICK PORTAL</span><h2>Pulse Deck</h2><p class="small-note">Your next destination, one touch away. Shortcut: Alt P.</p></div><button class="icon-button" data-close-dialog="hb11PulseDialog" type="button" aria-label="Close Pulse Deck">✕</button></div>
+    <div id="hb11PulseContent"></div>
+  </dialog>
+  <dialog id="questDialog" class="modal">
+    <form id="questForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">NEW OBJECTIVE</span><h2 id="questDialogTitle">Create a quest</h2></div><button class="icon-button" type="button" data-close-dialog="questDialog" aria-label="Close">✕</button></div>
+      <input type="hidden" id="questId">
+      <label>Quest title<input id="questTitle" maxlength="120" required placeholder="e.g. Clear the desk for 5 minutes"></label>
+      <div class="form-grid"><label>Category<select id="questCategory"><option>Personal</option><option>Work</option><option>Learning</option><option>Wellness</option><option>Gaming</option><option>Home</option><option>Fitness</option><option>Focus</option><option>Social</option></select></label><label>XP reward<select id="questXP"><option value="10">10 XP · Tiny</option><option value="20" selected>20 XP · Standard</option><option value="35">35 XP · Stretch</option><option value="50">50 XP · Big effort</option></select></label></div>
+      <label>Repeat schedule<select id="questRepeat"><option value="none">One-time</option><option value="daily">Daily reset</option><option value="weekly">Weekly reset</option></select></label>
+      <label>Optional note<textarea id="questNote" rows="3" maxlength="500" placeholder="What would make this easier to start?"></textarea></label>
+      <div class="modal-actions"><button class="button button-quiet" type="button" data-close-dialog="questDialog">Cancel</button><button class="button button-primary" type="submit">Save quest <span>↗</span></button></div>
+    </form>
+  </dialog>
+  <dialog id="backlogDialog" class="modal">
+    <form id="backlogForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">YOUR RITUALS LIBRARY</span><h2>Add to your backlog</h2></div><button class="icon-button" type="button" data-close-dialog="backlogDialog" aria-label="Close">✕</button></div>
+      <label>Title<input id="backlogTitle" required maxlength="140" placeholder="Game, movie, or anime"></label>
+      <div class="form-grid"><label>Type<select id="backlogType"><option>Game</option><option>Movie</option><option>Anime</option><option>Show</option><option>Book</option></select></label><label>Status<select id="backlogStatus"><option>Want to Try</option><option>In Progress</option><option>Finished</option></select></label></div>
+      <label>Optional note<input id="backlogNote" maxlength="240" placeholder="Why it caught your eye"></label>
+      <div class="modal-actions"><button class="button button-quiet" type="button" data-close-dialog="backlogDialog">Cancel</button><button class="button button-primary" type="submit">Add item <span>↗</span></button></div>
+    </form>
+  </dialog>
+  <script src="./catalog-extra.js" defer></script>
+  <script src="./rowanvale16.js" defer></script>
+  <script src="./rowanvale161.js" defer></script>
+  <script src="./rowanvale162.js" defer></script>
+  <script src="./rowanvale163.js" defer></script>
+  <script src="./rowanvale17.js" defer></script>
+  <script src="./rowanvale17calm.js" defer></script>
+  <script src="./rowanvale171.js" defer></script>
+  <script src="./rowanvale172.js" defer></script>
+  <script src="./offline-directory182.js" defer></script>
+  <script src="./night19.js" defer></script>
+<script src="./fan182.js" defer></script>
+<script src="./book-starters.js" defer></script>
+<script src="./media193-core.js" defer></script>
+<script src="./living-core.js" defer></script>
+<script src="./covers1861.js" defer></script>
+<script src="./library19.js" defer></script>
+<script src="./media193.js" defer></script>
+<script src="./living184.js" defer></script>
+<script src="./media183.js" defer></script>
+  <script src="./watch181.js" defer></script>
+  <script src="./yourworld18.js" defer></script>
+  <script src="./vendor/supabase-2.118.0.js" defer></script>
+<script src="./profile-core.js" defer></script>
+<script src="./enrichment-core.js" defer></script>
+<script src="./connection-core.js" defer></script>
+<script src="./title-index186.js" defer></script>
+<script src="./artwork-queue186.js" defer></script>
+<script src="./reset-core186.js" defer></script>
+<script src="./wellbeing-core193.js" defer></script>
+<script src="./wellbeing193.js" defer></script>
+<script src="./reset186.js" defer></script>
+<script src="./profile-layout186.js" defer></script>
+<script src="./experience186.js" defer></script>
+<script src="./profile185.js" defer></script>
+<script src="./connectivity185.js" defer></script>
+<script src="./health19.js" defer></script>
+<script src="./training-core193.js" defer></script>
+<script src="./training193.js" defer></script>
+<script src="./import-core193.js" defer></script>
+<script src="./import193.js" defer></script>
+<script src="./app.js" defer></script>
+  <script src="./mobile.js" defer></script>
+  <script src="./desktop.js" defer></script>
+  <script src="./liltwood.js" defer></script>
+  <script src="./rowanvale.js" defer></script>
+  <script src="./rowanvale173.js" defer></script>
+  <script src="./rowanvale1724.js" defer></script>
+  <script src="./sidebar-15-1.js" defer></script>
+<script src="./polish1730.js" defer></script>
+<script src="./navigation1740.js" defer></script>
+<script src="./header1741.js" defer></script>
+</body>
+</html>

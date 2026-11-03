@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-01T09:56:26.968Z",
+  "results": [
+    {
+      "name": "Quest create, edit and reload preserve title, note and reward",
+      "pass": true
+    },
+    {
+      "name": "Quest completion, reopen and recompletion reconcile XP without duplicate awards",
+      "pass": true
+    },
+    {
+      "name": "Quest deletion and undo restore the record and reconcile its XP",
+      "pass": true
+    },
+    {
+      "name": "Movement session create, edit and reload retain corrected duration and notes",
+      "pass": true
+    },
+    {
+      "name": "Movement deletion and undo retain the corrected session",
+      "pass": true
+    },
+    {
+      "name": "Food servings calculate saved nutrition totals; deletion and undo preserve entries",
+      "pass": true
+    },
+    {
+      "name": "Hydration quick adds persist exact amounts; deletion undo restores the entry",
+      "pass": true
+    },
+    {
+      "name": "My Day layout persists and its Movement shortcut reaches the saved activity",
+      "pass": true
+    },
+    {
+      "name": "Overview care check and reopen persist across reload",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

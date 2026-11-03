@@ -1,0 +1,6 @@
+/* Rowanvale: persistent, accessible storage feedback. */
+.rv-save-warning{position:sticky;top:0;z-index:80;margin:12px 24px;padding:14px 18px;border:1px solid #f0b778;border-radius:12px;background:#34291f;color:#fff0db;font:500 14px/1.6 system-ui,sans-serif;box-shadow:0 8px 24px #0004}
+.rv-save-warning[hidden]{display:none}
+body[data-save-blocked] .workspace-status-dot{background:#f0b778!important}
+@media(max-width:600px){.rv-save-warning{margin:8px;padding:12px;position:relative}dialog.modal{max-height:90dvh;overflow-y:auto}dialog .modal-actions .button{min-height:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.rv-save-warning{animation:none!important}}

@@ -1,0 +1,26 @@
+{
+  "name": "rowanvale",
+  "version": "19.3.0",
+  "private": true,
+  "description": "Rowanvale 19.3.0 \u2014 Your World Together Beta",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node app/server.js",
+    "test": "node tests/run-tests.cjs",
+    "test:browser": "node tests/run-tests.cjs --browser",
+    "check": "node tests/check-source.cjs",
+    "build": "node tests/check-source.cjs --build",
+    "format:check": "prettier --check app/profile-core.js app/enrichment-core.js app/connection-core.js app/profile185.js app/connectivity185.js app/profile185.css app/connectivity185.css tests/profile_connectivity.test.cjs tests/profile_browser.cjs tests/connectivity_browser.cjs app/artwork-queue186.js app/reset-core186.js app/reset186.js app/experience186.js app/profile-layout186.js app/experience186.css tests/experience186.test.cjs tests/experience186_browser.cjs app/title-index186.js tests/catalog-audit186.cjs app/covers1861.js app/covers1861.css app/cover-service1861.js tests/covers1861.test.cjs tests/covers1861_browser.cjs tests/covers_server1861.test.cjs tests/covers1861_live.cjs tests/launch1861_browser.cjs tests/browser-runtime.cjs app/library19.js app/night19.js app/health19.js app/health19.css",
+    "catalog:audit": "node tests/catalog-audit186.cjs",
+    "test:live-covers": "node tests/covers1861_live.cjs",
+    "start:hosted": "node hosting/server.cjs",
+    "test:hosting": "node --test hosting/server.test.cjs",
+    "test:hosting:browser": "node hosting/browser.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "prettier": "3.9.10"
+  }
+}

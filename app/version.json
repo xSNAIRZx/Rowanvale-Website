@@ -1,0 +1,15 @@
+{
+  "version": "19.3.0",
+  "channel": "beta",
+  "name": "Rowanvale Beta 19.3 — More of Your World",
+  "released": "2026-11-02",
+  "releaseNotes": "Trust repairs, recoverable workouts and quiet sessions, private history, detailed media tracking and reviewed local imports.",
+  "changes": [
+    "Search opens the correct saved media title; reviewed CSV/JSON imports preserve editions and paused statuses",
+    "Journals and activity history no longer silently discard older records",
+    "Recoverable structured workouts with sets, units, routines and optional rest timer",
+    "Search, edit, export and undo private wellbeing history; recover Quiet Room sessions",
+    "Dated media diaries, season and episode logs, book editions, copies and rereads",
+    "Guest access and setup checks make suggested group lineups more useful"
+  ]
+}

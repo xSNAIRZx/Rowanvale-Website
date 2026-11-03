@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-01T10:17:47.662Z",
+  "environment": "Headless Chrome on this Windows PC, 1440×1000; local server; external requests blocked; service workers disabled; three fresh contexts. Not CPU/network throttled. Timings include two paint frames for navigation/search and are observations, not universal budgets.",
+  "records": 2000,
+  "runs": [
+    {
+      "coldShellMs": 321,
+      "reload2000Ms": 577,
+      "navigationMs": 103,
+      "searchMs": 19
+    },
+    {
+      "coldShellMs": 262,
+      "reload2000Ms": 471,
+      "navigationMs": 86,
+      "searchMs": 17
+    },
+    {
+      "coldShellMs": 239,
+      "reload2000Ms": 470,
+      "navigationMs": 84,
+      "searchMs": 16
+    }
+  ]
+}
