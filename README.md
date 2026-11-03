@@ -1,6 +1,6 @@
 # Rowanvale 19.3 — runnable private website starter
 
-This package contains the actual Beta 19.3 app plus a working hosted entry point, not only a prompt. The visual redesign is still pending your direction choice. Give your implementation AI the entire directory, then have it read this file and NEXT_PROJECT_BRIEF.md.
+This package contains the actual Beta 19.3 app plus a working hosted entry point, not only a prompt. The visual redesign is still pending your direction choice. For an AI with limited file access, start with [AI_HANDOFF.txt](AI_HANDOFF.txt), then this README and [NEXT_PROJECT_BRIEF.md](NEXT_PROJECT_BRIEF.md). The AI can request individual source files as needed; no ZIP is required.
 
 ## What is implemented
 
@@ -63,3 +63,4 @@ Hosting tests use a temporary synthetic workspace and the real Node backend. The
 Keep the unchanged Beta 19.3 desktop build and the previous server image. Export browser data and the artwork ZIP before upgrades. To roll back, run the prior image with the same persistent volume only if its data format remains compatible; otherwise restore the verified exported backup into an isolated prior volume. Keep the final website origin stable to retain browser storage.
 
 The other AI should now: configure the actual host and secrets; verify real HTTPS, provider calls and persistent-volume restart; then follow NEXT_PROJECT_BRIEF.md through the design-direction checkpoint. Public multi-user accounts require a separate isolation design. The gateway password must stay private; Basic authentication uses browser-managed sessions and does not provide an in-app logout/account-management system. On shared computers, use a separate browser profile/private session and explicitly close it after use. Reassess this authentication design before any wider release.
+
