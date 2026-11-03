@@ -3,13 +3,13 @@
    removed only after activation. API/version checks bypass cache. */
 // Bump the trailing build tag on every deploy. The fetch handler is cache-first, so an
 // unchanged name keeps serving the previous shell to anyone who has already visited.
-const CACHE_NAME = 'hearthbyte-play-connect-reset-v1.0.0-rowanvale-lamplight-b5';
+const CACHE_NAME = 'hearthbyte-play-connect-reset-v1.1.0-rowanvale-lamplight-b1';
 const APP_SHELL = [
   './import-core193.js', './import193.js', './import193.css',
   './media193-core.js', './media193.js', './wellbeing-core193.js', './wellbeing193.js', './wellbeing193.css', './training-core193.js', './training193.js', './training193.css',
   './library19.js', './night19.js', './health19.js', './health19.css',
   './',
-  './index.html', './covers1861.js', './covers1861.css',
+  './covers1861.js', './covers1861.css',
   './title-index186.js','./experience186.css','./experience186.js','./profile-layout186.js','./artwork-queue186.js','./reset-core186.js','./reset186.js',
   './styles.css', './lamplight.css', './assets/fonts/fraunces-latin.woff2', './assets/fonts/worksans-latin.woff2', './vendor/supabase-2.118.0.js', './profile-core.js', './enrichment-core.js', './connection-core.js', './profile185.js', './connectivity185.js', './profile185.css', './connectivity185.css', './living-core.js', './living184.js', './living184.css', './assets/tmdb.svg', './book-starters.js', './media183.js', './media183.css', './fan182.js', './fan182.css', './offline-directory182.js', './watch181.js', './watch181.css', './yourworld18.js', './yourworld18.css',
   './release1727.css', './polish1730.css', './polish1730.js', './navigation1740.css', './navigation1740.js', './header1741.css', './header1741.js',
@@ -93,11 +93,14 @@ self.addEventListener('fetch', event => {
     event.respondWith((async () => {
       try {
         const cache = await caches.open(CACHE_NAME);
-        const cached = await cache.match('./index.html');
-        // Only a complete, non-redirected shell may answer a navigation. Replaying a
-        // cached redirect here sends the browser back to the same navigation forever,
-        // which surfaces as "this site can't be reached" with no network error.
-        if (cached && cached.ok && !cached.redirected) return cached;
+        // '/index.html' redirects to '/', so it is never stored and the shell lives under
+        // the scope root. Only a complete, non-redirected document may answer a
+        // navigation; replaying a cached redirect loops until the browser reports
+        // "this site can't be reached".
+        for (const key of ['./', './index.html']) {
+          const cached = await cache.match(key);
+          if (cached && cached.ok && !cached.redirected) return cached;
+        }
       } catch {}
       return fetch(request);
     })());

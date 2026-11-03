@@ -111,7 +111,7 @@ async function lookupMany(values, doFetch, signal) {
     encodeURIComponent(values.join('|'));
   const response = await doFetch(url, {
     signal,
-    headers: { 'user-agent': 'Rowanvale/1.0.0 (public web build; artwork lookup)' },
+    headers: { 'user-agent': 'Rowanvale/1.1.0 (public web build; artwork lookup)' },
   });
   if (!response.ok) {
     const error = new Error(`Artwork source responded ${response.status}.`);

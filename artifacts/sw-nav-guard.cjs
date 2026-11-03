@@ -112,6 +112,19 @@ const ORIGIN = `http://127.0.0.1:${PORT}/`;
       if (navigations.length) throw new Error(navigations.join(', '));
     });
 
+    await check('navigation still renders with the network offline', async () => {
+      await page.evaluate(async () => {
+        await navigator.serviceWorker.ready;
+      });
+      await context.setOffline(true);
+      try {
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        if (!/rowanvale/i.test(await page.title())) throw new Error('offline reload did not render the cached shell');
+      } finally {
+        await context.setOffline(false);
+      }
+    });
+
     await check('shell repaired after the guard ran', async () => {
       await page.evaluate(async () => {
         const names = await caches.keys();

@@ -1,8 +1,8 @@
 {
   "name": "rowanvale",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "Rowanvale 1.0.0 \u2014 Your World Together Beta",
+  "description": "Rowanvale 1.1.0 \u2014 Your World Together Beta",
   "engines": {
     "node": ">=18"
   },

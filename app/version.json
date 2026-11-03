@@ -1,15 +1,13 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "channel": "release",
-  "name": "Rowanvale 1.0 — A softer place to play, grow and unwind",
+  "name": "Rowanvale 1.1 — A shell that keeps working offline",
   "released": "2026-11-03",
-  "releaseNotes": "Rowanvale 1.0 ships the Lamplight design layer, self-hosted typography, a public deployment and a full feature sweep across every view.",
+  "releaseNotes": "Rowanvale 1.1 keeps the installed app opening without a network after the shell stopped depending on the redirecting /index.html path, and finishes the artwork repairs so more cards carry real covers.",
   "changes": [
-    "Search opens the correct saved media title; reviewed CSV/JSON imports preserve editions and paused statuses",
-    "Journals and activity history no longer silently discard older records",
-    "Recoverable structured workouts with sets, units, routines and optional rest timer",
-    "Search, edit, export and undo private wellbeing history; recover Quiet Room sessions",
-    "Dated media diaries, season and episode logs, book editions, copies and rereads",
-    "Guest access and setup checks make suggested group lineups more useful"
+    "Offline navigation survives a shell installed without a cached copy of the redirecting index.html",
+    "A cached redirect or error page can no longer lock a returning browser out of every navigation",
+    "Artwork lookup requests all page images, so non-free box art resolves again",
+    "Stale cover cache entries are dropped when the resolver schema changes"
   ]
 }
