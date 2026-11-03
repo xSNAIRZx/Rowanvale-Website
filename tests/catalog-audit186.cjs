@@ -100,7 +100,7 @@ const result = {
   },
   userData: "No user media records were opened or renamed.",
 };
-const dest = path.join(root, "docs/evidence/1.0.0/catalog-title-audit.json");
+const dest = path.join(require("./evidence-path.cjs").dir, "catalog-title-audit.json");
 fs.mkdirSync(path.dirname(dest), { recursive: true });
 fs.writeFileSync(dest, JSON.stringify(result, null, 2));
 for (const c of result.catalogs)

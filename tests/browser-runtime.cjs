@@ -1,9 +1,19 @@
 /* Existing regression fixtures isolate the new automatic-cover network path.
    Its service, DOM behavior and actual live images have separate dedicated tests. */
 const pw = require(process.env.ROWANVALE_PLAYWRIGHT || "playwright");
+const FALLBACK_CHROME = process.env.ROWANVALE_CHROME || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+// Playwright's bundled browser is not always downloaded, but the machine may already have Chrome.
+const launch = async (options) => {
+  try {
+    return await pw.chromium.launch(options);
+  } catch (err) {
+    if (!/Executable doesn't exist|playwright install/i.test(String(err && err.message))) throw err;
+    return pw.chromium.launch({ ...options, executablePath: FALLBACK_CHROME });
+  }
+};
 const chromium = {
   launch: async (options) => {
-    const browser = await pw.chromium.launch(options),
+    const browser = await launch(options),
       make = browser.newContext.bind(browser);
     browser.newContext = async (options) => {
       const c = await make(options);

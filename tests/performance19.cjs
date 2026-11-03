@@ -22,7 +22,7 @@ const BASE=process.env.ROWANVALE_TEST_URL||'http://localhost:8199',K='mindforge.
    await context.close();
   }
  }finally{await browser.close();}
- const out=path.resolve(__dirname,'../docs/evidence/1.0.0');fs.mkdirSync(out,{recursive:true});
+ const out=require('./evidence-path.cjs').dir;fs.mkdirSync(out,{recursive:true});
  const report={date:new Date().toISOString(),environment:'Headless Chrome on this Windows PC, 1440×1000; local server; external requests blocked; service workers disabled; three fresh contexts. Not CPU/network throttled. Timings include two paint frames for navigation/search and are observations, not universal budgets.',records:2000,runs};
  fs.writeFileSync(path.join(out,'performance-baseline.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 })().catch(e=>{console.error(e);process.exitCode=1;});

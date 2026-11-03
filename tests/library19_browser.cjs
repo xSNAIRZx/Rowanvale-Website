@@ -1,6 +1,6 @@
 'use strict';
 const {chromium}=require('./browser-runtime.cjs'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const K='mindforge.momentum.data',out=path.resolve(__dirname,'../docs/evidence/1.0.0');fs.mkdirSync(out,{recursive:true});
+const K='mindforge.momentum.data',out=require('./evidence-path.cjs').dir;fs.mkdirSync(out,{recursive:true});
 (async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.ROWANVALE_BROWSER||'C:/Program Files/Google/Chrome/Application/chrome.exe'});try{
  const context=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block'});await context.route('https://**/*',r=>r.abort());const page=await context.newPage(),errors=[],checks=[];page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());
  const nav=()=>page.evaluate(()=>document.querySelector('.nav-item[data-view=media]').click()),saved=()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),K),click=a=>page.locator('[data-living='+a+']').first().click();

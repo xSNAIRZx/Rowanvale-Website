@@ -5,7 +5,7 @@ const assert = require("node:assert/strict"),
   os = require("os"),
   { chromium } = require("./browser-runtime.cjs");
 const K = "mindforge.momentum.data",
-  OUT = path.resolve(__dirname, "../docs/evidence/1.0.0/wellbeing");
+  OUT = path.join(require("./evidence-path.cjs").dir, "wellbeing");
 fs.mkdirSync(OUT, { recursive: true });
 (async () => {
   const browser = await chromium.launch({

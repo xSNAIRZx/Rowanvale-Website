@@ -6,7 +6,7 @@ const fs = require("fs"),
 const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
   ROOT = path.resolve(__dirname, ".."),
   K = "mindforge.momentum.data",
-  OUT = path.join(ROOT, "docs/evidence/1.0.0");
+  OUT = require("./evidence-path.cjs").dir;
 (async () => {
   const b = await chromium.launch({
       executablePath: process.env.ROWANVALE_BROWSER || undefined,
@@ -55,7 +55,7 @@ const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
   assert.equal(await p.title(), "STALE ROWANVALE SHELL");
   await c.unroute("**/sw.js");
   await p.goto(BASE + "/api/launch");
-  await p.waitForURL("**/index.html?build=1.0.0");
+  await p.waitForURL("**/index.html?build=" + require("./evidence-path.cjs").version);
   await p.waitForFunction(() => document.body.classList.contains("signed-in"));
   assert.match(await p.title(), /19\.3\.0/);
   assert.equal(
@@ -86,7 +86,7 @@ const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
     ),
   );
   console.log(
-    "PASS stale-shell upgrade preserves saved workspace and opens 1.0.0",
+    "PASS stale-shell upgrade preserves saved workspace and opens the current build",
   );
   await c.close();
   await b.close();
