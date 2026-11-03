@@ -2,7 +2,7 @@
 const fs = require("fs"),
   path = require("path"),
   assert = require("node:assert/strict"),
-  { chromium } = require(process.env.ROWANVALE_PLAYWRIGHT || "playwright");
+  { chromium } = { chromium: { launch: require("./browser-runtime.cjs").launchChromium } };
 const ROOT = path.resolve(__dirname, ".."),
   OUT = require("./evidence-path.cjs").dir,
   BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",

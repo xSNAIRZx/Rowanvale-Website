@@ -1,0 +1,16 @@
+{
+  "checks": [
+    "Reset-plan and journal save independently without deleting older records",
+    "Saving guided care retains more than200 prior care records",
+    "Editing the current journal in history refreshes its reflection editor",
+    "Private history searches all older records and combines date/type filters",
+    "Historical edit, delete and undo preserve newer data and survive reload",
+    "Selected history export excludes every unselected private record",
+    "Failed history edit keeps its draft and previous saved record",
+    "Custom Quiet Room duration persists; early finish records actual time without completion XP",
+    "Quiet Room survives closing its tab and recovers paused in a new tab",
+    "A second tab takes timer control without duplicate completion",
+    "Private timeline fits phone viewport and retains accessible controls"
+  ],
+  "errors": []
+}

@@ -1,0 +1,70 @@
+{
+  "checks": [
+    {
+      "name": "Default profile is complete without artwork uploads, fake collections or unearned badges",
+      "pass": true
+    },
+    {
+      "name": "Profile preview changes do not save until Apply and Cancel discards the draft",
+      "pass": true
+    },
+    {
+      "name": "Six profile presets preview distinctly and never change global appearance",
+      "pass": true
+    },
+    {
+      "name": "Profile identity, username, bio and appearance persist after a real reload",
+      "pass": true
+    },
+    {
+      "name": "Light, dark and system profile lighting work independently of the app",
+      "pass": true
+    },
+    {
+      "name": "A populated profile showcases all supported formats and existing profile content",
+      "pass": true
+    },
+    {
+      "name": "Featured choices, section order and visibility save predictably",
+      "pass": true
+    },
+    {
+      "name": "Shared preview respects visibility and the exported page contains no private workspace",
+      "pass": true
+    },
+    {
+      "name": "Private guestbook notes remain functional without appearing in the shared snapshot",
+      "pass": true
+    },
+    {
+      "name": "Failed storage writes keep the preview open and preserve the last saved identity",
+      "pass": true
+    },
+    {
+      "name": "Uploaded avatars, banners and gallery images persist with the existing profile records",
+      "pass": true
+    },
+    {
+      "name": "The preview supports a mobile width and stays inside the dialog",
+      "pass": true
+    },
+    {
+      "name": "Small mobile, phone, tablet and desktop profile/editor layouts avoid horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "A 2,000-item collection renders bounded pages, filters and searches responsively",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus remains in the native editor and reduced motion removes animation",
+      "pass": true
+    },
+    {
+      "name": "Global light, dark and system mode work with a saved custom theme",
+      "pass": false,
+      "error": "Expected \"actual\" to be strictly unequal to:\n\n'#141110'"
+    }
+  ],
+  "errors": []
+}

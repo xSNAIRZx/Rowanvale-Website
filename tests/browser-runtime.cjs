@@ -3,7 +3,7 @@
 const pw = require(process.env.ROWANVALE_PLAYWRIGHT || "playwright");
 const FALLBACK_CHROME = process.env.ROWANVALE_CHROME || "C:/Program Files/Google/Chrome/Application/chrome.exe";
 // Playwright's bundled browser is not always downloaded, but the machine may already have Chrome.
-const launch = async (options) => {
+const launchChromium = async (options) => {
   try {
     return await pw.chromium.launch(options);
   } catch (err) {
@@ -13,7 +13,7 @@ const launch = async (options) => {
 };
 const chromium = {
   launch: async (options) => {
-    const browser = await launch(options),
+    const browser = await launchChromium(options),
       make = browser.newContext.bind(browser);
     browser.newContext = async (options) => {
       const c = await make(options);
@@ -35,4 +35,4 @@ const chromium = {
     return browser;
   },
 };
-module.exports = { ...pw, chromium };
+module.exports = { ...pw, chromium, launchChromium };

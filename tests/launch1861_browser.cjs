@@ -2,7 +2,7 @@
 const fs = require("fs"),
   path = require("path"),
   assert = require("node:assert/strict"),
-  { chromium } = require(process.env.ROWANVALE_PLAYWRIGHT || "playwright");
+  { chromium } = { chromium: { launch: require("./browser-runtime.cjs").launchChromium } };
 const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
   ROOT = path.resolve(__dirname, ".."),
   K = "mindforge.momentum.data",
@@ -57,7 +57,7 @@ const BASE = process.env.ROWANVALE_TEST_URL || "http://localhost:8188",
   await p.goto(BASE + "/api/launch");
   await p.waitForURL("**/index.html?build=" + require("./evidence-path.cjs").version);
   await p.waitForFunction(() => document.body.classList.contains("signed-in"));
-  assert.match(await p.title(), /19\.3\.0/);
+  assert.ok((await p.title()).includes(require("./evidence-path.cjs").version));
   assert.equal(
     await p.evaluate((k) => JSON.parse(localStorage.getItem(k)).profile.bio, K),
     "KEEP MY EXISTING BIO",

@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-03T20:56:50.132Z",
+  "checks": [
+    "Global search includes new routes and opens exact typed saved item",
+    "Cancel review changes nothing; possible duplicates default to skip",
+    "Different edition and dropped anime added, existing records and XP preserved",
+    "Same file reimport is idempotent by default",
+    "Undo removes only added titles",
+    "Failed save retains review, rolls back all data, then retries once",
+    "Undo survives reload",
+    "Real CSV watchlist import remains planned, carries metadata and undoes after reload",
+    "Malformed nested JSON rejected before review without data changes",
+    "Import review fits390px",
+    "No page errors"
+  ]
+}

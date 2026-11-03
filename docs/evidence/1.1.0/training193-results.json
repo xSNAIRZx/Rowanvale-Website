@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-03T20:57:24.126Z",
+  "results": [
+    {
+      "name": "Structured draft autosaves individual sets and resumes after reload",
+      "pass": true
+    },
+    {
+      "name": "Units retain canonical weight and optional rest can be skipped",
+      "pass": true
+    },
+    {
+      "name": "Failed autosave keeps saved bytes intact and supports explicit retry",
+      "pass": true
+    },
+    {
+      "name": "Finish saves once, updates history and creates reusable structured routines",
+      "pass": true
+    },
+    {
+      "name": "Structured workout layout fits a 320px viewport",
+      "pass": true
+    },
+    {
+      "name": "Unsaved draft cannot overwrite another tab and can reload the saved replacement",
+      "pass": true
+    },
+    {
+      "name": "Repeat always copies the visible dated session and remains after filtering",
+      "pass": true
+    },
+    {
+      "name": "Adding at former movement, food, water, routine and recipe limits never drops existing records",
+      "pass": true
+    },
+    {
+      "name": "Unknown barcode nutrients remain unknown and direct food edits keep the same record",
+      "pass": true
+    },
+    {
+      "name": "Workout draft resumes and finishes with the network and local server unreachable",
+      "pass": true
+    }
+  ],
+  "errors": []
+}
