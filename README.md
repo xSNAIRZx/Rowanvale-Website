@@ -64,3 +64,6 @@ Keep the unchanged Beta 19.3 desktop build and the previous server image. Export
 
 The other AI should now: configure the actual host and secrets; verify real HTTPS, provider calls and persistent-volume restart; then follow NEXT_PROJECT_BRIEF.md through the design-direction checkpoint. Public multi-user accounts require a separate isolation design. The gateway password must stay private; Basic authentication uses browser-managed sessions and does not provide an in-app logout/account-management system. On shared computers, use a separate browser profile/private session and explicitly close it after use. Reassess this authentication design before any wider release.
 
+## Build and repository readiness
+
+Run npm ci, then npm run build. The complete source package is generated in build/Rowanvale_19.3.0 with a BUILD_MANIFEST.json containing file hashes. It includes the original app, private hosting gateway, Docker/Compose examples, tests, and AI project brief. This is a source package, not a static-only web export. See [REPOSITORY_READINESS.txt](REPOSITORY_READINESS.txt) for the source audit, verification results and remaining deployment/design decisions.

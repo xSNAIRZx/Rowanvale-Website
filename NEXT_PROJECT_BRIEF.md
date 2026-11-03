@@ -2,15 +2,15 @@
 
 ## Read this first
 
-Implement both projects against the enclosed real Beta 19.3.0 code. This is an implementation assignment, not a request for another generic plan or a mock website. The code is the working baseline; the redesign and hosting conversion have not yet been implemented. Preserve the current local desktop edition as a separately runnable build.
+Implement both projects against the enclosed real Beta 19.3.0 code. This is an implementation assignment, not a request for another generic plan or a mock website. The code is the working baseline. A private owner hosting gateway is implemented in hosting/server.cjs; production deployment and the visual redesign remain pending. README.md describes the current gateway and its limits. Preserve the current local desktop edition as a separately runnable build.
 
 The user approved a full website including server-powered features. They also selected the original comprehensive redesign brief below. Retain its Checkpoint 1: inspect the source, present three genuinely different creative directions, and STOP for the user's choice before visual implementation. You may inventory hosting needs and prepare reversible tests before that choice. Do not infer a chosen design from this handoff.
 
 ## Source of truth
 
-- Enclosed source: `Rowanvale_19.3.0/` (app, backend, tests, docs, launcher, package manifests, BUILD_MANIFEST.json).
-- GitHub: https://github.com/xSNAIRZx/Rowanvale-
-- Verified baseline commit: 7308493f8960f06f019c9e6bc02337b16b60acbd
+- Enclosed source: repository root (app/, backend/, hosting/, tests/, docs/, launcher and package manifests). npm run build generates build/Rowanvale_19.3.0/ and its BUILD_MANIFEST.json.
+- GitHub: https://github.com/xSNAIRZx/Rowanvale-Website
+- Historical upstream baseline reference: 7308493f8960f06f019c9e6bc02337b16b60acbd (not verified as part of this repository history). Use the checked-out repository commit as the current source reference.
 - This remains a BETA / PRE-RELEASE. No stable-release claim.
 - User's original brief is preserved below. Where its product assumptions conflict with actual code, verify and explain the conflict; use actual source as evidence.
 
