@@ -29,7 +29,7 @@ const PORT = Number(process.env.PORT || 8080);
 const HOST = process.env.HOST === '0.0.0.0' ? '0.0.0.0' : '127.0.0.1';
 const SECURITY_HEADERS = { 'X-Content-Type-Options':'nosniff', 'Referrer-Policy':'strict-origin-when-cross-origin', 'X-Frame-Options':'SAMEORIGIN', 'Content-Security-Policy':"default-src 'self' https: data: blob:; connect-src 'self' https:; img-src 'self' https: data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; frame-ancestors 'self'" };
 function staticHeaders(type, cache='no-store'){ return { 'Content-Type':type, ...SECURITY_HEADERS, 'Cache-Control':cache }; }
-const MIME = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.json':'application/json; charset=utf-8', '.webmanifest':'application/manifest+json', '.svg':'image/svg+xml', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.ico':'image/x-icon' };
+const MIME = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.json':'application/json; charset=utf-8', '.webmanifest':'application/manifest+json', '.svg':'image/svg+xml', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.ico':'image/x-icon', '.woff2':'font/woff2' };
 const WINDOW_MS = 60_000, MAX_REQUESTS = 90, buckets = new Map();
 function send(res, status, body, type='application/json; charset=utf-8') {
   res.writeHead(status, { ...staticHeaders(type, 'no-store') });

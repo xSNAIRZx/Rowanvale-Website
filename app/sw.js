@@ -1,7 +1,7 @@
 /* Rowanvale 15 mobile service worker.
    App-shell cache is versioned. New worker installs a fresh cache; old caches are
    removed only after activation. API/version checks bypass cache. */
-const CACHE_NAME = 'hearthbyte-play-connect-reset-v19.3.0-rowanvale';
+const CACHE_NAME = 'hearthbyte-play-connect-reset-v19.3.0-rowanvale-lamplight';
 const APP_SHELL = [
   './import-core193.js', './import193.js', './import193.css',
   './media193-core.js', './media193.js', './wellbeing-core193.js', './wellbeing193.js', './wellbeing193.css', './training-core193.js', './training193.js', './training193.css',
@@ -9,7 +9,7 @@ const APP_SHELL = [
   './',
   './index.html', './covers1861.js', './covers1861.css',
   './title-index186.js','./experience186.css','./experience186.js','./profile-layout186.js','./artwork-queue186.js','./reset-core186.js','./reset186.js',
-  './styles.css', './vendor/supabase-2.118.0.js', './profile-core.js', './enrichment-core.js', './connection-core.js', './profile185.js', './connectivity185.js', './profile185.css', './connectivity185.css', './living-core.js', './living184.js', './living184.css', './assets/tmdb.svg', './book-starters.js', './media183.js', './media183.css', './fan182.js', './fan182.css', './offline-directory182.js', './watch181.js', './watch181.css', './yourworld18.js', './yourworld18.css',
+  './styles.css', './lamplight.css', './assets/fonts/fraunces-latin.woff2', './assets/fonts/worksans-latin.woff2', './vendor/supabase-2.118.0.js', './profile-core.js', './enrichment-core.js', './connection-core.js', './profile185.js', './connectivity185.js', './profile185.css', './connectivity185.css', './living-core.js', './living184.js', './living184.css', './assets/tmdb.svg', './book-starters.js', './media183.js', './media183.css', './fan182.js', './fan182.css', './offline-directory182.js', './watch181.js', './watch181.css', './yourworld18.js', './yourworld18.css',
   './release1727.css', './polish1730.css', './polish1730.js', './navigation1740.css', './navigation1740.js', './header1741.css', './header1741.js',
   './mobile.css',
   './desktop.css',

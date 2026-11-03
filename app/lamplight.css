@@ -1,0 +1,539 @@
+/* Rowanvale · LAMPLIGHT 19.4 — direction A + C
+   One warm lamp per screen, hairline shelf surfaces, cover art as the hero,
+   and a growing stem for progress. Loaded last so it settles the earlier
+   versioned layers instead of adding a thirty-eighth opinion.
+   No ids, data hooks, view renderers or saved data shapes are changed here. */
+
+/* ---------- type: self-hosted, subset, metric-matched fallbacks ---------- */
+@font-face{font-family:'Fraunces';src:url('./assets/fonts/fraunces-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;font-optical-sizing:auto}
+@font-face{font-family:'Work Sans';src:url('./assets/fonts/worksans-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Fraunces Fallback';src:local('Georgia'),local('Times New Roman');size-adjust:97%;ascent-override:94%;descent-override:24%;line-gap-override:0%}
+@font-face{font-family:'Work Sans Fallback';src:local('Arial'),local('Helvetica');size-adjust:99%;ascent-override:92%;descent-override:24%;line-gap-override:0%}
+
+/* ---------- tokens: the defaults below are Forest Dusk (auth screen) ---------- */
+:root{
+  --rv-lamp:#e9b96e;--rv-lamp-rgb:233 185 110;--rv-leaf:#a8c48a;--rv-leaf-rgb:168 196 138;
+  --rv-ground:#141110;--rv-surface:#1e1915;--rv-raised:#272019;--rv-hairline:#3a2f26;
+  --rv-ink:#f3ead9;--rv-muted:#b4a491;--rv-onlamp:#1a120a;
+  --rv-font-ui:'Work Sans','Work Sans Fallback',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --rv-font-display:'Fraunces','Fraunces Fallback',Georgia,'Times New Roman',serif;
+  --rv-r-lg:22px;--rv-r-md:14px;--rv-r-sm:9px;--rv-art-radius:22px 22px 22px 6px;
+  --rv-shadow:0 20px 44px -30px #000;
+  --rv-ease:cubic-bezier(.22,.61,.36,1);--rv-fast:140ms;--rv-slow:260ms;
+  color-scheme:dark;
+}
+
+/* Forest Dusk */
+html body.signed-in[data-theme="rowan"][data-appearance-resolved="dark"]{
+  --rv-lamp:#e9b96e;--rv-lamp-rgb:233 185 110;--rv-leaf:#a8c48a;--rv-leaf-rgb:168 196 138;
+  --rv-ground:#141110;--rv-surface:#1e1915;--rv-raised:#272019;--rv-hairline:#3a2f26;
+  --rv-ink:#f3ead9;--rv-muted:#b4a491;--rv-onlamp:#1a120a;color-scheme:dark;
+}
+html body.signed-in[data-theme="rowan"][data-appearance-resolved="light"]{
+  --rv-lamp:#97601c;--rv-lamp-rgb:151 96 28;--rv-leaf:#5b7a3f;--rv-leaf-rgb:91 122 63;
+  --rv-ground:#faf6ee;--rv-surface:#fffdf8;--rv-raised:#f1ebe0;--rv-hairline:#d9d0be;
+  --rv-ink:#241f19;--rv-muted:#5c5348;--rv-onlamp:#fffbf4;color-scheme:light;
+}
+/* Afterglow */
+html body.signed-in[data-theme="afterglow"][data-appearance-resolved="dark"]{
+  --rv-lamp:#f0a98e;--rv-lamp-rgb:240 169 142;--rv-leaf:#c39bd3;--rv-leaf-rgb:195 155 211;
+  --rv-ground:#17121a;--rv-surface:#221a22;--rv-raised:#2b2130;--rv-hairline:#3e3140;
+  --rv-ink:#f5edf2;--rv-muted:#bcaeb8;--rv-onlamp:#1c1116;color-scheme:dark;
+}
+html body.signed-in[data-theme="afterglow"][data-appearance-resolved="light"]{
+  --rv-lamp:#b0523c;--rv-lamp-rgb:176 82 60;--rv-leaf:#7c4f86;--rv-leaf-rgb:124 79 134;
+  --rv-ground:#fbf5f4;--rv-surface:#fffcfc;--rv-raised:#f4eaea;--rv-hairline:#dccbcb;
+  --rv-ink:#241a1d;--rv-muted:#5f4c51;--rv-onlamp:#fffaf7;color-scheme:light;
+}
+/* Redline */
+html body.signed-in[data-theme="redline"][data-appearance-resolved="dark"]{
+  --rv-lamp:#e2705a;--rv-lamp-rgb:226 112 90;--rv-leaf:#b8a05e;--rv-leaf-rgb:184 160 94;
+  --rv-ground:#17100f;--rv-surface:#221613;--rv-raised:#2c1d18;--rv-hairline:#402a22;
+  --rv-ink:#f8ede6;--rv-muted:#c0a79c;--rv-onlamp:#1b0d09;color-scheme:dark;
+}
+html body.signed-in[data-theme="redline"][data-appearance-resolved="light"]{
+  --rv-lamp:#b23f30;--rv-lamp-rgb:178 63 48;--rv-leaf:#7d6a2c;--rv-leaf-rgb:125 106 44;
+  --rv-ground:#fbf4f2;--rv-surface:#fffcfb;--rv-raised:#f4e9e6;--rv-hairline:#dfc9c3;
+  --rv-ink:#251714;--rv-muted:#634a44;--rv-onlamp:#fffaf8;color-scheme:light;
+}
+/* Dreamscape */
+html body.signed-in[data-theme="indigo"][data-appearance-resolved="dark"]{
+  --rv-lamp:#b4a2f2;--rv-lamp-rgb:180 162 242;--rv-leaf:#8fbfa8;--rv-leaf-rgb:143 191 168;
+  --rv-ground:#12111b;--rv-surface:#1c1a28;--rv-raised:#262234;--rv-hairline:#363148;
+  --rv-ink:#f0edfa;--rv-muted:#b4aecb;--rv-onlamp:#151129;color-scheme:dark;
+}
+html body.signed-in[data-theme="indigo"][data-appearance-resolved="light"]{
+  --rv-lamp:#5b4bc4;--rv-lamp-rgb:91 75 196;--rv-leaf:#3f6f5c;--rv-leaf-rgb:63 111 92;
+  --rv-ground:#f8f6fd;--rv-surface:#fffdfd;--rv-raised:#efecf8;--rv-hairline:#d6d1e6;
+  --rv-ink:#1f1b2e;--rv-muted:#524d68;--rv-onlamp:#fffbf4;color-scheme:light;
+}
+/* Moss Glow */
+html body.signed-in[data-theme="moss"][data-appearance-resolved="dark"]{
+  --rv-lamp:#b9d98a;--rv-lamp-rgb:185 217 138;--rv-leaf:#9cc48b;--rv-leaf-rgb:156 196 139;
+  --rv-ground:#10150f;--rv-surface:#1a221a;--rv-raised:#232d22;--rv-hairline:#33402f;
+  --rv-ink:#edf2e4;--rv-muted:#aebda6;--rv-onlamp:#12180c;color-scheme:dark;
+}
+html body.signed-in[data-theme="moss"][data-appearance-resolved="light"]{
+  --rv-lamp:#4c7a38;--rv-lamp-rgb:76 122 56;--rv-leaf:#6b4f86;--rv-leaf-rgb:107 79 134;
+  --rv-ground:#f7faf3;--rv-surface:#fdfff9;--rv-raised:#edf2e6;--rv-hairline:#cfdac4;
+  --rv-ink:#1b2419;--rv-muted:#4d5a48;--rv-onlamp:#fffbf4;color-scheme:light;
+}
+/* Any other legacy theme id falls back to the :root default lamp. It must NOT read
+   var(--accent): the paint layer below re-points --accent at --rv-lamp, so the two would
+   form a custom-property cycle and resolve to nothing (no lamp pool, no gold, no stem). */
+
+/* ---------- repaint the legacy vocabulary onto the new palette ---------- */
+html body.signed-in[data-theme][data-appearance-resolved]{
+  --bg:var(--rv-ground)!important;--text:var(--rv-ink)!important;--muted:var(--rv-muted)!important;--dim:var(--rv-muted)!important;
+  --panel:var(--rv-surface)!important;--panel2:var(--rv-raised)!important;--panel3:var(--rv-ground)!important;
+  --line:var(--rv-hairline)!important;--border:var(--rv-hairline)!important;
+  --accent:var(--rv-lamp)!important;--accent-rgb:var(--rv-lamp-rgb)!important;--accent2:var(--rv-leaf)!important;
+  --hb12-bg:var(--rv-ground)!important;--hb12-shell:var(--rv-ground)!important;--hb12-surface:var(--rv-surface)!important;
+  --hb12-raised:var(--rv-raised)!important;--hb12-outline:var(--rv-hairline)!important;--hb12-text:var(--rv-ink)!important;
+  --hb12-muted:var(--rv-muted)!important;--hb12-onaccent:var(--rv-onlamp)!important;--hb12-font:var(--rv-font-ui)!important;
+  --rv-heading:var(--rv-font-display)!important;--rvp-font:var(--rv-font-ui)!important;
+  --shadow:var(--rv-shadow)!important;
+  font-family:var(--rv-font-ui)!important;color:var(--rv-ink)!important;background-color:var(--rv-ground)!important;
+  background-image:radial-gradient(ellipse 62% 40rem at 74% -12rem,rgb(var(--rv-lamp-rgb) / .20),transparent 70%)!important;
+  background-repeat:no-repeat!important;background-attachment:fixed!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved]::before{opacity:.012!important}
+
+/* ---------- shell: ground falls away, one light, hairline edges ---------- */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.sidebar,.lw-sidebar){
+  background:rgb(var(--rv-ground) / .92)!important;border-right:1px solid var(--rv-hairline)!important;
+  box-shadow:none!important;backdrop-filter:blur(18px)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.brand strong,.mobile-brand strong){
+  font-family:var(--rv-font-display)!important;font-weight:600!important;letter-spacing:.02em!important;
+  font-size:21px!important;color:var(--rv-ink)!important;text-transform:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.brand small,.mobile-brand small){
+  font-family:var(--rv-font-ui)!important;font-size:8px!important;letter-spacing:.26em!important;color:var(--rv-muted)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.brand-mark,.workspace-avatar,.avatar-button,.shell-account-wrap > .shell-account-trigger){
+  background:rgb(var(--rv-lamp-rgb) / .14)!important;border:1px solid rgb(var(--rv-lamp-rgb) / .38)!important;
+  border-radius:var(--rv-r-md)!important;box-shadow:none!important;color:var(--rv-lamp)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.brand-mark span){background:var(--rv-lamp)!important;box-shadow:none!important}
+
+/* nav: a shelf, with the stem marking where you are */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.side-label,.lw-blockhead span,.rv-area-title){
+  font-family:var(--rv-font-ui)!important;font-size:9px!important;letter-spacing:.22em!important;
+  color:var(--rv-muted)!important;font-weight:600!important;opacity:.85;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-item,.rv-area-button,.sidebar-collapse,.shell-shortcut,.rv-rail-tool){
+  border:1px solid transparent!important;background:transparent!important;color:var(--rv-muted)!important;
+  border-radius:var(--rv-r-md)!important;font-family:var(--rv-font-ui)!important;font-size:13px!important;
+  transition:background var(--rv-fast) var(--rv-ease),border-color var(--rv-fast) var(--rv-ease),color var(--rv-fast) var(--rv-ease)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-item,.rv-area-button):hover{
+  background:rgb(var(--rv-lamp-rgb) / .07)!important;color:var(--rv-ink)!important;transform:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-item.active,.rv-area-button.active,.rv-area-button[aria-current]){
+  position:relative!important;background:rgb(var(--rv-lamp-rgb) / .12)!important;color:var(--rv-ink)!important;
+  border-color:rgb(var(--rv-lamp-rgb) / .24)!important;box-shadow:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-item.active,.rv-area-button.active,.rv-area-button[aria-current])::before{
+  content:""!important;position:absolute!important;left:2px!important;top:9px!important;bottom:9px!important;width:2px!important;
+  border-radius:2px!important;background:linear-gradient(180deg,var(--rv-leaf),var(--rv-lamp))!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-icon,.rv-area-icon,.shortcut-glyph,.lw-group-symbol){
+  color:var(--rv-lamp)!important;font-size:15px!important;opacity:.9;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-count,.tag,.pill,.update-dot){
+  background:rgb(var(--rv-lamp-rgb) / .10)!important;color:var(--rv-muted)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:999px!important;font-size:9px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-section){
+  background:transparent!important;border:0!important;border-top:1px solid var(--rv-hairline)!important;border-radius:0!important;
+  padding-top:6px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.nav-section summary){color:var(--rv-muted)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.sidebar-bottom,.mini-status){
+  background:transparent!important;border-color:var(--rv-hairline)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.workspace-copy b,.shell-progress-heading){color:var(--rv-ink)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.workspace-copy small,.mini-status small,.sidebar-version,.sidebar-version span){color:var(--rv-muted)!important}
+html body.signed-in[data-theme][data-appearance-resolved] .status-led{
+  background:var(--rv-leaf)!important;box-shadow:0 0 10px rgb(var(--rv-leaf-rgb) / .55)!important;
+}
+
+/* topbar: title, one search, one display menu, the account. Everything else recedes. */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.topbar){
+  background:rgb(var(--rv-ground) / .82)!important;border-bottom:1px solid var(--rv-hairline)!important;
+  backdrop-filter:blur(20px)!important;box-shadow:none!important;height:72px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.breadcrumb,.topbar-context-kicker){
+  font-size:9px!important;letter-spacing:.2em!important;color:var(--rv-muted)!important;text-transform:uppercase!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.breadcrumb b,.topbar-context strong){color:var(--rv-ink)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.command-launch,.shell-shortcut.lw-find){
+  background:rgb(var(--rv-surface) / .8)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:999px!important;color:var(--rv-muted)!important;height:38px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.command-launch:hover){
+  border-color:rgb(var(--rv-lamp-rgb) / .45)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.date-pill,.shell-level-pill){
+  background:transparent!important;border:1px solid var(--rv-hairline)!important;border-radius:999px!important;
+  color:var(--rv-muted)!important;font-size:9px!important;letter-spacing:.12em!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.shell-level-spark,#topPlayerLevel){color:var(--rv-lamp)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb12-undo-top,.hb13-workspace-launch){
+  background:transparent!important;border:1px solid transparent!important;color:var(--rv-muted)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb12-undo-top,.hb13-workspace-launch):hover{
+  background:rgb(var(--rv-lamp-rgb) / .08)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.shell-account-menu,.hb13-workspace-dialog){
+  background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-lg)!important;box-shadow:var(--rv-shadow)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.shell-account-menu button){color:var(--rv-ink)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.shell-account-menu button):hover{
+  background:rgb(var(--rv-lamp-rgb) / .08)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.shell-menu-divider,.rv173-menu-caption){
+  border-color:var(--rv-hairline)!important;color:var(--rv-muted)!important;
+}
+
+/* ---------- one navigation model: retire the duplicates ---------- */
+html body.signed-in .hb12-wayfinder,
+html body.signed-in .rv-rail-tools,
+html body.signed-in .hb11-pulse-trigger,
+html body.signed-in .lw-filter-wrap,
+html body.signed-in .rv-area-flyout,
+html body.signed-in #hb13BackTop{display:none!important}
+
+/* ---------- content: the lamp pool and the page heading ---------- */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.main-area){
+  background-image:radial-gradient(ellipse 46rem 30rem at 68% -6rem,rgb(var(--rv-lamp-rgb) / .16),transparent 72%)!important;
+  background-repeat:no-repeat!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.content,.main-area){color:var(--rv-ink)!important}
+html body.signed-in[data-theme][data-appearance-resolved] .content{padding-top:34px!important;max-width:1420px!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.page-heading h1,.discover-hero h2,.hero-panel h1,.hb12-day-hero h2){
+  font-family:var(--rv-font-display)!important;font-weight:500!important;font-optical-sizing:auto!important;
+  letter-spacing:-.015em!important;line-height:1.06!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.page-heading h1){font-size:clamp(30px,3.2vw,42px)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.page-heading p,.discover-hero p,.hero-panel p){
+  color:var(--rv-muted)!important;font-size:14px!important;line-height:1.7!important;max-width:60ch!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.eyebrow){
+  font-family:var(--rv-font-ui)!important;font-size:9px!important;letter-spacing:.24em!important;
+  color:var(--rv-lamp)!important;font-weight:600!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.small-note,.muted,.field-help,.stat-foot,.quote-author){
+  color:var(--rv-muted)!important;
+}
+
+/* ---------- surfaces: objects on a shelf, not identical boxes ---------- */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.panel,.stat-card,.game-card,.level-card,.release-card,
+  .hb12-widget,.hb12-today-snapshot,.hb12-controls,.hb12-pick,.hb12-resource-card,.hb12-safety-card,.community-card,
+  .living-card,.profile-card,.experience-card,.health-card,.backlog-item,.quest-row,.setting-row){
+  background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-lg)!important;box-shadow:var(--rv-shadow)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.panel,.game-card,.hb12-widget){
+  border-top-color:rgb(var(--rv-lamp-rgb) / .28)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hero-panel,.discover-hero,.hb12-day-hero){
+  background:var(--rv-surface)!important;
+  background-image:radial-gradient(ellipse 34rem 22rem at 84% -4rem,rgb(var(--rv-lamp-rgb) / .30),transparent 70%)!important;
+  border:1px solid rgb(var(--rv-lamp-rgb) / .22)!important;border-radius:28px!important;
+  box-shadow:var(--rv-shadow)!important;padding:clamp(26px,3.2vw,44px)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hero-panel h1){font-size:clamp(34px,4vw,54px)!important;max-width:22ch!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hero-orb,.discover-orbit){
+  background:radial-gradient(circle at 40% 34%,rgb(var(--rv-lamp-rgb) / .26),transparent 66%)!important;
+  border-color:rgb(var(--rv-lamp-rgb) / .22)!important;box-shadow:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.panel-heading h2,.panel-heading h3,.stat-number,.level-top strong,.game-card h3){
+  font-family:var(--rv-font-ui)!important;color:var(--rv-ink)!important;letter-spacing:-.01em!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.panel-heading h2,.panel-heading h3){font-size:15px!important;font-weight:600!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.stat-number){font-family:var(--rv-font-display)!important;font-weight:500!important;font-size:clamp(24px,2.6vw,34px)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.stat-label){letter-spacing:.18em!important;color:var(--rv-muted)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hero-panel,.discover-hero,.hud,.hb11-hud,.living-art,.route-art){border-radius:var(--rv-art-radius)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.divider,.log-item,.habit-item,.setting-row:not(:last-child)){
+  border-color:var(--rv-hairline)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.empty-state){
+  background:transparent!important;border:1px dashed rgb(var(--rv-lamp-rgb) / .32)!important;
+  border-radius:var(--rv-r-md)!important;color:var(--rv-muted)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.empty-state b){color:var(--rv-ink)!important}
+
+/* the stem: progress that grows instead of shouting */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.progress-track){
+  background:rgb(var(--rv-lamp-rgb) / .12)!important;border-radius:999px!important;height:4px!important;
+  overflow:visible!important;position:relative!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.progress-fill){
+  background:linear-gradient(90deg,rgb(var(--rv-leaf-rgb) / .85),var(--rv-lamp))!important;
+  border-radius:999px!important;box-shadow:0 0 12px rgb(var(--rv-lamp-rgb) / .45)!important;position:relative!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.progress-fill)::after{
+  content:""!important;position:absolute!important;right:-3px!important;top:-4px!important;width:7px!important;height:7px!important;
+  background:var(--rv-leaf)!important;border-radius:0 60% 60% 60%!important;transform:rotate(45deg)!important;
+  box-shadow:0 0 10px rgb(var(--rv-leaf-rgb) / .6)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.level-emblem,.backlog-icon,.support-tool-icon,.discord-glyph){
+  background:rgb(var(--rv-lamp-rgb) / .12)!important;border:1px solid rgb(var(--rv-lamp-rgb) / .28)!important;
+  color:var(--rv-lamp)!important;border-radius:var(--rv-r-md)!important;
+}
+
+/* ---------- controls ---------- */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.button){
+  font-family:var(--rv-font-ui)!important;font-weight:600!important;font-size:12px!important;
+  border-radius:999px!important;padding:10px 16px!important;box-shadow:none!important;
+  transition:background var(--rv-fast) var(--rv-ease),border-color var(--rv-fast) var(--rv-ease),color var(--rv-fast) var(--rv-ease)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.button-primary,.auth-big-button){
+  background:var(--rv-lamp)!important;border-color:transparent!important;color:var(--rv-onlamp)!important;
+  box-shadow:0 10px 26px -16px rgb(var(--rv-lamp-rgb) / .9)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.button-primary):hover{
+  filter:brightness(1.06)!important;transform:translateY(-1px)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.button-quiet){
+  background:transparent!important;border-color:var(--rv-hairline)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.button-quiet):hover{
+  background:rgb(var(--rv-lamp-rgb) / .08)!important;border-color:rgb(var(--rv-lamp-rgb) / .4)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.button-danger){
+  background:rgb(226 112 90 / .10)!important;border-color:rgb(226 112 90 / .38)!important;color:#ffb3a3!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.icon-button,.tiny-button,.subtle-link){
+  background:transparent!important;border-color:var(--rv-hairline)!important;color:var(--rv-muted)!important;border-radius:var(--rv-r-sm)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.subtle-link){border-color:transparent!important;color:var(--rv-lamp)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.filter-chip,.vibe-chip,.auth-theme-option,.theme-option){
+  background:transparent!important;border:1px solid var(--rv-hairline)!important;color:var(--rv-muted)!important;
+  border-radius:999px!important;font-size:11px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.filter-chip.active,.vibe-chip.active,.theme-option.active,.auth-theme-option.selected){
+  background:rgb(var(--rv-lamp-rgb) / .12)!important;border-color:rgb(var(--rv-lamp-rgb) / .48)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),textarea,select,.field-input,.search-input){
+  background:rgb(var(--rv-ground) / .55)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-md)!important;color:var(--rv-ink)!important;box-shadow:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(input,textarea,select):focus-visible{
+  outline:2px solid var(--rv-lamp)!important;outline-offset:2px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(input,textarea)::placeholder{color:var(--rv-muted)!important;opacity:.75}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.switch){background:rgb(var(--rv-muted) / .35)!important;border-radius:999px!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.switch:checked){background:var(--rv-lamp)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.switch:checked)::before{background:var(--rv-onlamp)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.quest-check){
+  border:1px solid var(--rv-hairline)!important;border-radius:7px!important;background:transparent!important;color:transparent!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.quest-check.done){
+  background:var(--rv-leaf)!important;border-color:var(--rv-leaf)!important;color:var(--rv-onlamp)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.status-banner){
+  background:rgb(var(--rv-leaf-rgb) / .08)!important;border:1px solid rgb(var(--rv-leaf-rgb) / .3)!important;border-radius:var(--rv-r-md)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.status-banner.warning){
+  background:rgb(226 180 90 / .08)!important;border-color:rgb(226 180 90 / .32)!important;
+}
+
+/* ---------- dialogs, toasts, mobile ---------- */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.modal){
+  background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-lg)!important;color:var(--rv-ink)!important;box-shadow:0 40px 120px -40px #000!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.modal)::backdrop{background:rgb(var(--rv-ground) / .78)!important;backdrop-filter:blur(3px)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.modal-head h2){font-family:var(--rv-font-display)!important;font-weight:500!important;font-size:24px!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.toast){
+  background:var(--rv-surface)!important;border:1px solid rgb(var(--rv-lamp-rgb) / .4)!important;
+  border-radius:var(--rv-r-md)!important;color:var(--rv-ink)!important;box-shadow:var(--rv-shadow)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.footer){
+  color:var(--rv-muted)!important;border-top:1px solid var(--rv-hairline)!important;letter-spacing:.16em!important;opacity:.75;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.mobile-nav){
+  background:rgb(var(--rv-ground) / .95)!important;border-top:1px solid var(--rv-hairline)!important;backdrop-filter:blur(20px)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.mobile-nav button){color:var(--rv-muted)!important;min-height:48px!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.mobile-nav button.active){color:var(--rv-lamp)!important;background:rgb(var(--rv-lamp-rgb) / .08)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.guide-launcher){
+  background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;color:var(--rv-ink)!important;
+  border-radius:999px!important;box-shadow:var(--rv-shadow)!important;
+}
+
+/* ---------- sign-in: the first room you walk into ---------- */
+html body .auth-gate{color:var(--rv-ink)!important;background-color:var(--rv-ground)!important;
+  background-image:radial-gradient(ellipse 42rem 34rem at 22% -6rem,rgb(var(--rv-lamp-rgb) / .22),transparent 68%)!important}
+html body .auth-scene{background:transparent!important;border-color:var(--rv-hairline)!important}
+html body .auth-scene-copy h2,html body #authTitle,html body #authWizardTitle{
+  font-family:var(--rv-font-display)!important;font-weight:500!important;letter-spacing:-.015em!important;color:var(--rv-ink)!important;
+}
+html body .auth-scene-copy h2 em,html body #authTitle em{color:var(--rv-lamp)!important;font-style:italic!important;font-weight:400!important}
+html body .auth-scene-copy p,html body .auth-copy,html body .auth-entry-caption{color:var(--rv-muted)!important}
+html body .auth-card{background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:28px!important;box-shadow:0 40px 120px -60px #000!important}
+html body .auth-label,html body .auth-card-edition,html body .auth-divider span{color:var(--rv-muted)!important;letter-spacing:.2em!important}
+html body .auth-label-dot,html body .auth-status-pulse{background:var(--rv-leaf)!important}
+html body .auth-primary-actions .button-primary,html body .auth-big-button{
+  background:var(--rv-lamp)!important;color:var(--rv-onlamp)!important;border-radius:999px!important;
+}
+html body .auth-skip-button{background:transparent!important;border:1px solid var(--rv-hairline)!important;
+  color:var(--rv-ink)!important;border-radius:999px!important}
+html body .auth-theme-option{background:transparent!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-md)!important;color:var(--rv-muted)!important}
+html body .auth-theme-option.selected{border-color:rgb(var(--rv-lamp-rgb) / .6)!important;color:var(--rv-ink)!important;
+  background:rgb(var(--rv-lamp-rgb) / .10)!important}
+html body .auth-form input{background:rgb(var(--rv-ground) / .55)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-md)!important;color:var(--rv-ink)!important}
+html body .auth-entry{background:transparent!important}
+html body .auth-stage-chip{background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;
+  border-radius:var(--rv-r-md)!important;color:var(--rv-ink)!important}
+
+/* focus, selection, motion */
+html body.signed-in[data-theme][data-appearance-resolved] :is(a,button,input,select,textarea,[tabindex]):focus-visible{
+  outline:2px solid var(--rv-lamp)!important;outline-offset:3px!important;border-radius:var(--rv-r-sm);
+}
+html body ::selection{background:rgb(var(--rv-lamp-rgb) / .32);color:var(--rv-ink)}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.panel,.game-card,.stat-card,.quest-row):hover{
+  border-color:rgb(var(--rv-lamp-rgb) / .34)!important;
+}
+@media(prefers-reduced-motion:reduce){
+  html body *,html body *::before,html body *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+html body.reduce-motion *,html body.reduce-motion *::before,html body.reduce-motion *::after{
+  animation:none!important;transition:none!important;scroll-behavior:auto!important;
+}
+
+/* ---------- corrections: legacy surfaces that never used the token palette ----------
+   .home-command-hero / .home-status-card are VYTRON 9 hard-coded navy blocks and
+   auth-15-1 paints .button-quiet teal. Because they bypass --panel/--accent, light mode
+   produced light-on-light copy and dark-on-dark status text. Re-point them at Lamplight. */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-command-hero){
+  background:var(--rv-surface)!important;
+  background-image:radial-gradient(ellipse 36rem 26rem at 84% -10rem,rgb(var(--rv-lamp-rgb) / .26),transparent 72%)!important;
+  border:1px solid rgb(var(--rv-lamp-rgb) / .18)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-command-copy h1,.home-command-copy h2){
+  font-family:var(--rv-font-display)!important;font-weight:500!important;letter-spacing:-.02em!important;
+  color:var(--rv-ink)!important;line-height:1.04!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-command-copy p,.home-hero-lead,.home-command-copy small){
+  color:var(--rv-muted)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-command-art,.home-planet){
+  opacity:.42!important;filter:saturate(.7)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-status-card,.home-stat-card,.home-quick-grid button,.continue-game-card){
+  background:var(--rv-raised)!important;border:1px solid var(--rv-hairline)!important;
+  color:var(--rv-ink)!important;border-radius:var(--rv-r-lg)!important;box-shadow:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-status-card) :is(b,strong,p,span,small,div){
+  color:inherit!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-status-card) :is(small,.home-status-label,.home-status-kicker){
+  color:var(--rv-muted)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-status-card) :is(a,button){
+  color:var(--rv-lamp)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.home-stat-card) :is(.home-stat-icon){
+  background:rgb(var(--rv-lamp-rgb) / .12)!important;border-color:rgb(var(--rv-lamp-rgb) / .26)!important;color:var(--rv-lamp)!important;
+}
+
+/* the sidebar is a shelf: give it a surface so it reads apart from the ground */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.sidebar){
+  background:var(--rv-surface)!important;border-right:1px solid var(--rv-hairline)!important;
+  box-shadow:none!important;backdrop-filter:none!important;
+}
+
+/* auth gate controls: the legacy sheet hard-codes a teal quiet button */
+html body .auth-gate :is(.button-quiet,.auth-skip-button,.auth-submit){
+  background:transparent!important;border:1px solid var(--rv-hairline)!important;color:var(--rv-ink)!important;
+  border-radius:999px!important;
+}
+html body .auth-gate :is(.button-quiet,.auth-skip-button,.auth-submit):hover{
+  background:rgb(var(--rv-lamp-rgb) / .08)!important;border-color:rgb(var(--rv-lamp-rgb) / .4)!important;
+}
+html body .auth-gate :is(.auth-return-card,.auth-theme-option,.auth-divider){
+  background:transparent!important;border-color:var(--rv-hairline)!important;color:var(--rv-ink)!important;
+}
+
+/* the mobile tab bar: keep the current tab on the lamp, not the legacy teal/mint */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.mobile-nav button.active){
+  color:var(--rv-lamp)!important;background:rgb(var(--rv-lamp-rgb) / .10)!important;
+  border-color:rgb(var(--rv-lamp-rgb) / .22)!important;
+}
+@media(max-width:760px){
+  html body.signed-in[data-theme][data-appearance-resolved] :is(.topbar){
+    height:auto!important;min-height:0!important;padding-block:9px!important;margin-bottom:0!important;
+  }
+}
+
+/* My Day's hero (.rv-home-hero) was painted navy by VYTRON 9 with cream copy on top,
+   so in light mode it flipped to light-on-light. It also sizes h1 below h2, which
+   inverts the heading order. Bring it onto the shelf and restore h1 > h2. */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.rv-home-hero){
+  background:var(--rv-surface)!important;
+  background-image:radial-gradient(ellipse 40rem 28rem at 16% -10rem,rgb(var(--rv-lamp-rgb) / .22),transparent 72%)!important;
+  border:1px solid var(--rv-hairline)!important;border-top-color:rgb(var(--rv-lamp-rgb) / .26)!important;
+  border-radius:var(--rv-r-art,28px)!important;box-shadow:var(--rv-shadow)!important;color:var(--rv-ink)!important;
+  overflow:hidden!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.rv-home-art){border-radius:0 var(--rv-r-lg) var(--rv-r-lg) 0!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.rv-home-welcome h1){
+  font-family:var(--rv-font-display)!important;font-weight:500!important;font-size:clamp(30px,3.4vw,44px)!important;
+  letter-spacing:-.02em!important;line-height:1.05!important;color:var(--rv-ink)!important;margin:0 0 6px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.rv-home-welcome h2){
+  font-family:var(--rv-font-display)!important;font-weight:500!important;font-size:clamp(19px,1.9vw,25px)!important;
+  letter-spacing:-.01em!important;line-height:1.25!important;color:var(--rv-muted)!important;margin:0 0 14px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.rv-home-welcome p){color:var(--rv-muted)!important;max-width:54ch!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.rv-eyebrow){
+  font-family:var(--rv-font-ui)!important;font-size:9px!important;letter-spacing:.24em!important;
+  color:var(--rv-lamp)!important;font-weight:600!important;text-transform:uppercase!important;
+}
+
+/* Quick-action strip + mobile pocket hero were the last two blocks still painted with
+   the retired teal/cyan accent and the system sans face. */
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb11-context-tools){
+  border-color:var(--rv-hairline)!important;color:var(--rv-muted)!important;background:transparent!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb11-context-tools) > span{
+  color:var(--rv-muted)!important;letter-spacing:.2em!important;font-size:9px!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb11-context-tools) > span :is(i,b){
+  color:var(--rv-lamp)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb11-context-tools) button{
+  background:transparent!important;border:1px solid var(--rv-hairline)!important;color:var(--rv-ink)!important;
+  border-radius:999px!important;font-weight:600!important;box-shadow:none!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb11-context-tools) button:hover{
+  background:rgb(var(--rv-lamp-rgb) / .08)!important;border-color:rgb(var(--rv-lamp-rgb) / .4)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket){
+  background:var(--rv-surface)!important;border:1px solid var(--rv-hairline)!important;
+  border-top-color:rgb(var(--rv-lamp-rgb) / .26)!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket h2){
+  font-family:var(--rv-font-display)!important;font-weight:500!important;font-size:clamp(24px,6.4vw,30px)!important;
+  letter-spacing:-.02em!important;line-height:1.1!important;color:var(--rv-ink)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket p){color:var(--rv-muted)!important}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-eyebrow){
+  font-family:var(--rv-font-ui)!important;letter-spacing:.22em!important;color:var(--rv-lamp)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket-actions button){
+  background:var(--rv-raised)!important;border:1px solid var(--rv-hairline)!important;color:var(--rv-ink)!important;
+  border-radius:var(--rv-r-lg)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket-actions button) :is(small){
+  color:var(--rv-muted)!important;
+}
+html body.signed-in[data-theme][data-appearance-resolved] :is(.hb-mobile-pocket-flower){color:var(--rv-lamp)!important}
