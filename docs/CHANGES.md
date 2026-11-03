@@ -1,3 +1,14 @@
+# Rowanvale 1.1.0 — A shell that keeps working offline
+
+Release 3 November 2026
+
+- Navigation resolves the cached shell from the scope root, so an installed copy still opens with the network offline instead of falling through to a failed request.
+- The service worker no longer tries to cache /index.html, which the host redirects; a stale cached redirect can no longer trap the app on "this site can't be reached".
+- Install caching is per file and tolerant, so one slow or unavailable asset cannot abort the whole offline shell.
+- Artwork lookups accept non-free Wikimedia leads, stride page lookups in batches of twenty, and reject logos and wordmarks in favour of the designed placeholder.
+
+See version.json for the in-app release notes.
+
 # Rowanvale 18.2.0 — The Fan Lounge
 
 - Offline film, TV and anime directory joins existing games.
