@@ -2,16 +2,20 @@
  *
  * The desktop build runs on app/server.js (node:http + node:fs). That process cannot
  * run on Workers, but almost everything it serves is a static file, so this Worker
- * hands those straight to the asset binding and keeps only the small differences:
+ * hands those straight to the asset binding and covers only the small differences:
  *
- *  - /api/*  the Node server proxies RAWG, Open Food Facts, artwork caching and
- *            metadata lookups from a local process with local disk. There is no
- *            equivalent here and no API key is configured, so these answer 503 in
- *            the same shape the client already handles when the sources are down.
- *            Every collection, journal and profile stays in the browser.
+ *  - /api/artwork/resolve  served for real, from a keyless Wikipedia lookup. Without it
+ *            every catalogue card fell back to a placeholder, which is what "the art
+ *            doesn't load" looked like on the hosted build.
+ *  - /api/*  everything else (RAWG metadata, Open Food Facts, local artwork storage)
+ *            needs a desktop process with a disk and API keys, so it answers 503 in
+ *            the shape the client already handles. Collections, journals and profiles
+ *            stay in the browser.
  *  - /sw.js and /version.json must never be served from an HTTP cache, otherwise a
- *    fleet of browsers can pin an old service worker to the new deployment.
+ *    fleet of browsers can pin an old service worker to a new deployment.
  */
+
+import { resolveItems } from './cover-resolver.js';
 
 const NO_STORE_PATHS = new Set(['/sw.js', '/version.json']);
 
@@ -34,9 +38,24 @@ function withNoStore(response) {
   });
 }
 
+async function handleResolve(request) {
+  if (request.method !== 'POST') return json(405, { error: 'Use POST for artwork resolution.' });
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json(400, { error: 'Send a JSON body with an items array.' });
+  }
+  if (!Array.isArray(body?.items)) return json(400, { error: 'Send a JSON body with an items array.' });
+  const results = await resolveItems(body.items);
+  return json(200, { results });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.pathname === '/api/artwork/resolve') return handleResolve(request);
 
     if (url.pathname.startsWith('/api/')) {
       return json(503, {

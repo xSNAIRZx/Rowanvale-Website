@@ -3,7 +3,7 @@
    removed only after activation. API/version checks bypass cache. */
 // Bump the trailing build tag on every deploy. The fetch handler is cache-first, so an
 // unchanged name keeps serving the previous shell to anyone who has already visited.
-const CACHE_NAME = 'hearthbyte-play-connect-reset-v1.0.0-rowanvale-lamplight-b2';
+const CACHE_NAME = 'hearthbyte-play-connect-reset-v1.0.0-rowanvale-lamplight-b5';
 const APP_SHELL = [
   './import-core193.js', './import193.js', './import193.css',
   './media193-core.js', './media193.js', './wellbeing-core193.js', './wellbeing193.js', './wellbeing193.css', './training-core193.js', './training193.js', './training193.css',
@@ -51,7 +51,19 @@ const APP_SHELL = [
   './assets/icon-512.png'
 ];
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
+  // Cache the shell one file at a time. addAll() is all-or-nothing, so a single URL that
+  // redirects or 404s would block activation and leave an old worker serving a shell that
+  // no longer matches the deployment.
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    await Promise.all(APP_SHELL.map(async url => {
+      try {
+        const response = await fetch(new Request(url, { cache: 'reload', redirect: 'follow' }));
+        if (response.ok && !response.redirected) await cache.put(url, response);
+      } catch {}
+    }));
+    await self.skipWaiting();
+  })());
 });
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => (key.startsWith('mindforge-momentum-') || key.startsWith('vytron-') || key.startsWith('hearthbyte-play-connect-reset-')) && key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
@@ -78,8 +90,17 @@ self.addEventListener('fetch', event => {
   // Serve one complete installed shell. Mixing a newly fetched HTML file with old
   // cached scripts can corrupt an upgrade; a new worker installs all files together.
   if (request.mode === 'navigate') {
-    event.respondWith(caches.open(CACHE_NAME).then(async cache =>
-      (await cache.match('./index.html')) || fetch(request)));
+    event.respondWith((async () => {
+      try {
+        const cache = await caches.open(CACHE_NAME);
+        const cached = await cache.match('./index.html');
+        // Only a complete, non-redirected shell may answer a navigation. Replaying a
+        // cached redirect here sends the browser back to the same navigation forever,
+        // which surfaces as "this site can't be reached" with no network error.
+        if (cached && cached.ok && !cached.redirected) return cached;
+      } catch {}
+      return fetch(request);
+    })());
     return;
   }
   event.respondWith(caches.open(CACHE_NAME).then(async cache => {

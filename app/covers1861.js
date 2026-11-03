@@ -28,6 +28,17 @@ const RVCovers = (() => {
     const v = JSON.parse(localStorage.getItem(STORE) || "{}");
     if (v && typeof v === "object" && !Array.isArray(v)) cache = v;
   } catch {}
+  // 1.0.1 replaced a resolver that answered "no cover" for nearly every title. Those
+  // negatives are cached for a day, so drop them once instead of leaving every existing
+  // browser on placeholders until tomorrow. Artwork that did resolve is kept.
+  try {
+    if (localStorage.getItem(STORE + ".schema") !== "2") {
+      for (const k of Object.keys(cache))
+        if (cache[k]?.state !== "ready") delete cache[k];
+      localStorage.setItem(STORE + ".schema", "2");
+      localStorage.setItem(STORE, JSON.stringify(cache));
+    }
+  } catch {}
   function describe(x) {
     const m = C.meta(x),
       type = C.TYPES.includes(x.type) ? x.type : "Game";
@@ -344,6 +355,7 @@ const RVCovers = (() => {
     if (result.state === "ready" && C.safeImage(result.artwork) && e.ids.size)
       waitingSaves.set(k, result);
     paint(k);
+    if (result.state === "ready") summary();
   }
   async function pump() {
     if (busy || !ctx?.active() || !enabled() || !online) return;

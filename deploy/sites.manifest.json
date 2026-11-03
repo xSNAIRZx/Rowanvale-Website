@@ -1,11 +1,16 @@
 {
   "entrypoint": "worker.js",
-  "compatibilityDate": "2026-11-01",
+  "compatibilityDate": "2026-11-03",
   "modules": [
     {
       "name": "worker.js",
       "type": "esm",
       "path": "./worker.js"
+    },
+    {
+      "name": "cover-resolver.js",
+      "type": "esm",
+      "path": "./cover-resolver.js"
     }
   ],
   "assetsDirectory": "../dist",
