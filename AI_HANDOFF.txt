@@ -1,0 +1,43 @@
+ROWANVALE AI CODE HANDOFF
+
+This folder contains the original uploaded Rowanvale 19.3.0 code, unchanged, plus this guide. The site source is now available in this GitHub repository. The uploaded ZIP was used for the initial structure review.
+
+Start by reading README.md and NEXT_PROJECT_BRIEF.md. Use the brief as project context and follow the user's current request. No redesign or deployment was requested in preparing this handoff.
+
+STRUCTURE
+app/index.html: application shell and ordered script/style loading.
+app/app.js: central application logic (approximately 418 KB).
+app/styles.css: base styling (approximately 355 KB).
+app/: many additional versioned feature scripts/styles for media, library, profiles, connections, fitness, wellbeing, imports and artwork. Inspect loading order, globals and overrides before changing them.
+app/server.js: Node HTTP/static server, provider metadata, artwork and backup/workspace routes.
+app/sw.js and manifest.webmanifest: offline/installable app support.
+app/assets/ and app/vendor/: visual assets and bundled Supabase client.
+backend/supabase-private-sync.sql: optional private cloud sync schema.
+hosting/server.cjs: owner-private authenticated gateway around the original loopback backend.
+tests/: source checks, unit/integration and browser tests.
+docs/: historical notes, screenshots and test evidence, not fresh verification.
+Dockerfile, compose.yaml, Caddyfile.example and environment examples: hosting configuration.
+
+FEATURES
+My Day, games/media/books discovery and library, watchlists, quests, fitness, focus/reset/wellbeing, profiles, appearance settings, private friend rosters, connections and backup/import tools. UI presence alone does not prove that an external service is connected.
+
+DATA
+Most records/settings live in browser localStorage by default. Changing host, port or protocol changes the storage origin. Private hosted artwork storage is separate. Optional Supabase sync needs explicit setup. Preserve JSON and artwork ZIP backup workflows. Keep provider secrets server-side.
+The hosted gateway is designed for one private owner, not a public multi-user service. Public accounts require separate identity, authorization and storage isolation.
+
+RUNNING
+Node >=18 is declared. From this directory: npm ci, then npm start.
+The original server defaults to http://127.0.0.1:8080. Set PORT=4175 in the process environment to use the user's reported port. Localhost is machine-specific; its accessibility and current running state were not verified.
+For private hosting follow README.md, then npm run start:hosted. The gateway requires owner credentials, PUBLIC_URL and an absolute persistent data directory. It does not automatically load .env.hosted outside Compose.
+
+CHECKS
+npm run check
+npm test
+npm run test:browser
+npm run test:hosting
+npm run test:hosting:browser
+Inspect browser and provider requirements before running. None of these checks were run for this handoff, and no visual localhost review or deployment was performed.
+
+NEXT AI
+Preserve existing behavior and data formats. Make the user's requested changes incrementally. The main visible maintenance concern is large central files plus many versioned layers loaded together. Keep service-worker caches coordinated with changed assets. Historical test evidence is not a substitute for fresh checks.
+
