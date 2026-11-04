@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-03T20:56:34.248Z",
+  "date": "2026-11-04T00:21:57.832Z",
   "browser": "156.0.8078.80",
   "checks": [
     "Save current query/type/status/sort",
@@ -15,7 +15,7 @@
     "All three densities fit390/768/1440",
     "No page errors"
   ],
-  "searchMs": 142,
+  "searchMs": 123,
   "dataset": 3000,
   "limits": "Synthetic local workspace; external network blocked. Search timing is one local sample, not a benchmark guarantee. Physical devices and assistive technology not tested."
 }

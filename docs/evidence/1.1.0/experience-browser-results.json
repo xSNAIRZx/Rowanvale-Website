@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-03T20:55:27.926Z",
+  "date": "2026-11-04T00:19:36.335Z",
   "results": [
     {
       "name": "The new sign-in presentation fits a small phone",
@@ -160,11 +160,11 @@
   ],
   "errors": [],
   "artwork": {
-    "firstRequestMs": 421,
+    "firstRequestMs": 414,
     "requests": [
       {
         "title": "Priority book 40",
-        "at": 1793739327703
+        "at": 1793751576106
       }
     ]
   }

@@ -1,4 +1,6 @@
 {
+  "date": "2026-11-04T00:15:25.231Z",
+  "browser": "156.0.8078.80",
   "checks": [
     {
       "name": "Default profile is complete without artwork uploads, fake collections or unearned badges",
@@ -62,9 +64,14 @@
     },
     {
       "name": "Global light, dark and system mode work with a saved custom theme",
-      "pass": false,
-      "error": "Expected \"actual\" to be strictly unequal to:\n\n'#141110'"
+      "pass": true
+    },
+    {
+      "name": "The original global appearance editor and other Rowanvale views still render",
+      "pass": true
     }
   ],
-  "errors": []
+  "errors": [],
+  "exportEvidence": "Prepared HTML payload and copy fallback verified. Automated Chromium downloads are canceled by this environment; OS-level download delivery is not claimed.",
+  "fixtures": "Synthetic QA media and user data; screenshots are the running app."
 }

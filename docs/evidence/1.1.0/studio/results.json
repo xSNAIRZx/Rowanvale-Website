@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Workspace presets stage appearance, layout and comfort without changing saved identity",
+    "Unsaved workspace changes can cancel navigation; save persists complete preset",
+    "Portable workspace includes only versioned visual preferences",
+    "Invalid import is rejected atomically; valid import stays staged until saved",
+    "Local preset list supports duplicate protection and staged removal/undo",
+    "Existing theme export remains a separate compatible format",
+    "Workspace presets and preview comparison remain usable on narrow phones"
+  ],
+  "errors": []
+}

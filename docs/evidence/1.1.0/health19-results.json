@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-03T20:56:41.223Z",
+  "date": "2026-11-04T00:22:05.349Z",
   "results": [
     {
       "name": "No worker cannot claim offline readiness, even while browser is online",

@@ -1,3 +1,10 @@
+## Unreleased — Lamplight polish pass
+
+- Custom theme palettes now define the Lamplight ground, surface, ink and lamp tokens themselves, so Light and Dark actually change a saved custom theme instead of both resolving to the default Forest Dusk ground.
+- The phone Games & Media hero is compact at 320–400px: the supporting sentence moves to the accessibility layer and the title, lamp and every action stay, bringing the library search above the bottom navigation.
+- Library search now precedes the shelf tiles, so the primary control is the first thing reached on a phone while desktop keeps all four shelves.
+- The workspace-import regression check waits for the asynchronous status it asserts rather than reading the previous message; the shipped message is unchanged.
+
 ## Unreleased — reproducible public and private builds
 
 - Include public Worker deployment source and the asset builder in the complete source package.
