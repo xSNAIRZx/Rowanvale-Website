@@ -1,0 +1,27 @@
+ROWANVALE REPOSITORY READINESS — 2026-11-03
+
+SOURCE AUDIT
+All 558 original files in the uploaded project were present in the GitHub checkout. Ignoring text line endings, only the intentionally updated README differed before the build fixes. App assets, catalogs, backend schema, tests, hosting files, environment examples and historical evidence are included.
+
+BUILD FIXES
+Added .gitattributes for stable text line endings. The bundled SDK integrity check normalizes CRLF to LF before validating the original verified hash. The build now includes hosting/, Docker/Compose/Caddy configuration, environment templates and the AI brief/guide, alongside the original desktop app. Private .env variants are excluded from the generated package. Updated the brief's stale repository/directory references and distinguished the implemented private gateway from pending deployment.
+
+HOW TO REPRODUCE
+Install Node (Dockerfile uses Node 24), then run npm ci and npm run build.
+Output: build/Rowanvale_19.3.0/ with BUILD_MANIFEST.json file hashes.
+Run npm start for the original local app; use PORT=4175 in the process environment if desired. Default port is 8080. Follow README.md for authenticated hosting and migration.
+Browser dependencies: npm exec playwright install chromium for the full browser suite. The hosted browser check defaults to installed Chrome on Windows; set ROWANVALE_BROWSER to an installed compatible browser executable elsewhere.
+
+OBSERVED VERIFICATION
+Windows, Node 26.12.1; npm ci succeeded with zero reported dependency vulnerabilities.
+npm run build: passed; 60 application modules, 96 HTML assets, offline shell and bundled SDK integrity/license verified.
+npm test: 163 tests passed plus 7 book catalog assertions.
+npm run test:hosting: 12 tests passed.
+npm run test:hosting:browser: 6 checks passed, including authenticated screens, resolver POST, mobile fit, offline restart with retained data and no page errors.
+These local results do not certify Docker or production HTTPS, live external providers, the full browser regression suite, or every possible feature.
+
+REMAINING USER/HOST INPUTS
+The complete current source is available, but the intended redesigned site is not finished. NEXT_PROJECT_BRIEF.md preserves the planned redesign; its design-direction checkpoint remains pending. Hosting provider/domain, TLS, persistent volume and owner credentials must be supplied for deployment. Optional provider API keys and Supabase configuration must be supplied separately, never committed. Existing private browser data must be exported/imported; Git does not carry it. The current gateway serves a single private owner; public multi-user operation needs a separate isolation design.
+
+AI READING ORDER
+AI_HANDOFF.txt, README.md, NEXT_PROJECT_BRIEF.md, then the source files needed for the requested change. No ZIP is needed to access the source through GitHub.

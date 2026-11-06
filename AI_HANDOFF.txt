@@ -1,6 +1,6 @@
 ROWANVALE AI CODE HANDOFF
 
-This folder contains the original uploaded Rowanvale 19.3.0 code, unchanged, plus this guide. The site source is now available in this GitHub repository. The uploaded ZIP was used for the initial structure review.
+This repository contains the uploaded Rowanvale 19.3.0 application plus the AI guide and build/documentation fixes. The site source is now available in this GitHub repository. The uploaded ZIP was used for the initial structure review.
 
 Start by reading README.md and NEXT_PROJECT_BRIEF.md. Use the brief as project context and follow the user's current request. No redesign or deployment was requested in preparing this handoff.
 
@@ -36,8 +36,7 @@ npm test
 npm run test:browser
 npm run test:hosting
 npm run test:hosting:browser
-Inspect browser and provider requirements before running. None of these checks were run for this handoff, and no visual localhost review or deployment was performed.
+Inspect browser and provider requirements before running. On 2026-11-03, dependency installation, build, 163 automated tests plus 7 book catalog assertions, 12 hosting tests and 6 hosted browser checks passed on Windows with Node 26.12.1. See REPOSITORY_READINESS.txt. Production deployment, Docker and live-provider credentials remain unverified.
 
 NEXT AI
 Preserve existing behavior and data formats. Make the user's requested changes incrementally. The main visible maintenance concern is large central files plus many versioned layers loaded together. Keep service-worker caches coordinated with changed assets. Historical test evidence is not a substitute for fresh checks.
-
